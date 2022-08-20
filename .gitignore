@@ -43,3 +43,5 @@ x86
 # CMake
 build/*
 bin/*
+
+*.log

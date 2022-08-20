@@ -160,51 +160,68 @@ void CIndexResourcesDlg::OnTimer(UINT nIDEvent)
 		return;
 	}
 
-	if (!Process2da("HATERACE",&_2daHateRace))
+	if (infinity::active_profile.user_lists & infinity::RacialEnemy)
 	{
-		EndDialog(IDCANCEL);
-		return;
+		if (!Process2da("HATERACE", &_2daHateRace))
+		{
+			EndDialog(IDCANCEL);
+			return;
+		}
 	}
 
-	if (!Process2da("WEAPPROF",&_2daWeapProf))
+	if (infinity::active_profile.user_lists & infinity::Profs)
 	{
-		EndDialog(IDCANCEL);
-		return;
+		if (!Process2da("WEAPPROF", &_2daWeapProf))
+		{
+			EndDialog(IDCANCEL);
+			return;
+		}
 	}
 
-	if (!Process2da("KITLIST",&_2daKitList))
+	if (infinity::active_profile.user_lists & infinity::Kits)
 	{
-		EndDialog(IDCANCEL);
-		return;
+		if (!Process2da("KITLIST", &_2daKitList))
+		{
+			EndDialog(IDCANCEL);
+			return;
+		}
 	}
 
-	AddToLog("Creating racial enemy list.\n");
-	if (!CreateRacialEnemyList())
+	if (infinity::active_profile.user_lists & infinity::RacialEnemy)
 	{
-		AddToLog("   Failed creating list.\n\n");
-		EndDialog(IDCANCEL);
-		return;
+		AddToLog("Creating racial enemy list.\n");
+		if (!CreateRacialEnemyList())
+		{
+			AddToLog("   Failed creating list.\n\n");
+			EndDialog(IDCANCEL);
+			return;
+		}
+		AddToLog("   List created.\n\n");
 	}
-	AddToLog("   List created.\n\n");
 
-	AddToLog("Creating weapon proficiency list.\n");
-	if (!CreateWeaponProfList())
+	if (infinity::active_profile.user_lists & infinity::Profs)
 	{
-		AddToLog("   Failed creating list.\n\n");
-		EndDialog(IDCANCEL);
-		return;
+		AddToLog("Creating weapon proficiency list.\n");
+		if (!CreateWeaponProfList())
+		{
+			AddToLog("   Failed creating list.\n\n");
+			EndDialog(IDCANCEL);
+			return;
+		}
+		AddToLog("   List created.\n\n");
 	}
-	AddToLog("   List created.\n\n");
 
-	AddToLog("Creating kit ability list.\n");
-	if (!CreateKitList())
+	if (infinity::active_profile.user_lists & infinity::Kits)
 	{
-		AddToLog("   Failed creating list.\n\n");
-		EndDialog(IDCANCEL);
-		return;
+		AddToLog("Creating kit ability list.\n");
+		if (!CreateKitList())
+		{
+			AddToLog("   Failed creating list.\n\n");
+			EndDialog(IDCANCEL);
+			return;
+		}
+		AddToLog("   List created.\n\n");
 	}
-	AddToLog("   List created.\n\n");
-
 
 	EndDialog(IDOK);
 }

@@ -59,6 +59,7 @@
 #include <afxtempl.h>
 #include <atlbase.h>
 #include <math.h>
+#include <string>
 
 #define	DIR_MULTISAVE		"mpsave\\"
 #define	DIR_SINGLESAVE		"save\\"
@@ -66,18 +67,16 @@
 #define	DIR_OVERRIDE		"Override\\"
 #define	DIR_CHARACTERS		"Characters\\"
 
-#define	LOGFILE				"ShadowKeeper.log"
-
 // Defines for the user list filenames.
-#define ULF_KITS			"..\\data\\Kits.uld"
-#define ULF_GENDER		"..\\data\\Gender.uld"
-#define ULF_RACE			"..\\data\\Race.uld"
-#define ULF_CLASS			"..\\data\\Class.uld"
-#define ULF_ALIGNMENT	"..\\data\\Alignment.uld"
-#define ULF_RACIALENEMY "..\\data\\RacialEnemy.uld"
-#define ULF_NUMATTACKS	"..\\data\\NumAttacks.uld"
-#define ULF_PROFS			"..\\data\\Profs.uld"
-#define ULF_AFFECTS		"..\\data\\Affects.uld"
+#define ULF_KITS			".\\data\\Kits.uld"
+#define ULF_GENDER			".\\data\\Gender.uld"
+#define ULF_RACE			".\\data\\Race.uld"
+#define ULF_CLASS			".\\data\\Class.uld"
+#define ULF_ALIGNMENT		".\\data\\Alignment.uld"
+#define ULF_RACIALENEMY		".\\data\\RacialEnemy.uld"
+#define ULF_NUMATTACKS		".\\data\\NumAttacks.uld"
+#define ULF_PROFS			".\\data\\Profs.uld"
+#define ULF_AFFECTS			".\\data\\Affects.uld"
 
 // Standard document hints.
 #define	HINT_CHANGE_GRIDLINES		5000

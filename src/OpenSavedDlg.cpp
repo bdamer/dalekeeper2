@@ -237,13 +237,14 @@ void COpenSavedDlg::FillGames()
 
 	m_bLoadingGames = TRUE;
 	BOOL bNotDone = TRUE;
+	const auto filename = infinity::active_profile.save_prefix + ".gam";
 	while(bNotDone)
 	{
 		// Make sure it's a directory, and not the '.' or '..'.
 		if (fd.dwFileAttributes&FILE_ATTRIBUTE_DIRECTORY && isdigit(fd.cFileName[0]) && strcmp(fd.cFileName,".") && strcmp(fd.cFileName,".."))
 		{
 			strPath = strSave + CString(fd.cFileName) + "\\";
-			strFile = strPath + "Baldur.gam";
+			strFile = strPath + filename.c_str();
 
 			// Make sure a saved file exists here.
 			if (CFile::GetStatus(strFile,fs))
@@ -328,8 +329,7 @@ void COpenSavedDlg::OnItemchangedGames(NMHDR* pNMHDR, LRESULT* pResult)
 
 	COpenGameData *pData = (COpenGameData*)m_lcGames.GetItemData(pNMListView->iItem);
 
-	CString strFile;
-	strFile = pData->m_strPath+"Baldur.bmp";
+	const CString strFile(pData->m_strPath + (infinity::active_profile.save_prefix + ".bmp").c_str());
 	m_wndBitmap.LoadBitmap(strFile);
 	
 	*pResult = 0;

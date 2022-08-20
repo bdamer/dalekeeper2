@@ -20,6 +20,7 @@
     <Keyword>MFCProj</Keyword>
     <ProjectGuid>{BA28E43A-A681-4AE4-83E2-67673EB42FE0}</ProjectGuid>
     <ProjectName>DaleKeeper2</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -64,7 +65,7 @@
     <LibraryPath>$(ProjectDir)..\lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug\</OutDir>
+    <OutDir>$(SolutionDir)..\</OutDir>
     <IntDir>.\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(ProjectDir)..\include</IncludePath>
@@ -117,7 +118,7 @@
       <SubSystem>Windows</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <OutputFile>.\Profiling\DaleKeeper2.exe</OutputFile>
-      <AdditionalDependencies>version.lib;zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>version.lib;libz-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -159,8 +160,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <OutputFile>.\Debug\DaleKeeper2.exe</OutputFile>
-      <AdditionalDependencies>version.lib;zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(SolutionDir)..\DaleKeeper2.exe</OutputFile>
+      <AdditionalDependencies>version.lib;libz-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
@@ -201,7 +202,7 @@
       <SubSystem>Windows</SubSystem>
       <IgnoreSpecificDefaultLibraries>StaticZlib.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <OutputFile>.\Release\DaleKeeper2.exe</OutputFile>
-      <AdditionalDependencies>version.lib;zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>version.lib;libz-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -237,6 +238,7 @@
     <ClCompile Include="..\src\InfChr.cpp" />
     <ClCompile Include="..\src\InfCreature.cpp" />
     <ClCompile Include="..\src\InfGame.cpp" />
+    <ClCompile Include="..\src\infinity.cpp" />
     <ClCompile Include="..\src\InfKey.cpp" />
     <ClCompile Include="..\src\InfTlk.cpp" />
     <ClCompile Include="..\src\InstallPathDlg.cpp" />
@@ -330,6 +332,7 @@
     <ClInclude Include="..\src\InfChr.h" />
     <ClInclude Include="..\src\InfCreature.h" />
     <ClInclude Include="..\src\InfGame.h" />
+    <ClInclude Include="..\src\infinity.h" />
     <ClInclude Include="..\src\InfKey.h" />
     <ClInclude Include="..\src\InfTlk.h" />
     <ClInclude Include="..\src\InstallPathDlg.h" />

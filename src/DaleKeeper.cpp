@@ -196,7 +196,7 @@ BOOL CDaleKeeperApp::InitInstance()
 		}
 	}
 	
-	::DeleteFile(LOGFILE);
+	::DeleteFile(log_file);
 
 	AfxEnableControlContainer();
 
@@ -450,13 +450,15 @@ void CDaleKeeperApp::OnUpdateFileOpencharacterfile(CCmdUI* pCmdUI)
 
 void CDaleKeeperApp::LoadSavedGame(const char *pszPath, const char *pszTitle, BOOL bMultiPlayer)
 {
+	const std::string filename = infinity::active_profile.save_prefix + ".gam";
+
 	m_li.nType = (bMultiPlayer ? LI_GAMETYPE_MULTI : LI_GAMETYPE_SINGLE);
 	m_li.strPath = pszPath;
 	m_li.strTitle = pszTitle;
-	m_li.strFile = "Baldur.gam";
+	m_li.strFile = filename.c_str();
 
 	CString strOpen(pszPath);
-	strOpen += "Baldur.gam";
+	strOpen += filename.c_str();
 
 	OpenDocumentFile(strOpen);
 }
@@ -704,6 +706,7 @@ BOOL CDaleKeeperApp::LoadLists()
 {
 	AddToLog("Loading user defined lists:\n");
 
+	// TODO: Don't hardcode paths
 	if (!_vlKit.Load(ULF_KITS) ||
 		 !_vlGenderUser.Load(ULF_GENDER,TRUE) ||
 		 !_vlRaceUser.Load(ULF_RACE,TRUE) ||

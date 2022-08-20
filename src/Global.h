@@ -31,6 +31,11 @@
 
 **************************************************************************************/
 
+#include "infinity.h"
+
+// Name of this application
+extern const CString app_name;
+extern const CString log_file;
 
 // Path to the Icewind Dale installation.
 extern CString _strInstallPath;

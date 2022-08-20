@@ -471,12 +471,13 @@ BOOL CDaleKeeperDoc::SaveGame()
 
 	CCopyFilesDlg dlgCopy;
 
+	const auto filename = infinity::active_profile.save_prefix + ".gam";
 	bNotDone = TRUE;
 	while(bNotDone)
 	{
 		// Only copy files and there is no need to copy Icewind.gam which will be reconstructed
 		// on the save.
-		if (!(fd.dwFileAttributes&FILE_ATTRIBUTE_DIRECTORY) && strcmpi(fd.cFileName,"Baldur.gam"))
+		if (!(fd.dwFileAttributes&FILE_ATTRIBUTE_DIRECTORY) && strcmpi(fd.cFileName, filename.c_str()))
 			dlgCopy.m_slSource.AddTail(fd.cFileName);
 
 		bNotDone = ::FindNextFile(hFind,&fd);
@@ -494,7 +495,7 @@ BOOL CDaleKeeperDoc::SaveGame()
 	}
 
 	CString strSaveFile;
-	strSaveFile = strDir + "Baldur.gam";
+	strSaveFile = strDir + filename.c_str();
 
 	if (!m_infGame.Write(strSaveFile))
 	{

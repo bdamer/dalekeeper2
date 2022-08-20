@@ -1,28 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\src\AddAbilitiesDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\BitmapWnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\BrowseDirsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ChangesMadeDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CharTabCtrl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\ChildFrm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ColorPickerDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CopyFilesDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\CreatureBrowserDoc.cpp">
@@ -34,12 +16,6 @@
     <ClCompile Include="..\src\CreatureBrowserView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\CreatureFilterDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CreatureListCtrl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\DaleKeeper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -49,61 +25,7 @@
     <ClCompile Include="..\src\DaleKeeperView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\DirTreeCtrl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\EditAffectDataDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\EditAffectDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\EditListDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\EditUserListDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\EditVarDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ExportOptionsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ExportResourceDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Global.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\IndexResourcesDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Inf2DA.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\InfBam.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\InfBifFile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\InfChr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\InfCreature.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\InfGame.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\InfKey.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\InfTlk.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\InstallPathDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\ItemBrowserCom.cpp">
@@ -118,55 +40,13 @@
     <ClCompile Include="..\src\ItemBrowserView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\ItemFilterDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ItemListCtrl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\LimitSpellsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\MainFrm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\MDIClientWnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\MiscSettingsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\NameRefDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\OpenChrDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\OpenCreDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\OpenSavedDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\PalImageList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\PortraitsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\SaveChrDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\SaveGameDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\SaveCreDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\SetQtyDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\SetValueDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\SortStringArray.cpp">
@@ -187,87 +67,189 @@
     <ClCompile Include="..\src\SpellBrowserView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\SpellFilterDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\SpellListCtrl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\StaticUrl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\StdAfx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\StringFinderDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabAbilitiesDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabAffectsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabAppearanceDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabCharacteristicsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabGlobalVarsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabInvDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabMemSpellsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabProfsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabResistancesDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabSavesDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabSpellsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabStatesDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TabThiefSkillsDlg.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\ValueList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\AddAbilitiesDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BrowseDirsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ChangesMadeDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ColorPickerDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CopyFilesDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CreatureFilterDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EditAffectDataDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EditAffectDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EditUserListDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EditVarDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\EditListDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ExportOptionsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ExportResourceDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IndexResourcesDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CharTabCtrl.cpp">
+      <Filter>Source Files\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CreatureListCtrl.cpp">
+      <Filter>Source Files\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DirTreeCtrl.cpp">
+      <Filter>Source Files\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabThiefSkillsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabResistancesDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabSavesDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabSpellsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabStatesDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabMemSpellsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabProfsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\StringFinderDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabAbilitiesDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabAffectsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabAppearanceDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabCharacteristicsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabGlobalVarsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TabInvDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SpellFilterDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SaveGameDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SaveCreDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PortraitsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SaveChrDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\OpenSavedDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MiscSettingsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\NameRefDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\OpenChrDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\OpenCreDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ItemFilterDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InstallPathDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Inf2DA.cpp">
+      <Filter>Source Files\infinity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InfBam.cpp">
+      <Filter>Source Files\infinity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InfBifFile.cpp">
+      <Filter>Source Files\infinity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InfChr.cpp">
+      <Filter>Source Files\infinity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InfCreature.cpp">
+      <Filter>Source Files\infinity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InfGame.cpp">
+      <Filter>Source Files\infinity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InfKey.cpp">
+      <Filter>Source Files\infinity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InfTlk.cpp">
+      <Filter>Source Files\infinity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SetValueDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SetQtyDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LimitSpellsDlg.cpp">
+      <Filter>Source Files\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SpellListCtrl.cpp">
+      <Filter>Source Files\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ItemListCtrl.cpp">
+      <Filter>Source Files\controls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\infinity.cpp">
+      <Filter>Source Files\infinity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\AddAbilitiesDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\BitmapWnd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\BrowseDirsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ChangesMadeDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\CharTabCtrl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\ChildFrm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ColorPickerDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\CopyFilesDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\CreatureBrowserDoc.h">
@@ -279,12 +261,6 @@
     <ClInclude Include="..\src\CreatureBrowserView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\CreatureFilterDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\CreatureListCtrl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\DaleKeeper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -294,61 +270,7 @@
     <ClInclude Include="..\src\DaleKeeperView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\DirTreeCtrl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\EditAffectDataDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\EditAffectDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\EditListDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\EditUserListDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\EditVarDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ExportOptionsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ExportResourceDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Global.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IndexResourcesDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Inf2DA.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\InfBam.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\InfBifFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\InfChr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\InfCreature.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\InfGame.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\InfKey.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\InfTlk.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\InstallPathDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\ItemBrowserCom.h">
@@ -363,55 +285,13 @@
     <ClInclude Include="..\src\ItemBrowserView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\ItemFilterDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ItemListCtrl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\LimitSpellsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\MainFrm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\MDIClientWnd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\MiscSettingsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\NameRefDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\OpenChrDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\OpenCreDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\OpenSavedDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\PalImageList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\PortraitsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\SaveChrDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\SaveCreDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\SaveGameDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\SetQtyDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\SetValueDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\SpellBitmaps.h">
@@ -432,48 +312,6 @@
     <ClInclude Include="..\src\ValueList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\TabThiefSkillsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabStatesDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabSpellsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabSavesDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabResistancesDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabProfsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabMemSpellsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabInvDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabGlobalVarsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabCharacteristicsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabAppearanceDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabAffectsDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TabAbilitiesDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\StringFinderDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -483,11 +321,179 @@
     <ClInclude Include="..\src\SpellListCtrl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\SpellFilterDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\resource.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\AddAbilitiesDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BrowseDirsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ChangesMadeDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ColorPickerDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CopyFilesDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CreatureFilterDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BitmapWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CharTabCtrl.h">
+      <Filter>Header Files\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CreatureListCtrl.h">
+      <Filter>Header Files\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EditAffectDataDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ExportResourceDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ExportOptionsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EditUserListDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EditListDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EditAffectDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IndexResourcesDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EditVarDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InstallPathDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ItemFilterDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LimitSpellsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MiscSettingsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\NameRefDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\OpenChrDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\OpenCreDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\OpenSavedDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\PortraitsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SaveChrDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SaveCreDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SaveGameDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabThiefSkillsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabSavesDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabSpellsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabStatesDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabResistancesDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabMemSpellsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabProfsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabGlobalVarsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabInvDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabAppearanceDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabCharacteristicsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\StringFinderDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabAbilitiesDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TabAffectsDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SpellFilterDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SetValueDlg.h">
+      <Filter>Header Files\dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ItemListCtrl.h">
+      <Filter>Header Files\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DirTreeCtrl.h">
+      <Filter>Header Files\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SetQtyDlg.h">
+      <Filter>Header Files\controls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InfTlk.h">
+      <Filter>Header Files\infinity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Inf2DA.h">
+      <Filter>Header Files\infinity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InfBam.h">
+      <Filter>Header Files\infinity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InfBifFile.h">
+      <Filter>Header Files\infinity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InfChr.h">
+      <Filter>Header Files\infinity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InfCreature.h">
+      <Filter>Header Files\infinity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InfGame.h">
+      <Filter>Header Files\infinity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InfKey.h">
+      <Filter>Header Files\infinity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\infinity.h">
+      <Filter>Header Files\infinity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -521,6 +527,24 @@
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{1aed5648-e501-4933-a2f0-53bcce4d0ead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dialogs">
+      <UniqueIdentifier>{1eb20869-33ae-43e6-b089-453cef792847}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\controls">
+      <UniqueIdentifier>{046f53c5-766d-4f64-89d0-46ff27b1dcf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\dialogs">
+      <UniqueIdentifier>{b8f28cb8-eafc-49d4-8e23-4d8991995377}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\controls">
+      <UniqueIdentifier>{6cf4f2d9-d367-46e7-a781-59057c3f58f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\infinity">
+      <UniqueIdentifier>{f060d204-230a-41fc-b0d3-8beda8b02ec9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\infinity">
+      <UniqueIdentifier>{db5741e1-d35e-4a06-9786-09c323d3b113}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

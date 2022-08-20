@@ -46,6 +46,9 @@
 #include "ValueList.h"
 #include "Global.h"
 
+const CString app_name = "DaleKeeper2"; // nee ShadowKeeper
+const CString log_file = app_name + ".log";
+
 CString _strInstallPath;
 
 CInfKey _infKey;
@@ -699,7 +702,7 @@ void AddToLog(const char *pszString, BOOL bForceWrite)
 
 	CStdioFile file;
 
-	if (!file.Open(LOGFILE,CFile::modeNoTruncate|CFile::modeCreate|CFile::modeWrite|CFile::typeText))
+	if (!file.Open(log_file,CFile::modeNoTruncate|CFile::modeCreate|CFile::modeWrite|CFile::typeText))
 		return;
 
 	file.SeekToEnd();

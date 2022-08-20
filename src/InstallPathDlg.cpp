@@ -84,8 +84,8 @@ BOOL CInstallPathDlg::OnInitDialog()
 	CDialog::OnInitDialog();
 	
 	m_edPathInfo.SetWindowText(
-		"Shadow Keeper needs to know where you installed the game.\r\n\r\n"
-		"Search: Makes Shadow Keeper attempt to locate the game for you.\r\n\r\n"
+		app_name + " needs to know where you installed the game.\r\n\r\n"
+		"Search: Automatically locate the game for you.\r\n\r\n"
 		"Browse: Allows you to pick the directory yourself."
 		);
 	
@@ -117,7 +117,8 @@ void CInstallPathDlg::OnOK()
 	m_strPath.TrimRight();
 	if (m_strPath.IsEmpty())
 	{
-		MessageBox("You need to enter the path to Shadows of Amn.","No Path");
+		const std::string msg = "You need to enter the path to " + infinity::active_profile.name + ".";
+		MessageBox(msg.c_str(), "No Path");
 		return;
 	}
 
@@ -127,15 +128,17 @@ void CInstallPathDlg::OnOK()
 		UpdateData(FALSE);
 	}
 
-	// Verify that the game is really there. If IDMain.exe is not there allow them
+	// Verify that the game is really there. If executable is not there allow them
 	// to continue, but warn them.
-	CString strFile(m_strPath+"BGMain.exe");
+	const CString executable = infinity::active_profile.executable.c_str();
+	CString strFile(m_strPath + executable);
 	DWORD dwAttr = GetFileAttributes(strFile);
 	if (dwAttr == 0xFFFFFFFF)
 	{
-		CString strMessage = "The Shadows of Amn executable was not found at this location. "
+		const CString strMessage = "The main executable was not found at this location. "
 			"Are you sure this is the correct directory?";
-		if (MessageBox(strMessage,"BGMain.exe Not Found",MB_YESNO|MB_ICONQUESTION) == IDNO)
+		const CString title(executable + " not found");
+		if (MessageBox(strMessage, title, MB_YESNO|MB_ICONQUESTION) == IDNO)
 			return;
 	}
 
