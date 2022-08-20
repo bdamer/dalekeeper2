@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profiling|Win32">
+      <Configuration>Profiling</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <Keyword>MFCProj</Keyword>
+    <ProjectGuid>{BA28E43A-A681-4AE4-83E2-67673EB42FE0}</ProjectGuid>
+    <ProjectName>DaleKeeper2</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'">
+    <OutDir>.\Profiling\</OutDir>
+    <IntDir>.\Profiling\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\include</IncludePath>
+    <LibraryPath>$(ProjectDir)..\lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\include</IncludePath>
+    <LibraryPath>$(ProjectDir)..\lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\include</IncludePath>
+    <LibraryPath>$(ProjectDir)..\lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Profiling\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Profiling\DaleKeeper2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Profiling\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Profiling\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Profiling\DaleKeeper2.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Profiling\DaleKeeper2.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <OutputFile>.\Profiling\DaleKeeper2.exe</OutputFile>
+      <AdditionalDependencies>version.lib;zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\DaleKeeper2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\DaleKeeper2.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\DaleKeeper2.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <OutputFile>.\Debug\DaleKeeper2.exe</OutputFile>
+      <AdditionalDependencies>version.lib;zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\DaleKeeper2.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\DaleKeeper2.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\DaleKeeper2.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>StaticZlib.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Release\DaleKeeper2.exe</OutputFile>
+      <AdditionalDependencies>version.lib;zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\AddAbilitiesDlg.cpp" />
+    <ClCompile Include="..\src\BitmapWnd.cpp" />
+    <ClCompile Include="..\src\BrowseDirsDlg.cpp" />
+    <ClCompile Include="..\src\ChangesMadeDlg.cpp" />
+    <ClCompile Include="..\src\CharTabCtrl.cpp" />
+    <ClCompile Include="..\src\ChildFrm.cpp" />
+    <ClCompile Include="..\src\ColorPickerDlg.cpp" />
+    <ClCompile Include="..\src\CopyFilesDlg.cpp" />
+    <ClCompile Include="..\src\CreatureBrowserDoc.cpp" />
+    <ClCompile Include="..\src\CreatureBrowserFrame.cpp" />
+    <ClCompile Include="..\src\CreatureBrowserView.cpp" />
+    <ClCompile Include="..\src\CreatureFilterDlg.cpp" />
+    <ClCompile Include="..\src\CreatureListCtrl.cpp" />
+    <ClCompile Include="..\src\DaleKeeper.cpp" />
+    <ClCompile Include="..\src\DaleKeeperDoc.cpp" />
+    <ClCompile Include="..\src\DaleKeeperView.cpp" />
+    <ClCompile Include="..\src\DirTreeCtrl.cpp" />
+    <ClCompile Include="..\src\EditAffectDataDlg.cpp" />
+    <ClCompile Include="..\src\EditAffectDlg.cpp" />
+    <ClCompile Include="..\src\EditListDlg.cpp" />
+    <ClCompile Include="..\src\EditUserListDlg.cpp" />
+    <ClCompile Include="..\src\EditVarDlg.cpp" />
+    <ClCompile Include="..\src\ExportOptionsDlg.cpp" />
+    <ClCompile Include="..\src\ExportResourceDlg.cpp" />
+    <ClCompile Include="..\src\Global.cpp" />
+    <ClCompile Include="..\src\IndexResourcesDlg.cpp" />
+    <ClCompile Include="..\src\Inf2DA.cpp" />
+    <ClCompile Include="..\src\InfBam.cpp" />
+    <ClCompile Include="..\src\InfBifFile.cpp" />
+    <ClCompile Include="..\src\InfChr.cpp" />
+    <ClCompile Include="..\src\InfCreature.cpp" />
+    <ClCompile Include="..\src\InfGame.cpp" />
+    <ClCompile Include="..\src\InfKey.cpp" />
+    <ClCompile Include="..\src\InfTlk.cpp" />
+    <ClCompile Include="..\src\InstallPathDlg.cpp" />
+    <ClCompile Include="..\src\ItemBrowserCom.cpp" />
+    <ClCompile Include="..\src\ItemBrowserDoc.cpp" />
+    <ClCompile Include="..\src\ItemBrowserFrame.cpp" />
+    <ClCompile Include="..\src\ItemBrowserView.cpp" />
+    <ClCompile Include="..\src\ItemFilterDlg.cpp" />
+    <ClCompile Include="..\src\ItemListCtrl.cpp" />
+    <ClCompile Include="..\src\LimitSpellsDlg.cpp" />
+    <ClCompile Include="..\src\MainFrm.cpp" />
+    <ClCompile Include="..\src\MDIClientWnd.cpp" />
+    <ClCompile Include="..\src\MiscSettingsDlg.cpp" />
+    <ClCompile Include="..\src\NameRefDlg.cpp" />
+    <ClCompile Include="..\src\OpenChrDlg.cpp" />
+    <ClCompile Include="..\src\OpenCreDlg.cpp" />
+    <ClCompile Include="..\src\OpenSavedDlg.cpp" />
+    <ClCompile Include="..\src\PalImageList.cpp" />
+    <ClCompile Include="..\src\PortraitsDlg.cpp" />
+    <ClCompile Include="..\src\SaveChrDlg.cpp" />
+    <ClCompile Include="..\src\SaveCreDlg.cpp" />
+    <ClCompile Include="..\src\SaveGameDlg.cpp" />
+    <ClCompile Include="..\src\SetQtyDlg.cpp" />
+    <ClCompile Include="..\src\SetValueDlg.cpp" />
+    <ClCompile Include="..\src\SortStringArray.cpp" />
+    <ClCompile Include="..\src\SpellBitmaps.cpp" />
+    <ClCompile Include="..\src\SpellBrowserCom.cpp" />
+    <ClCompile Include="..\src\SpellBrowserDoc.cpp" />
+    <ClCompile Include="..\src\SpellBrowserFrame.cpp" />
+    <ClCompile Include="..\src\SpellBrowserView.cpp" />
+    <ClCompile Include="..\src\SpellFilterDlg.cpp" />
+    <ClCompile Include="..\src\SpellListCtrl.cpp" />
+    <ClCompile Include="..\src\StaticUrl.cpp" />
+    <ClCompile Include="..\src\StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="..\src\StringFinderDlg.cpp" />
+    <ClCompile Include="..\src\TabAbilitiesDlg.cpp" />
+    <ClCompile Include="..\src\TabAffectsDlg.cpp" />
+    <ClCompile Include="..\src\TabAppearanceDlg.cpp" />
+    <ClCompile Include="..\src\TabCharacteristicsDlg.cpp" />
+    <ClCompile Include="..\src\TabGlobalVarsDlg.cpp" />
+    <ClCompile Include="..\src\TabInvDlg.cpp" />
+    <ClCompile Include="..\src\TabMemSpellsDlg.cpp" />
+    <ClCompile Include="..\src\TabProfsDlg.cpp" />
+    <ClCompile Include="..\src\TabResistancesDlg.cpp" />
+    <ClCompile Include="..\src\TabSavesDlg.cpp" />
+    <ClCompile Include="..\src\TabSpellsDlg.cpp" />
+    <ClCompile Include="..\src\TabStatesDlg.cpp" />
+    <ClCompile Include="..\src\TabThiefSkillsDlg.cpp" />
+    <ClCompile Include="..\src\ValueList.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\res\DaleKeeper.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\AddAbilitiesDlg.h" />
+    <ClInclude Include="..\src\BitmapWnd.h" />
+    <ClInclude Include="..\src\BrowseDirsDlg.h" />
+    <ClInclude Include="..\src\ChangesMadeDlg.h" />
+    <ClInclude Include="..\src\CharTabCtrl.h" />
+    <ClInclude Include="..\src\ChildFrm.h" />
+    <ClInclude Include="..\src\ColorPickerDlg.h" />
+    <ClInclude Include="..\src\CopyFilesDlg.h" />
+    <ClInclude Include="..\src\CreatureBrowserDoc.h" />
+    <ClInclude Include="..\src\CreatureBrowserFrame.h" />
+    <ClInclude Include="..\src\CreatureBrowserView.h" />
+    <ClInclude Include="..\src\CreatureFilterDlg.h" />
+    <ClInclude Include="..\src\CreatureListCtrl.h" />
+    <ClInclude Include="..\src\DaleKeeper.h" />
+    <ClInclude Include="..\src\DaleKeeperDoc.h" />
+    <ClInclude Include="..\src\DaleKeeperView.h" />
+    <ClInclude Include="..\src\DirTreeCtrl.h" />
+    <ClInclude Include="..\src\EditAffectDataDlg.h" />
+    <ClInclude Include="..\src\EditAffectDlg.h" />
+    <ClInclude Include="..\src\EditListDlg.h" />
+    <ClInclude Include="..\src\EditUserListDlg.h" />
+    <ClInclude Include="..\src\EditVarDlg.h" />
+    <ClInclude Include="..\src\ExportOptionsDlg.h" />
+    <ClInclude Include="..\src\ExportResourceDlg.h" />
+    <ClInclude Include="..\src\Global.h" />
+    <ClInclude Include="..\src\IndexResourcesDlg.h" />
+    <ClInclude Include="..\src\Inf2DA.h" />
+    <ClInclude Include="..\src\InfBam.h" />
+    <ClInclude Include="..\src\InfBifFile.h" />
+    <ClInclude Include="..\src\InfChr.h" />
+    <ClInclude Include="..\src\InfCreature.h" />
+    <ClInclude Include="..\src\InfGame.h" />
+    <ClInclude Include="..\src\InfKey.h" />
+    <ClInclude Include="..\src\InfTlk.h" />
+    <ClInclude Include="..\src\InstallPathDlg.h" />
+    <ClInclude Include="..\src\ItemBrowserCom.h" />
+    <ClInclude Include="..\src\ItemBrowserDoc.h" />
+    <ClInclude Include="..\src\ItemBrowserFrame.h" />
+    <ClInclude Include="..\src\ItemBrowserView.h" />
+    <ClInclude Include="..\src\ItemFilterDlg.h" />
+    <ClInclude Include="..\src\ItemListCtrl.h" />
+    <ClInclude Include="..\src\LimitSpellsDlg.h" />
+    <ClInclude Include="..\src\MainFrm.h" />
+    <ClInclude Include="..\src\MDIClientWnd.h" />
+    <ClInclude Include="..\src\MiscSettingsDlg.h" />
+    <ClInclude Include="..\src\NameRefDlg.h" />
+    <ClInclude Include="..\src\OpenChrDlg.h" />
+    <ClInclude Include="..\src\OpenCreDlg.h" />
+    <ClInclude Include="..\src\OpenSavedDlg.h" />
+    <ClInclude Include="..\src\PalImageList.h" />
+    <ClInclude Include="..\src\PortraitsDlg.h" />
+    <ClInclude Include="..\src\Resource.h" />
+    <ClInclude Include="..\src\SaveChrDlg.h" />
+    <ClInclude Include="..\src\SaveCreDlg.h" />
+    <ClInclude Include="..\src\SaveGameDlg.h" />
+    <ClInclude Include="..\src\SetQtyDlg.h" />
+    <ClInclude Include="..\src\SetValueDlg.h" />
+    <ClInclude Include="..\src\SpellBitmaps.h" />
+    <ClInclude Include="..\src\SpellBrowserCom.h" />
+    <ClInclude Include="..\src\SpellBrowserDoc.h" />
+    <ClInclude Include="..\src\SpellBrowserFrame.h" />
+    <ClInclude Include="..\src\SpellBrowserView.h" />
+    <ClInclude Include="..\src\SpellFilterDlg.h" />
+    <ClInclude Include="..\src\SpellListCtrl.h" />
+    <ClInclude Include="..\src\StaticUrl.h" />
+    <ClInclude Include="..\src\StdAfx.h" />
+    <ClInclude Include="..\src\StringFinderDlg.h" />
+    <ClInclude Include="..\src\TabAbilitiesDlg.h" />
+    <ClInclude Include="..\src\TabAffectsDlg.h" />
+    <ClInclude Include="..\src\TabAppearanceDlg.h" />
+    <ClInclude Include="..\src\TabCharacteristicsDlg.h" />
+    <ClInclude Include="..\src\TabGlobalVarsDlg.h" />
+    <ClInclude Include="..\src\TabInvDlg.h" />
+    <ClInclude Include="..\src\TabMemSpellsDlg.h" />
+    <ClInclude Include="..\src\TabProfsDlg.h" />
+    <ClInclude Include="..\src\TabResistancesDlg.h" />
+    <ClInclude Include="..\src\TabSavesDlg.h" />
+    <ClInclude Include="..\src\TabSpellsDlg.h" />
+    <ClInclude Include="..\src\TabStatesDlg.h" />
+    <ClInclude Include="..\src\TabThiefSkillsDlg.h" />
+    <ClInclude Include="..\src\ValueList.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\res\bitmap1.bmp" />
+    <Image Include="..\res\DaleKeeper.ico" />
+    <Image Include="..\res\DaleKeeperDoc.ico" />
+    <Image Include="..\res\Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\res\cursor1.cur" />
+    <CustomBuild Include="..\res\DaleKeeper.rc2" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

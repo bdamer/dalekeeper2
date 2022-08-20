@@ -262,12 +262,12 @@ BOOL CInfBifFile::GetBam(const CResInfo *pResInfo, CInfBam &bam)
 		return(FALSE);
 	}
 
-	if (uncompress(pExpand,&nExpandSize,pData+12,nDataSize-12) != Z_OK)
+	/*if (uncompress(pExpand, &nExpandSize, pData + 12, nDataSize - 12) != Z_OK)
 	{
 		delete [] pData;
 		delete [] pExpand;
 		return(FALSE);
-	}
+	}*/
 	delete [] pData;
 
 	bam.SetBuffer(pExpand,nExpandSize);

@@ -39,12 +39,12 @@ public:
 
 public:
 	// Needed for the CList template class.
-	operator=(CValueItem &vi);
+	void operator=(CValueItem &vi);
 
 	// Both of these assign the m_nValue member. The text version takes
 	// a str and does a strtol on it to determine a value.
-	operator=(const char *pszValue);
-	operator=(int nValue);
+	void operator=(const char *pszValue);
+	void operator=(int nValue);
 };
 
 class CValueList : public CList<CValueItem,CValueItem&>

@@ -69,15 +69,15 @@
 #define	LOGFILE				"ShadowKeeper.log"
 
 // Defines for the user list filenames.
-#define ULF_KITS			"Kits.uld"
-#define ULF_GENDER		"Gender.uld"
-#define ULF_RACE			"Race.uld"
-#define ULF_CLASS			"Class.uld"
-#define ULF_ALIGNMENT	"Alignment.uld"
-#define ULF_RACIALENEMY "RacialEnemy.uld"
-#define ULF_NUMATTACKS	"NumAttacks.uld"
-#define ULF_PROFS			"Profs.uld"
-#define ULF_AFFECTS		"Affects.uld"
+#define ULF_KITS			"..\\data\\Kits.uld"
+#define ULF_GENDER		"..\\data\\Gender.uld"
+#define ULF_RACE			"..\\data\\Race.uld"
+#define ULF_CLASS			"..\\data\\Class.uld"
+#define ULF_ALIGNMENT	"..\\data\\Alignment.uld"
+#define ULF_RACIALENEMY "..\\data\\RacialEnemy.uld"
+#define ULF_NUMATTACKS	"..\\data\\NumAttacks.uld"
+#define ULF_PROFS			"..\\data\\Profs.uld"
+#define ULF_AFFECTS		"..\\data\\Affects.uld"
 
 // Standard document hints.
 #define	HINT_CHANGE_GRIDLINES		5000

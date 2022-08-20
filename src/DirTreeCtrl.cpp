@@ -178,7 +178,7 @@ void CDirTreeCtrl::DisplayPath(HTREEITEM hParent, LPCTSTR strPath)
 	if ( m_bFiles )
 	{
 		strFileArray.Sort();
-		for ( i = 0; i < strFileArray.GetSize(); i++ )
+		for (auto  i = 0; i < strFileArray.GetSize(); i++ )
 		{
 			HTREEITEM hItem = AddItem( hParent, strFileArray.GetAt(i) );
 			

@@ -100,7 +100,7 @@ BOOL CColorPickerDlg::OnInitDialog()
 
 	if (m_nSelection != -1)
 	{
-		for (i=0;i<nCount;i++)
+		for (auto i=0;i<nCount;i++)
 			if ((int)m_lcColors.GetItemData(i) == m_nSelection)
 			{
 				m_lcColors.SetItemState(i,LVIS_SELECTED|LVIS_FOCUSED,LVIS_SELECTED|LVIS_FOCUSED);

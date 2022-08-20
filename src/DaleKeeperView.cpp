@@ -804,7 +804,7 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 	CTabSpellsDlg *pSpellTab;
 	SPELLDATA *pSpells;
 
-	for (i=0;i<3;i++)
+	for (auto i=0;i<3;i++)
 	{
 		switch(i)
 		{

@@ -194,7 +194,7 @@ BOOL CTabInvDlg::OnInitDialog()
 	// is replaced with the proper one. The keeps all the indices straight so
 	// that changing a single item in the middle of the list doesn't throw off
 	// all the indices to the other images.
-	for (i=0;i<INF_NUM_ITEMSLOTS;i++)
+	for (auto i=0;i<INF_NUM_ITEMSLOTS;i++)
 		m_ilIcons.Add(CBitmap::FromHandle(m_hNoIcon),RGB(0,0,0));
 
 	m_lcInv.SetImageList(&m_ilIcons,LVSIL_SMALL);
@@ -203,7 +203,7 @@ BOOL CTabInvDlg::OnInitDialog()
 	// really only 37 spots in use. Everywhere I copy the data I'm doing the full
 	// size, but I don't want that extra item in the list control.
 	int nItem;
-	for (i=0;i<INF_NUM_ITEMSLOTS-1;i++)
+	for (auto i=0;i<INF_NUM_ITEMSLOTS-1;i++)
 	{
 		nItem = m_lcInv.InsertItem(i,"",i);
 		m_lcInv.SetItemText(nItem,1,_itemPos[i].pszPos);

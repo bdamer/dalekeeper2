@@ -171,7 +171,7 @@ BOOL CInfKey::Read(const char *pszFilename, CProgressCtrl *pCtrl)
 	CResInfo *pResInfo;
 	CObList	*pResList;
 	char szName[9];
-	for (i=0;i<(int)m_keyHeader.dwResourceCount;i++)
+	for (auto i=0;i<(int)m_keyHeader.dwResourceCount;i++)
 	{
 		// I'm not using all the resources types. This is an attempt to speed it up
 		// a little bit. The map classes take a little while to add all the items.
@@ -240,7 +240,7 @@ BOOL CInfKey::Read(const char *pszFilename, CProgressCtrl *pCtrl)
 	// used multiple times. Each time a bif file is opened I index all the 
 	// resources in the file -- it was starting to add up when doing items.
 	CString strBifFile;
-	for (i=0;i<(int)m_keyHeader.dwBifCount;i++)
+	for (auto i=0;i<(int)m_keyHeader.dwBifCount;i++)
 	{
 		if (pCtrl)
 		{

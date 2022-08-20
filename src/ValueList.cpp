@@ -35,18 +35,18 @@
 #include "StdAfx.h"
 #include "ValueList.h"
 
-CValueItem::operator=(CValueItem &vi) 
+void CValueItem::operator=(CValueItem &vi)
 { 
 	m_strText = vi.m_strText; 
 	m_nValue = vi.m_nValue; 
 }
 
-CValueItem::operator=(const char *pszValue)
+void CValueItem::operator=(const char *pszValue)
 {
 	m_nValue = strtol(pszValue,NULL,0);;
 }
 
-CValueItem::operator=(int nValue)
+void CValueItem::operator=(int nValue)
 {
 	m_nValue = nValue;
 }
