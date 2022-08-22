@@ -477,7 +477,7 @@ BOOL CDaleKeeperDoc::SaveGame()
 	{
 		// Only copy files and there is no need to copy Icewind.gam which will be reconstructed
 		// on the save.
-		if (!(fd.dwFileAttributes&FILE_ATTRIBUTE_DIRECTORY) && _strcmpi(fd.cFileName, filename.c_str()))
+		if (!(fd.dwFileAttributes&FILE_ATTRIBUTE_DIRECTORY) && _strcmpi(fd.cFileName, filename))
 			dlgCopy.m_slSource.AddTail(fd.cFileName);
 
 		bNotDone = ::FindNextFile(hFind,&fd);
@@ -494,9 +494,7 @@ BOOL CDaleKeeperDoc::SaveGame()
 		return(FALSE);
 	}
 
-	CString strSaveFile;
-	strSaveFile = strDir + filename.c_str();
-
+	const auto strSaveFile = strDir + filename;
 	if (!m_infGame.Write(strSaveFile))
 	{
 		dlgCopy.DeleteFiles();

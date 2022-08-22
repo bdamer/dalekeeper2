@@ -59,7 +59,6 @@
 #include <afxtempl.h>
 #include <atlbase.h>
 #include <math.h>
-#include <string>
 
 #define	DIR_MULTISAVE		"mpsave\\"
 #define	DIR_SINGLESAVE		"save\\"

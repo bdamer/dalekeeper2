@@ -187,7 +187,7 @@ LRESULT CMainFrame::OnDoResources(WPARAM wParam, LPARAM lParam)
 	}
 
 	HBITMAP hPal;
-	if (GetResourceBitmap(infinity::active_profile.palette.c_str(), hPal))
+	if (GetResourceBitmap(infinity::active_profile.palette, hPal))
 	{
 		_ilPal.CreateFromBitmap(hPal);
 		::DeleteObject(hPal);
@@ -195,7 +195,7 @@ LRESULT CMainFrame::OnDoResources(WPARAM wParam, LPARAM lParam)
 	else
 	{
 		const auto msg = "Failed to load resource: " + infinity::active_profile.palette;
-		MessageBox(msg.c_str(), "Resource Error", MB_ICONEXCLAMATION);
+		MessageBox(msg, "Resource Error", MB_ICONEXCLAMATION);
 		return 0;
 	}
 

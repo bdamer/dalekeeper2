@@ -244,7 +244,7 @@ void COpenSavedDlg::FillGames()
 		if (fd.dwFileAttributes&FILE_ATTRIBUTE_DIRECTORY && isdigit(fd.cFileName[0]) && strcmp(fd.cFileName,".") && strcmp(fd.cFileName,".."))
 		{
 			strPath = strSave + CString(fd.cFileName) + "\\";
-			strFile = strPath + filename.c_str();
+			strFile = strPath + filename;
 
 			// Make sure a saved file exists here.
 			if (CFile::GetStatus(strFile,fs))
@@ -329,7 +329,7 @@ void COpenSavedDlg::OnItemchangedGames(NMHDR* pNMHDR, LRESULT* pResult)
 
 	COpenGameData *pData = (COpenGameData*)m_lcGames.GetItemData(pNMListView->iItem);
 
-	const CString strFile(pData->m_strPath + (infinity::active_profile.save_prefix + ".bmp").c_str());
+	const auto strFile = pData->m_strPath + infinity::active_profile.save_prefix + ".bmp";
 	m_wndBitmap.LoadBitmap(strFile);
 	
 	*pResult = 0;

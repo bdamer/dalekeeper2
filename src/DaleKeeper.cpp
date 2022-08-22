@@ -448,15 +448,15 @@ void CDaleKeeperApp::OnUpdateFileOpencharacterfile(CCmdUI* pCmdUI)
 
 void CDaleKeeperApp::LoadSavedGame(const char *pszPath, const char *pszTitle, BOOL bMultiPlayer)
 {
-	const std::string filename = infinity::active_profile.save_prefix + ".gam";
+	const auto filename = infinity::active_profile.save_prefix + ".gam";
 
 	m_li.nType = (bMultiPlayer ? LI_GAMETYPE_MULTI : LI_GAMETYPE_SINGLE);
 	m_li.strPath = pszPath;
 	m_li.strTitle = pszTitle;
-	m_li.strFile = filename.c_str();
+	m_li.strFile = filename;
 
 	CString strOpen(pszPath);
-	strOpen += filename.c_str();
+	strOpen += filename;
 
 	OpenDocumentFile(strOpen);
 }

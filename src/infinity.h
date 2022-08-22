@@ -19,18 +19,18 @@ namespace infinity
 	struct Profile
 	{
 		// Common name [Baldur's Gate, Icewind Dale, Icewind Dale 2]
-		const std::string name;
+		const CString name;
 		// Game executable [BGMain.exe, IDMain.exe, iwd2.exe]
-		const std::string executable;
+		const CString executable;
 		// Save game file name [Baldur, ??, icewind2]
-		const std::string save_prefix;
+		const CString save_prefix;
 		// Color palette BMP 
-		const std::string palette;
+		const CString palette;
 		// Flags indicating which user list types to load
 		const int user_lists;
 
-		Profile(const std::string& name, const std::string& executable, const std::string& save_prefix,
-			const std::string& palette, int user_lists) 
+		Profile(const CString& name, const CString& executable, const CString& save_prefix,
+			const CString& palette, int user_lists)
 			: name(name), executable(executable), save_prefix(save_prefix), palette(palette), user_lists(user_lists) { }
 	};
 

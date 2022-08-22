@@ -117,8 +117,7 @@ void CInstallPathDlg::OnOK()
 	m_strPath.TrimRight();
 	if (m_strPath.IsEmpty())
 	{
-		const std::string msg = "You need to enter the path to " + infinity::active_profile.name + ".";
-		MessageBox(msg.c_str(), "No Path");
+		MessageBox("You need to enter the path to " + infinity::active_profile.name + ".", "No Path");
 		return;
 	}
 
@@ -130,7 +129,7 @@ void CInstallPathDlg::OnOK()
 
 	// Verify that the game is really there. If executable is not there allow them
 	// to continue, but warn them.
-	const CString executable = infinity::active_profile.executable.c_str();
+	const auto& executable = infinity::active_profile.executable;
 	CString strFile(m_strPath + executable);
 	DWORD dwAttr = GetFileAttributes(strFile);
 	if (dwAttr == 0xFFFFFFFF)
