@@ -518,7 +518,7 @@ void CSpellListCtrl::DisplaySpell(const char *pszResource)
 	for (int i=0;i<nCount;i++)
 	{
 		GetItemText(i,3,szRes,14);
-		if (!strcmpi(pszResource,szRes))
+		if (!_strcmpi(pszResource,szRes))
 		{
 			SetSelectedItem(i);
 			EnsureVisible(i,FALSE);

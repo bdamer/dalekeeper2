@@ -46,8 +46,8 @@
 #include "ValueList.h"
 #include "Global.h"
 
-const CString app_name = "DaleKeeper2"; // nee ShadowKeeper
-const CString log_file = app_name + ".log";
+const CString app_name = "Dale Keeper II"; // nee ShadowKeeper
+const CString log_file = "DaleKeeper2.log";
 
 CString _strInstallPath;
 
@@ -207,7 +207,7 @@ void MakeHexString(DWORD dwValue, char *pszResult, int nZeroPad)
 {
 	char szFormat[15];
 
-	sprintf(szFormat,"0x%%0%dX",nZeroPad);
+	sprintf_s(szFormat,"0x%%0%dX",nZeroPad);
 	sprintf(pszResult,szFormat,dwValue);
 }
 
@@ -737,7 +737,7 @@ CString GetSpellScriptName(const char *pszResName)
 					return(strResult);
 
 	char szBuf[100];
-	sprintf(szBuf,"%d%s",nType,pszResName+4);
+	sprintf_s(szBuf,"%d%s",nType,pszResName+4);
 	int nValue = atoi(szBuf);
 	if (_vlSpells.GetText(nValue,strResult))
 		return(strResult);

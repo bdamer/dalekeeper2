@@ -99,7 +99,7 @@ void CAddAbilitiesDlg::FillLevels()
 	char szBuf[50];
 	for (int i=0;i<100;i++)
 	{
-		sprintf(szBuf,"%03d",i+1);
+		sprintf_s(szBuf,"%03d",i+1);
 		m_cbFrom.AddString(szBuf);
 		m_cbTo.AddString(szBuf);
 	}

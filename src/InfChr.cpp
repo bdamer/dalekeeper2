@@ -125,7 +125,7 @@ void CInfChr::SetName(const char *pszName)
 	if (strlen(pszName) > 20)
 		memcpy(m_infChr.szName,pszName,20);
 	else
-		strcpy(m_infChr.szName,pszName);
+		strcpy_s(m_infChr.szName,pszName);
 
 }
 

@@ -46,7 +46,7 @@
 	#error include 'stdafx.h' before including this file for PCH
 #endif
 
-#include "resource.h"       // main symbols
+#include "../res/resource.h"       // main symbols
 
 /////////////////////////////////////////////////////////////////////////////
 // CDaleKeeperApp:
@@ -132,7 +132,6 @@ public:
 	afx_msg void OnUpdateViewItembrowser(CCmdUI* pCmdUI);
 	afx_msg void OnViewItembrowser();
 	afx_msg void OnHelpVisitthewebsite();
-	afx_msg void OnHelpSendemailtoaaron();
 	afx_msg void OnUpdateViewSpellbrowser(CCmdUI* pCmdUI);
 	afx_msg void OnViewSpellbrowser();
 	afx_msg void OnSettingsSpelllimits();

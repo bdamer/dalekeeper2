@@ -110,7 +110,7 @@ void CSaveChrDlg::OnOK()
 	else
 	{
 		CString strExt = strFile.Mid(nIndex+1);
-		if (strnicmp(strExt,"chr",3))
+		if (_strnicmp(strExt,"chr",3))
 			strFile += ".chr";
 	}
 

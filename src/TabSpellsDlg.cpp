@@ -496,7 +496,7 @@ void CTabSpellsDlg::AssignSpell(CHintSpell *pHs)
 				nKnownCount++;
 
 		strRes = m_lcSpells.GetItemText(i,4);
-		if (!strcmpi(strRes,pHs->pResInfo->strName))
+		if (!_strcmpi(strRes,pHs->pResInfo->strName))
 		{
 			CString strMessage;
 			strMessage.Format("%s already knows this spell.",(const char *)m_strCharName);
@@ -629,7 +629,7 @@ void CTabSpellsDlg::GetSpells(SPELLDATA *pData)
 
 		pData[i].wLevel = pSpellData->chLevel;
 		pData[i].wType = m_wSpellType;
-		strcpy(pData[i].szResName,pSpellData->pInfo->strName);
+		strcpy_s(pData[i].szResName, pSpellData->pInfo->strName);
 		pData[i].nTimesCanCast = pSpellData->chTimesCanCast;
 		pData[i].nTimesMemorized = pSpellData->chMem;
 	}
@@ -738,7 +738,7 @@ void CTabSpellsDlg::OnKitInnates()
 			else
 				if (!d.m_bRemoveKit)
 				{
-					strcpy(sd.szResName,strResName);
+					strcpy_s(sd.szResName, strResName);
 					sd.nTimesCanCast = 1;
 					sd.nTimesMemorized = 1;
 					sd.wLevel = 0;

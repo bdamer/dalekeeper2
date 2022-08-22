@@ -61,22 +61,22 @@
     <OutDir>.\Profiling\</OutDir>
     <IntDir>.\Profiling\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\include</IncludePath>
     <LibraryPath>$(ProjectDir)..\lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(PorjectDir)..\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)..\</OutDir>
     <IntDir>.\Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\include</IncludePath>
     <LibraryPath>$(ProjectDir)..\lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(PorjectDir)..\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>.\Release\</OutDir>
     <IntDir>.\Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\include</IncludePath>
     <LibraryPath>$(ProjectDir)..\lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(PorjectDir)..\include\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profiling|Win32'">
     <ClCompile>
@@ -300,6 +300,7 @@
     <ResourceCompile Include="..\res\DaleKeeper.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\res\resource.h" />
     <ClInclude Include="..\src\AddAbilitiesDlg.h" />
     <ClInclude Include="..\src\BitmapWnd.h" />
     <ClInclude Include="..\src\BrowseDirsDlg.h" />
@@ -333,6 +334,7 @@
     <ClInclude Include="..\src\InfCreature.h" />
     <ClInclude Include="..\src\InfGame.h" />
     <ClInclude Include="..\src\infinity.h" />
+    <ClInclude Include="..\src\infinity_version.h" />
     <ClInclude Include="..\src\InfKey.h" />
     <ClInclude Include="..\src\InfTlk.h" />
     <ClInclude Include="..\src\InstallPathDlg.h" />
@@ -391,7 +393,6 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\res\cursor1.cur" />
-    <CustomBuild Include="..\res\DaleKeeper.rc2" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

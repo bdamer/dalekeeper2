@@ -378,11 +378,11 @@ BOOL CDirTreeCtrl::SetSelPath(LPCTSTR strPath)
 		return FALSE;
 	}
 		
-	strcpy( pszPath, strPath );
-	strupr( pszPath );
+	strcpy_s( pszPath, iLen, strPath );
+	_strupr_s( pszPath , iLen);
 	
 	if ( pszPath[strlen(pszPath)-1] != '\\' )
-		strcat( pszPath, "\\" );
+		strcat_s( pszPath, iLen, "\\" );
     
 	int iLen2 = strlen( pszPath );
 	

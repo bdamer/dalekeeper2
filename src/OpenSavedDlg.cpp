@@ -255,8 +255,8 @@ void COpenSavedDlg::FillGames()
 				// and then overwriting them when they go back to play -- losing the clean
 				// version to fallback on. I'm preventing auto-saves and quick-saves from 
 				// showing up as an editing option.
-				if (_bAllowQuicksaves || (strcmpi(strName,"auto-save-tob") && strcmpi(strName,"quick-save-tob") &&
-					 strcmpi(strName,"auto-save") && strcmpi(strName,"quick-save")))
+				if (_bAllowQuicksaves || (_strcmpi(strName,"auto-save-tob") && _strcmpi(strName,"quick-save-tob") &&
+					 _strcmpi(strName,"auto-save") && _strcmpi(strName,"quick-save")))
 				{
 					pData = new COpenGameData;
 					pData->m_strName = strName;

@@ -181,8 +181,8 @@ void CPortraitsDlg::GetPortraitList(CListBox &lb, char chSize, int nWidth, int n
 	char szSearch[MAX_PATH+1];
 	char szPath[MAX_PATH+1];
 	char szFilename[MAX_PATH+1];
-	sprintf(szPath,"%s%s",(const char *)_strInstallPath,DIR_PORTRAITS);
-	sprintf(szSearch,"%s*%c.bmp",szPath,chSize);
+	sprintf_s(szPath,"%s%s",(const char *)_strInstallPath,DIR_PORTRAITS);
+	sprintf_s(szSearch,"%s*%c.bmp",szPath,chSize);
 
 	WIN32_FIND_DATA fd;
 	HANDLE hFile = ::FindFirstFile(szSearch,&fd);
@@ -197,13 +197,13 @@ void CPortraitsDlg::GetPortraitList(CListBox &lb, char chSize, int nWidth, int n
 	BOOL bFoundAnother = TRUE;
 	while(bFoundAnother)
 	{
-		strcpy(szFile,fd.cFileName);
+		strcpy_s(szFile,fd.cFileName);
 		bFoundAnother = ::FindNextFile(hFile,&fd);
 
 		if (strlen(szFile)-4 > 8)
 			continue;
 
-		sprintf(szFilename,"%s%s",szPath,szFile);
+		sprintf_s(szFilename,"%s%s",szPath,szFile);
 		if (!file.Open(szFilename,CFile::modeRead|CFile::shareDenyNone|CFile::typeBinary))
 			continue;
 

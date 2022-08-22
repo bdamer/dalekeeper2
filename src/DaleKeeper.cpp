@@ -80,7 +80,6 @@ BEGIN_MESSAGE_MAP(CDaleKeeperApp, CWinApp)
 	ON_UPDATE_COMMAND_UI(ID_VIEW_ITEMBROWSER, OnUpdateViewItembrowser)
 	ON_COMMAND(ID_VIEW_ITEMBROWSER, OnViewItembrowser)
 	ON_COMMAND(ID_HELP_VISITTHEWEBSITE, OnHelpVisitthewebsite)
-	ON_COMMAND(ID_HELP_SENDEMAILTOAARON, OnHelpSendemailtoaaron)
 	ON_UPDATE_COMMAND_UI(ID_VIEW_SPELLBROWSER, OnUpdateViewSpellbrowser)
 	ON_COMMAND(ID_VIEW_SPELLBROWSER, OnViewSpellbrowser)
 	ON_COMMAND(ID_SETTINGS_SPELLLIMITS, OnSettingsSpelllimits)
@@ -396,7 +395,6 @@ BOOL CAboutDlg::OnInitDialog()
 
 	m_suHacking.m_strUrl = "http://www.ugcs.caltech.edu/~jedwin/baldur.html";
 	m_suZlib.m_strUrl = "http://www.freesoftware.com/pub/infozip/zlib/";
-	m_suEmail.m_strUrl = _pszEmailAddress;
 	m_suVisit.m_strUrl = _pszWebAddress;
 
 	return(TRUE);
@@ -570,18 +568,6 @@ void CDaleKeeperApp::OnHelpVisitthewebsite()
 		AfxGetMainWnd()->GetSafeHwnd(),
 		"open",
 		_pszWebAddress,
-		NULL,
-		NULL,
-		SW_SHOWNORMAL
-		);
-}
-
-void CDaleKeeperApp::OnHelpSendemailtoaaron() 
-{
-	HINSTANCE hResult = ShellExecute(
-		AfxGetMainWnd()->GetSafeHwnd(),
-		"open",
-		_pszEmailAddress,
 		NULL,
 		NULL,
 		SW_SHOWNORMAL

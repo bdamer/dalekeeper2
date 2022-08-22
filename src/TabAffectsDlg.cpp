@@ -189,10 +189,10 @@ int CTabAffectsDlg::AddToList(INF_AFF *pAff, int nIndex)
 	memcpy(szBuf,pAff->chName,32);
 	m_lcList.SetItemText(nIndex,1,szBuf);
 
-	sprintf(szBuf,"%d",pAff->nNP1);
+	sprintf_s(szBuf,"%d",pAff->nNP1);
 	m_lcList.SetItemText(nIndex,2,szBuf);
 
-	sprintf(szBuf,"%d",pAff->nNP2);
+	sprintf_s(szBuf,"%d",pAff->nNP2);
 	m_lcList.SetItemText(nIndex,3,szBuf);
 
 	memset(szBuf,0,10);
@@ -215,7 +215,7 @@ int CTabAffectsDlg::AddToList(INF_AFF *pAff, int nIndex)
 	ScriptName(szBuf,strRes);
 	m_lcList.SetItemText(nIndex,7,strRes);
 
-	sprintf(szBuf,"%d",pAff->nTime);
+	sprintf_s(szBuf,"%d",pAff->nTime);
 	m_lcList.SetItemText(nIndex,8,szBuf);
 
 	MakeHexString(pAff->dwFlags,szBuf,8);

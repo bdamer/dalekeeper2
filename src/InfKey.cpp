@@ -148,7 +148,7 @@ BOOL CInfKey::Read(const char *pszFilename, CProgressCtrl *pCtrl)
 		if (szPath[0] == ':')
 			szPath[0] = '\\';
 
-		sprintf(szLogBuf,"      %s\n",szPath);
+		sprintf_s(szLogBuf,"      %s\n",szPath);
 		AddToLog(szLogBuf);
 		m_pBifInfo[i].strFilename = szPath;
 		m_pBifInfo[i].wLocation = bif.ptr[i].wFileLocation;
@@ -194,7 +194,7 @@ BOOL CInfKey::Read(const char *pszFilename, CProgressCtrl *pCtrl)
 		// Find the resource.
 		if (!m_mapResType.Lookup(res.ptr[i].wType,(CObject*&)pResList))
 		{
-			sprintf(szLogBuf,"      Allocating new map for resource type: %d\n",res.ptr[i].wType);
+			sprintf_s(szLogBuf,"      Allocating new map for resource type: %d\n",res.ptr[i].wType);
 			AddToLog(szLogBuf);
 
 			// If this type of resource isn't known yet, add one to the resource
@@ -279,7 +279,7 @@ CResInfo* CInfKey::GetResInfo(WORD wResourceType, const char *pszResName)
 	while(pos)
 	{
 		pResInfo = (CResInfo*)pList->GetNext(pos);
-		if (!strcmpi(pResInfo->strName,pszResName))
+		if (!_strcmpi(pResInfo->strName,pszResName))
 			return(pResInfo);
 	}
 
@@ -347,7 +347,7 @@ CInfBifFile* CInfKey::GetBifFile(const CResInfo *pInfo, BOOL bIgnoreOverride)
 	while(pos)
 	{
 		pTempFile = (CTempBifFile*)m_listTempBif.GetNext(pos);
-		if (pTempFile->wResType == pInfo->wResourceType && !strcmpi(pTempFile->strResName,pInfo->strName))
+		if (pTempFile->wResType == pInfo->wResourceType && !_strcmpi(pTempFile->strResName,pInfo->strName))
 			return(&pTempFile->infFile);
 	}
 
@@ -436,7 +436,7 @@ void CInfKey::RefreshOverride()
 
 	while(_keyResOver[i].szExt[0])
 	{
-		sprintf(szLogBuf,"      Resource extension: %s\n",_keyResOver[i].szExt);
+		sprintf_s(szLogBuf,"      Resource extension: %s\n",_keyResOver[i].szExt);
 		AddToLog(szLogBuf);
 
 		strFile.Format("%s%s*.%s",(const char *)_strInstallPath,DIR_OVERRIDE,_keyResOver[i].szExt);
@@ -446,7 +446,7 @@ void CInfKey::RefreshOverride()
 			bFoundFile = TRUE;
 			while(bFoundFile)
 			{
-				sprintf(szLogBuf,"         %s\n",fd.cFileName);
+				sprintf_s(szLogBuf,"         %s\n",fd.cFileName);
 				AddToLog(szLogBuf);
 
 				// Pull off the name up to the extension. That will be the resource ID.

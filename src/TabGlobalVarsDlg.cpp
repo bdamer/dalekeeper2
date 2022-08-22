@@ -159,7 +159,7 @@ int CTabGlobalVarsDlg::AddToList(INF_GAME_GLOBAL *pGlobal, int nIndex)
 		m_lcList.SetItemText(nIndex,0,szName);
 
 	char szValue[100];
-	sprintf(szValue,"%d",pGlobal->nValue);
+	sprintf_s(szValue, "%d",pGlobal->nValue);
 	//MakeHexString(pGlobal->nValue,szValue,8);
 	m_lcList.SetItemText(nIndex,1,szValue);
 	m_lcList.SetItemData(nIndex,(DWORD)pGlobal);
@@ -217,7 +217,7 @@ void CTabGlobalVarsDlg::OnVarAdd()
 			return;
 
 		memset(pGlobal,0,sizeof(INF_GAME_GLOBAL));
-		strncpy(pGlobal->chName,d.m_strName,32);
+		strncpy_s(pGlobal->chName,d.m_strName,32);
 		pGlobal->nValue = d.m_nValue;
 
 		int nIndex = AddToList(pGlobal);
@@ -269,7 +269,7 @@ void CTabGlobalVarsDlg::OnVarEdit()
 		m_lcList.DeleteItem(nIndex);
 
 		memset(pGlobal,0,sizeof(INF_GAME_GLOBAL));
-		strncpy(pGlobal->chName,d.m_strName,32);
+		strncpy_s(pGlobal->chName,d.m_strName,32);
 		pGlobal->nValue = d.m_nValue;
 
 		nIndex = AddToList(pGlobal);

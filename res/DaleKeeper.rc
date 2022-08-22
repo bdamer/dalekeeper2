@@ -1,6 +1,6 @@
-//Microsoft Developer Studio generated resource script.
+// Microsoft Visual C++ generated resource script.
 //
-#include "..\src\resource.h"
+#include "resource.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -13,13 +13,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -27,18 +25,18 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE 
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE 
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE 
 BEGIN
     "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
     "#define _AFX_NO_OLE_RESOURCES\r\n"
@@ -50,7 +48,6 @@ BEGIN
     "LANGUAGE 9, 1\r\n"
     "#pragma code_page(1252)\r\n"
     "#endif //_WIN32\r\n"
-    "#include ""..\\res\\DaleKeeper.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
     "#include ""afxres.rc""         // Standard components\r\n"
     "#endif\r\n"
     "\0"
@@ -66,22 +63,25 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDR_MAINFRAME           ICON    DISCARDABLE     "..\\res\\DaleKeeper.ico"
-IDR_DALEKETYPE          ICON    DISCARDABLE     "..\\res\\DaleKeeperDoc.ico"
+IDR_MAINFRAME           ICON                    "..\\res\\DaleKeeper.ico"
+
+IDR_DALEKETYPE          ICON                    "..\\res\\DaleKeeperDoc.ico"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Bitmap
 //
 
-IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "..\\res\\Toolbar.bmp"
+IDR_MAINFRAME           BITMAP                  "..\\res\\Toolbar.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Toolbar
 //
 
-IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+IDR_MAINFRAME TOOLBAR 16, 15
 BEGIN
     BUTTON      ID_FILE_OPENSAVEDGAME
     BUTTON      ID_FILE_SAVE
@@ -100,13 +100,12 @@ END
 // Menu
 //
 
-IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+IDR_MAINFRAME MENU
 BEGIN
     POPUP "&File"
     BEGIN
         MENUITEM "Open Saved Game...\tCtrl+O",  ID_FILE_OPENSAVEDGAME
-        MENUITEM "Open Cha&racter File...\tCtrl+R", 
-                                                ID_FILE_OPENCHARACTERFILE
+        MENUITEM "Open Cha&racter File...\tCtrl+R", ID_FILE_OPENCHARACTERFILE
         MENUITEM "Open CR&E File...\tCtrl+E",   ID_FILE_OPENCREFILE
         MENUITEM SEPARATOR
         MENUITEM "E&xit",                       ID_APP_EXIT
@@ -123,52 +122,42 @@ BEGIN
     POPUP "&Settings"
     BEGIN
         MENUITEM "&Installation Directory...",  ID_SETTINGS_INSTALLATIONDIRECTORY
-
         MENUITEM "&Spells...",                  ID_SETTINGS_SPELLLIMITS
         MENUITEM "&Miscellaneous...",           ID_SETTINGS_MISCELLANEOUS
         POPUP "Save Overwrite"
         BEGIN
             MENUITEM "Allow on CHR files",          ID_SETTINGS_SAVEOVERWRITE_ALLOWONCHRFILES
-
             MENUITEM "Allow on CRE files",          ID_SETTINGS_SAVEOVERWRITE_ALLOWONCREFILES
-
         END
         MENUITEM SEPARATOR
         POPUP "Lists"
         BEGIN
             MENUITEM "&Alignment...",               ID_SETTINGS_LISTS_ALIGNMENT
-
             MENUITEM "A&ffects...",                 ID_SETTINGS_LISTS_AFFECTS
-
             MENUITEM "&Class...",                   ID_SETTINGS_LISTS_CLASS
             MENUITEM "&Gender...",                  ID_SETTINGS_LISTS_GENDER
             MENUITEM "&Kits...",                    ID_SETTINGS_LISTS_KITS
             MENUITEM "&Number of Attacks...",       ID_SETTINGS_LISTS_NUMBEROFATACKS
-
             MENUITEM "&Proficiencies...",           ID_SETTINGS_LISTS_PROFICIENCIES
-
             MENUITEM "&Race...",                    ID_SETTINGS_LISTS_RACE
             MENUITEM "Racial &Enemy...",            ID_SETTINGS_LISTS_RACIALENEMY
-
         END
     END
     POPUP "&Help"
     BEGIN
-        MENUITEM "&About Shadow Keeper...",     ID_APP_ABOUT
+        MENUITEM "&About Dale Keeper II...",    ID_APP_ABOUT
         MENUITEM "View  &Readme.doc",           ID_HELP_VIEWREADMEDOC
         MENUITEM SEPARATOR
         MENUITEM "&Visit the Website",          ID_HELP_VISITTHEWEBSITE
-        MENUITEM "&Send Email to Aaron",        ID_HELP_SENDEMAILTOAARON
     END
 END
 
-IDR_DALEKETYPE MENU PRELOAD DISCARDABLE 
+IDR_DALEKETYPE MENU
 BEGIN
     POPUP "&File"
     BEGIN
         MENUITEM "Open Saved Game...\tCtrl+O",  ID_FILE_OPENSAVEDGAME
-        MENUITEM "Open Cha&racter File...\tCtrl+R", 
-                                                ID_FILE_OPENCHARACTERFILE
+        MENUITEM "Open Cha&racter File...\tCtrl+R", ID_FILE_OPENCHARACTERFILE
         MENUITEM "Open CR&E File...\tCtrl+E",   ID_FILE_OPENCREFILE
         MENUITEM "&Close",                      ID_FILE_CLOSE
         MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
@@ -194,26 +183,20 @@ BEGIN
     END
     POPUP "&Tools"
     BEGIN
-        MENUITEM "Edit &Out of Party Characters...", 
-                                                ID_TOOLS_EDITOUTOFPARTYCHARACTERS
-
+        MENUITEM "Edit &Out of Party Characters...", ID_TOOLS_EDITOUTOFPARTYCHARACTERS
         MENUITEM "Spell Memorization Check",    ID_TOOLS_SPELLMEMORIZATIONCHECK
-
         MENUITEM SEPARATOR
         MENUITEM "&Convert to CRE...",          ID_TOOLS_CONVERTTOCRE
     END
     POPUP "&Settings"
     BEGIN
         MENUITEM "&Installation Directory...",  ID_SETTINGS_INSTALLATIONDIRECTORY
-
         MENUITEM "&Spells...",                  ID_SETTINGS_SPELLLIMITS
         MENUITEM "&Miscellaneous...",           ID_SETTINGS_MISCELLANEOUS
         POPUP "Save Overwrite"
         BEGIN
             MENUITEM "Allow on CHR files",          ID_SETTINGS_SAVEOVERWRITE_ALLOWONCHRFILES
-
             MENUITEM "Allow on CRE files",          ID_SETTINGS_SAVEOVERWRITE_ALLOWONCREFILES
-
         END
     END
     POPUP "&Window"
@@ -225,11 +208,11 @@ BEGIN
     END
     POPUP "&Help"
     BEGIN
-        MENUITEM "&About Shadow Keeper...",     ID_APP_ABOUT
+        MENUITEM "&About Dale Keeper II...",    ID_APP_ABOUT
         MENUITEM "View  &Readme.doc",           ID_HELP_VIEWREADMEDOC
         MENUITEM SEPARATOR
-        MENUITEM "&Visit the Website",          ID_HELP_VISITTHEWEBSITE
-        MENUITEM "&Send Email to Aaron",        ID_HELP_SENDEMAILTOAARON
+        MENUITEM "&Visit the Website",          ID_HELP_VISITTHEWEBSITE, INACTIVE
+        MENUITEM "&Send Email to Aaron",        ID_HELP_SENDEMAILTOAARON, INACTIVE
     END
 END
 
@@ -239,7 +222,7 @@ END
 // Accelerator
 //
 
-IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+IDR_MAINFRAME ACCELERATORS
 BEGIN
     "A",            ID_PAGE_ABILITIES,      VIRTKEY, CONTROL, NOINVERT
     "B",            ID_VIEW_ITEMBROWSER,    VIRTKEY, CONTROL, NOINVERT
@@ -275,40 +258,32 @@ END
 // Dialog
 //
 
-IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 242, 196
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_ABOUTBOX DIALOG 0, 0, 242, 196
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "About Shadow Keeper"
 FONT 8, "MS Sans Serif"
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,96,175,50,14,WS_GROUP
     ICON            IDR_MAINFRAME,IDC_STATIC,5,5,20,20
-    LTEXT           "Shadow Keeper Version",IDC_STATIC,40,10,65,8,
-                    SS_NOPREFIX
-    LTEXT           "Copyright (C) 2000, 2001 Aaron O'Neil",IDC_STATIC,40,20,
-                    119,8
+    LTEXT           "Shadow Keeper Version",IDC_STATIC,40,10,65,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2000, 2001 Aaron O'Neil",IDC_STATIC,40,20,119,8
     LTEXT           "",IDC_VERSION,110,10,60,8
     CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,5,35,230,1
     PUSHBUTTON      "Visit the &Website",IDC_WEBSITE,5,40,80,14
-    LTEXT           "http://www.mud-master.com/shadowkeeper",IDC_VISIT,90,40,
-                    141,8,SS_NOTIFY
+    LTEXT           "http://www.mud-master.com/shadowkeeper",IDC_VISIT,90,40,141,8,SS_NOTIFY
     PUSHBUTTON      "Send &Email to Aaron",IDC_EMAIL,5,60,80,14
-    LTEXT           "mailto:sk@mud-master.com",IDC_MAILTO,90,60,130,8,
-                    SS_NOTIFY
+    LTEXT           "mailto:sk@mud-master.com",IDC_MAILTO,90,60,130,8,SS_NOTIFY
     CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,5,80,230,1
-    LTEXT           "I'd like to thank the folks at The Infinity Engine File Format Hacking Project. They have some excellent resources describing the various file formats in use by the Infinity Engine.",
-                    IDC_STATIC,5,85,230,25
-    CTEXT           "http://www.ugcs.caltech.edu/~jedwin/baldur.html",
-                    IDC_HACKING,5,115,230,8,SS_NOTIFY
+    LTEXT           "I'd like to thank the folks at The Infinity Engine File Format Hacking Project. They have some excellent resources describing the various file formats in use by the Infinity Engine.",IDC_STATIC,5,85,230,25
+    CTEXT           "http://www.ugcs.caltech.edu/~jedwin/baldur.html",IDC_HACKING,5,115,230,8,SS_NOTIFY
     CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,5,125,230,1
     CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,5,165,230,1
-    LTEXT           "Thanks also to Jean-loup Gailly and Mark Adler for the free and easy to use zlib compression code.",
-                    IDC_STATIC,5,130,230,20
-    CTEXT           "http://www.freesoftware.com/pub/infozip/zlib/",IDC_ZLIB,
-                    5,155,230,8,SS_NOTIFY
+    LTEXT           "Thanks also to Jean-loup Gailly and Mark Adler for the free and easy to use zlib compression code.",IDC_STATIC,5,130,230,20
+    CTEXT           "http://www.freesoftware.com/pub/infozip/zlib/",IDC_ZLIB,5,155,230,8,SS_NOTIFY
 END
 
-IDD_DALEKEEPER_FORM DIALOG DISCARDABLE  0, 0, 316, 156
-STYLE WS_CHILD
+IDD_DALEKEEPER_FORM DIALOG 0, 0, 316, 156
+STYLE DS_SETFONT | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
     EDITTEXT        IDC_NAME,5,5,45,12,ES_AUTOHSCROLL
@@ -318,71 +293,62 @@ BEGIN
     CONTROL         "Tab1",IDC_TAB,"SysTabControl32",WS_TABSTOP,85,5,225,145
 END
 
-IDR_MAINFRAME DIALOG DISCARDABLE  0, 0, 330, 16
-STYLE WS_CHILD
+IDR_MAINFRAME DIALOG 0, 0, 330, 16
+STYLE DS_SETFONT | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "TODO: layout dialog bar ",IDC_STATIC,12,4,300,8
 END
 
 IDD_INSTALLATION_PATH DIALOGEX 0, 0, 242, 95
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Installation Directory"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
-    LTEXT           "Shadows of Amn &Installation Directory",IDC_STATIC,5,5,
-                    120,8
+    LTEXT           "Shadows of Amn &Installation Directory",IDC_STATIC,5,5,120,8
     EDITTEXT        IDC_PATH,5,15,175,12,ES_AUTOHSCROLL
     DEFPUSHBUTTON   "OK",IDOK,185,15,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,185,35,50,14
     PUSHBUTTON      "&Search",IDC_SEARCH,185,55,50,14
     PUSHBUTTON      "&Browse",IDC_BROWSE,185,75,50,14
-    EDITTEXT        IDC_PATH_INFO,5,30,175,60,ES_MULTILINE | ES_READONLY | 
-                    NOT WS_BORDER | NOT WS_TABSTOP,WS_EX_STATICEDGE
+    EDITTEXT        IDC_PATH_INFO,5,30,175,60,ES_MULTILINE | ES_READONLY | NOT WS_BORDER | NOT WS_TABSTOP,WS_EX_STATICEDGE
 END
 
-IDD_BROWSE_DIR DIALOG DISCARDABLE  0, 0, 186, 141
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_BROWSE_DIR DIALOG 0, 0, 186, 141
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Browse Installation Path"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
-                    TVS_HASLINES | TVS_LINESATROOT | TVS_FULLROWSELECT | 
-                    WS_BORDER | WS_TABSTOP,5,5,175,105
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP,5,5,175,105
     DEFPUSHBUTTON   "OK",IDOK,35,120,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,101,120,50,14
 END
 
-IDD_OPEN_GAME DIALOG DISCARDABLE  0, 0, 277, 166
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_OPEN_GAME DIALOG 0, 0, 277, 166
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Open Single Player Saved Game"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_GAMES,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SORTASCENDING | WS_BORDER | 
-                    WS_TABSTOP,5,5,190,130
+    CONTROL         "List1",IDC_GAMES,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SORTASCENDING | WS_BORDER | WS_TABSTOP,5,5,190,130
     DEFPUSHBUTTON   "OK",IDOK,200,85,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,200,100,50,14
-    CONTROL         "&Multiplayer Games",IDC_MULTIPLAYER,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,200,125,75,10
+    CONTROL         "&Multiplayer Games",IDC_MULTIPLAYER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,200,125,75,10
     CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,5,140,265,1
-    LTEXT           "Quick Saves and Auto Saves will not show up in the list of available games to edit. You will need to save the game under a real save slot before editing.",
-                    IDC_STATIC,5,145,265,20
+    LTEXT           "Quick Saves and Auto Saves will not show up in the list of available games to edit. You will need to save the game under a real save slot before editing.",IDC_STATIC,5,145,265,20
 END
 
-IDD_INDEX_RESOURCES DIALOG DISCARDABLE  0, 0, 189, 23
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_INDEX_RESOURCES DIALOG 0, 0, 189, 23
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Indexing Shadows of Amn Resources"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,5,
-                    5,180,14
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,5,5,180,14
 END
 
 IDD_ABILITIES DIALOGEX 0, 0, 221, 131
-STYLE DS_CONTROL | WS_CHILD
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 EXSTYLE WS_EX_CONTROLPARENT
-FONT 8, "MS Sans Serif"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
     LTEXT           "St&rength",IDC_STATIC,5,5,28,8
     EDITTEXT        IDC_STR,45,5,25,12,ES_AUTOHSCROLL
@@ -410,8 +376,7 @@ BEGIN
     LTEXT           "Re&putation",IDC_STATIC,5,115,36,8
     EDITTEXT        IDC_REPUTATION,45,115,25,12,ES_AUTOHSCROLL
     LTEXT           "Attac&ks",IDC_STATIC,80,55,25,8
-    COMBOBOX        IDC_ATTACKS,120,55,60,60,CBS_DROPDOWNLIST | CBS_SORT | 
-                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_ATTACKS,120,55,60,60,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
     LTEXT           "E&xperience",IDC_STATIC,80,70,36,8
     EDITTEXT        IDC_EXP,120,70,60,12,ES_AUTOHSCROLL
     LTEXT           "Exp for Kill",IDC_STATIC,80,85,34,8
@@ -424,8 +389,8 @@ BEGIN
     EDITTEXT        IDC_LEVEL3,160,115,20,12,ES_AUTOHSCROLL
 END
 
-IDD_SAVING_THROWS DIALOG DISCARDABLE  0, 0, 186, 95
-STYLE DS_CONTROL | WS_CHILD
+IDD_SAVING_THROWS DIALOG 0, 0, 186, 95
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "Paralyzation, Poison, Death Magic",IDC_STATIC,5,5,109,8
@@ -440,43 +405,39 @@ BEGIN
     EDITTEXT        IDC_SAVE_SPELLS,120,65,30,12,ES_AUTOHSCROLL
 END
 
-IDD_SAVE_GAME DIALOG DISCARDABLE  0, 0, 222, 95
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_SAVE_GAME DIALOG 0, 0, 222, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Save Game"
 FONT 8, "MS Sans Serif"
 BEGIN
-    LTEXT           "To prevent accidental corruption of a saved game file, Shadow Keeper will save your changes in an entirely different saved game slot. Shadow Keeper has created a new name for this saved game, but you can change it to whatever you like.",
-                    IDC_STATIC,5,5,210,35
+    LTEXT           "To prevent accidental corruption of a saved game file, Shadow Keeper will save your changes in an entirely different saved game slot. Shadow Keeper has created a new name for this saved game, but you can change it to whatever you like.",IDC_STATIC,5,5,210,35
     LTEXT           "&New Game Name",IDC_STATIC,5,45,57,8
     EDITTEXT        IDC_FILENAME,5,55,210,12,ES_AUTOHSCROLL
     DEFPUSHBUTTON   "OK",IDOK,53,74,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,119,74,50,14
 END
 
-IDD_COPY_FILES DIALOG DISCARDABLE  0, 0, 137, 21
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+IDD_COPY_FILES DIALOG 0, 0, 137, 21
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
 CAPTION "Copying Files"
 FONT 8, "MS Sans Serif"
 BEGIN
-    LTEXT           "Copying files from original saved game...",IDC_STATIC,5,
-                    5,126,8
+    LTEXT           "Copying files from original saved game...",IDC_STATIC,5,5,126,8
 END
 
-IDD_PROFICIENCIES DIALOG DISCARDABLE  0, 0, 221, 131
-STYLE DS_CONTROL | WS_CHILD
+IDD_PROFICIENCIES DIALOG 0, 0, 221, 131
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_PROFS,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
-                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,0,0,220,115
+    CONTROL         "List1",IDC_PROFS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,0,0,220,115
     PUSHBUTTON      "-",IDC_1STCLASSDEC,125,115,15,14,BS_FLAT
     PUSHBUTTON      "+",IDC_1STCLASSINC,140,115,15,14,BS_FLAT
     PUSHBUTTON      "-",IDC_2NDCLASSDEC,170,115,15,14,BS_FLAT
     PUSHBUTTON      "+",IDC_2NDCLASSINC,185,115,15,14,BS_FLAT
 END
 
-IDD_RESISTANCES DIALOG DISCARDABLE  0, 0, 181, 101
-STYLE DS_CONTROL | WS_CHILD
+IDD_RESISTANCES DIALOG 0, 0, 181, 101
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "&Acid",IDC_STATIC,5,5,15,8
@@ -503,8 +464,8 @@ BEGIN
     EDITTEXT        IDC_RES_MAGICCOLD,135,65,30,12,ES_AUTOHSCROLL
 END
 
-IDD_THIEF_SKILLS DIALOG DISCARDABLE  0, 0, 221, 111
-STYLE DS_CONTROL | WS_CHILD
+IDD_THIEF_SKILLS DIALOG 0, 0, 221, 111
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "&Move Silently",IDC_STATIC,5,5,43,8
@@ -523,54 +484,43 @@ BEGIN
     EDITTEXT        IDC_DETECTILLUSIONS,65,95,30,12,ES_AUTOHSCROLL
 END
 
-IDD_CHARACTERISTICS DIALOG DISCARDABLE  0, 0, 221, 126
-STYLE DS_CONTROL | WS_CHILD
+IDD_CHARACTERISTICS DIALOG 0, 0, 221, 126
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "&Gender",IDC_STATIC,5,5,24,8
-    COMBOBOX        IDC_GENDER,65,5,105,60,CBS_DROPDOWNLIST | CBS_SORT | 
-                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_GENDER,65,5,105,60,CBS_DROPDOWNLIST | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Set Value",IDC_SETVALUE_GENDER,175,5,40,13
     LTEXT           "&Race",IDC_STATIC,5,20,18,8
-    COMBOBOX        IDC_RACE,65,20,105,60,CBS_DROPDOWNLIST | CBS_SORT | 
-                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_RACE,65,20,105,60,CBS_DROPDOWNLIST | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Set Value",IDC_SETVALUE_RACE,175,20,40,13
     LTEXT           "&Alignment",IDC_STATIC,5,35,32,8
-    COMBOBOX        IDC_ALIGNMENT,65,35,105,60,CBS_DROPDOWNLIST | CBS_SORT | 
-                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_ALIGNMENT,65,35,105,60,CBS_DROPDOWNLIST | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Set Value",IDC_SETVALUE_ALIGNMENT,175,35,40,13
     LTEXT           "&Class",IDC_STATIC,5,50,18,8
-    COMBOBOX        IDC_CLASS,65,50,105,100,CBS_DROPDOWNLIST | CBS_SORT | 
-                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CLASS,65,50,105,100,CBS_DROPDOWNLIST | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Set Value",IDC_SETVALUE_CLASS,175,50,40,13
     LTEXT           "&Kit",IDC_STATIC,5,65,9,8
-    COMBOBOX        IDC_KIT,65,65,105,100,CBS_DROPDOWNLIST | CBS_SORT | 
-                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_KIT,65,65,105,100,CBS_DROPDOWNLIST | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Set Value",IDC_SETVALUE_KIT,175,65,40,13
     LTEXT           "Racia&l Enemy",IDC_STATIC,5,80,44,8
-    COMBOBOX        IDC_RACIAL_ENEMY,65,80,105,100,CBS_DROPDOWNLIST | 
-                    CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_RACIAL_ENEMY,65,80,105,100,CBS_DROPDOWNLIST | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Set Value",IDC_SETVALUE_ENEMY,175,80,40,13
     LTEXT           "E&nemy/Ally",IDC_STATIC,5,95,36,8
-    COMBOBOX        IDC_ENEMYALLY,65,95,105,100,CBS_DROPDOWNLIST | CBS_SORT | 
-                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_ENEMYALLY,65,95,105,100,CBS_DROPDOWNLIST | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Set Value",IDC_SETVALUE_ENEMYALLY,175,95,40,13
     LTEXT           "&Movement Speed",IDC_STATIC,5,110,57,8
     EDITTEXT        IDC_MOVEMENTSPEED,65,110,30,12,ES_AUTOHSCROLL
     LTEXT           "Zero is normal speed.",IDC_STATIC,100,110,68,8
 END
 
-IDD_ITEM_BROWSER DIALOG DISCARDABLE  0, 0, 276, 195
-STYLE WS_CHILD
+IDD_ITEM_BROWSER DIALOG 0, 0, 276, 195
+STYLE DS_SETFONT | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_ITEMLIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
-                    WS_TABSTOP,0,0,210,120
-    EDITTEXT        IDC_ITEM_DESC,0,120,275,60,ES_MULTILINE | ES_AUTOVSCROLL | 
-                    ES_READONLY | WS_VSCROLL
-    PUSHBUTTON      "[No Character Selected]",IDC_ASSIGNITEM,0,180,275,14,
-                    BS_FLAT | WS_DISABLED
+    CONTROL         "List1",IDC_ITEMLIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,0,0,210,120
+    EDITTEXT        IDC_ITEM_DESC,0,120,275,60,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+    PUSHBUTTON      "[No Character Selected]",IDC_ASSIGNITEM,0,180,275,14,BS_FLAT | WS_DISABLED
     PUSHBUTTON      "Filter List",IDC_FILTERITEMS,215,50,55,14
     PUSHBUTTON      "Export List",IDC_EXPORTITEMS,215,75,55,14
     PUSHBUTTON      "Extract Item",IDC_EXPORTITEMRES,215,90,55,14
@@ -578,24 +528,20 @@ BEGIN
     LTEXT           "Item Count",IDC_ITEMCOUNT,235,110,35,8
 END
 
-IDD_INVENTORY DIALOG DISCARDABLE  0, 0, 221, 131
-STYLE DS_CONTROL | WS_CHILD
+IDD_INVENTORY DIALOG 0, 0, 221, 131
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_INVENTORY,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | 
-                    WS_BORDER | WS_TABSTOP,0,0,220,115
-    PUSHBUTTON      "Change Item",IDC_CHANGEITEM,0,115,50,14,BS_FLAT | 
-                    WS_DISABLED
-    PUSHBUTTON      "Clear Item",IDC_CLEAR,50,115,50,14,BS_FLAT | 
-                    WS_DISABLED
+    CONTROL         "List1",IDC_INVENTORY,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,0,0,220,115
+    PUSHBUTTON      "Change Item",IDC_CHANGEITEM,0,115,50,14,BS_FLAT | WS_DISABLED
+    PUSHBUTTON      "Clear Item",IDC_CLEAR,50,115,50,14,BS_FLAT | WS_DISABLED
     PUSHBUTTON      "Set Qty",IDC_SETQTY,100,115,50,14,BS_FLAT
     PUSHBUTTON      "Set All Qty",IDC_SETALLQTY,150,115,50,14,BS_FLAT
     PUSHBUTTON      "ID",IDC_IDALL,200,115,20,14,BS_FLAT
 END
 
-IDD_QUANTITY DIALOG DISCARDABLE  0, 0, 162, 106
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_QUANTITY DIALOG 0, 0, 162, 106
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Set Quantity/Charges"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -615,17 +561,13 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,89,85,50,14
 END
 
-IDD_SPELL_BROWSER DIALOG DISCARDABLE  0, 0, 271, 195
-STYLE WS_CHILD
+IDD_SPELL_BROWSER DIALOG 0, 0, 271, 195
+STYLE DS_SETFONT | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_SPELLLIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
-                    WS_TABSTOP,0,0,210,120
-    EDITTEXT        IDC_SPELL_DESC,0,120,210,60,ES_MULTILINE | 
-                    ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
-    PUSHBUTTON      "[No Character Selected]",IDC_ASSIGNSPELL,0,180,210,14,
-                    BS_FLAT | WS_DISABLED
+    CONTROL         "List1",IDC_SPELLLIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,0,0,210,120
+    EDITTEXT        IDC_SPELL_DESC,0,120,210,60,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+    PUSHBUTTON      "[No Character Selected]",IDC_ASSIGNSPELL,0,180,210,14,BS_FLAT | WS_DISABLED
     PUSHBUTTON      "Filter Spells",IDC_FILTERSPELLS,215,120,50,14
     PUSHBUTTON      "Export List",IDC_EXPORTSPELLS,215,145,50,14
     PUSHBUTTON      "Extract Spell",IDC_EXPORTSPELLRES,215,160,50,14
@@ -633,159 +575,106 @@ BEGIN
     LTEXT           "Spell Count",IDC_SPELLCOUNT,240,180,25,8
 END
 
-IDD_SPELLS DIALOG DISCARDABLE  0, 0, 222, 130
-STYLE DS_CONTROL | WS_CHILD
+IDD_SPELLS DIALOG 0, 0, 222, 130
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_SPELL_LIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
-                    WS_TABSTOP,0,0,220,115
+    CONTROL         "List1",IDC_SPELL_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,0,0,220,115
     PUSHBUTTON      "Add Spell",IDC_CHANGESPELL,0,115,50,14,BS_FLAT
     PUSHBUTTON      "Remove Spell",IDC_CLEAR_SPELL,50,115,50,14,BS_FLAT
-    PUSHBUTTON      "Kit",IDC_KIT_INNATES,100,115,50,14,BS_FLAT | NOT 
-                    WS_VISIBLE
+    PUSHBUTTON      "Kit",IDC_KIT_INNATES,100,115,50,14,BS_FLAT | NOT WS_VISIBLE
     PUSHBUTTON      "Mem -",IDC_MEM_DEC,160,115,30,14,BS_FLAT
     PUSHBUTTON      "Mem +",IDC_MEM_INC,190,115,30,14,BS_FLAT
 END
 
-IDD_LIMIT_SPELLS DIALOG DISCARDABLE  0, 0, 232, 215
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_LIMIT_SPELLS DIALOG 0, 0, 232, 215
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Spell Settings"
 FONT 8, "MS Sans Serif"
 BEGIN
     GROUPBOX        "Spell Icons",IDC_STATIC,5,5,220,55
-    LTEXT           "Checking this option will speed up the loading of the editor. The spell icons are mostly for aesthetics, but they can help you point out potentially bad spells to assign your characters as well.",
-                    IDC_STATIC,10,15,210,25
-    CONTROL         "&Disable Spell Icons",IDC_DISABLE_SPELL_ICONS,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,10,45,76,10
+    LTEXT           "Checking this option will speed up the loading of the editor. The spell icons are mostly for aesthetics, but they can help you point out potentially bad spells to assign your characters as well.",IDC_STATIC,10,15,210,25
+    CONTROL         "&Disable Spell Icons",IDC_DISABLE_SPELL_ICONS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,45,76,10
     GROUPBOX        "Known Spells",IDC_STATIC,5,65,220,52
-    LTEXT           "This represents the maximum number of known spells the editor will let you put for each type and level of spell per character.",
-                    IDC_STATIC,10,75,210,20
+    LTEXT           "This represents the maximum number of known spells the editor will let you put for each type and level of spell per character.",IDC_STATIC,10,75,210,20
     LTEXT           "&Known Spell Limit",IDC_STATIC,10,100,56,8
     EDITTEXT        IDC_KNOWNLIMIT,70,100,30,12,ES_AUTOHSCROLL
-    CONTROL         "Use Limit",IDC_USE_KNOWNLIMIT,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,110,100,45,10
+    CONTROL         "Use Limit",IDC_USE_KNOWNLIMIT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,110,100,45,10
     GROUPBOX        "Memorized Spells",IDC_STATIC,5,120,220,52
-    LTEXT           "This is the maximum number of spells the editor will let you mark as memorized per character per spell level and spell type.",
-                    IDC_STATIC,10,130,210,20
+    LTEXT           "This is the maximum number of spells the editor will let you mark as memorized per character per spell level and spell type.",IDC_STATIC,10,130,210,20
     LTEXT           "&Memorized Limit",IDC_STATIC,10,155,51,8
     EDITTEXT        IDC_MEMLIMIT,70,155,30,12,ES_AUTOHSCROLL
-    CONTROL         "Use Limit",IDC_USE_MEMLIMIT,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,110,155,45,10
-    CONTROL         "Refresh memorized spells on save.",IDC_MEMONSAVE,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,5,175,125,10
+    CONTROL         "Use Limit",IDC_USE_MEMLIMIT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,110,155,45,10
+    CONTROL         "Refresh memorized spells on save.",IDC_MEMONSAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,175,125,10
     DEFPUSHBUTTON   "OK",IDOK,58,194,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,124,194,50,14
 END
 
-IDD_MEMORIZATION DIALOG DISCARDABLE  0, 0, 221, 131
-STYLE DS_CONTROL | WS_CHILD
+IDD_MEMORIZATION DIALOG 0, 0, 221, 131
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | 
-                    WS_BORDER | WS_TABSTOP,0,0,220,115
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,0,0,220,115
     PUSHBUTTON      "Max -",IDC_MAXDEC,0,115,30,14,BS_FLAT
     PUSHBUTTON      "Max +",IDC_MAXINC,30,115,30,14,BS_FLAT
 END
 
-IDD_ITEMFILTER DIALOG DISCARDABLE  0, 0, 277, 210
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_ITEMFILTER DIALOG 0, 0, 277, 210
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Item Filter"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "Armor",IDC_VIEWARMOR,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,5,34,10
-    CONTROL         "Arrows",IDC_VIEWARROWS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,20,37,10
-    CONTROL         "Axes",IDC_VIEWAXES,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,35,31,10
-    CONTROL         "Belts",IDC_VIEWBELT,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,50,31,10
-    CONTROL         "Bolts",IDC_VIEWBOLTS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,65,31,10
-    CONTROL         "Books",IDC_VIEWBOOKS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,80,36,10
-    CONTROL         "Boots",IDC_VIEWBOOTS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,95,34,10
-    CONTROL         "Bows",IDC_VIEWBOWS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,110,33,10
-    CONTROL         "Bullets",IDC_VIEWBULLETS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,125,37,10
-    CONTROL         "Cloaks",IDC_VIEWCLOAKS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,140,37,10
-    CONTROL         "Containers",IDC_VIEWCONTAINERS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,155,49,10
-    CONTROL         "Crossbows",IDC_VIEWCROSSBOWS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,170,50,10
-    CONTROL         "Daggers",IDC_VIEWDAGGERS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,60,5,43,10
-    CONTROL         "Darts",IDC_VIEWDARTS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,60,20,33,10
-    CONTROL         "Familiars",IDC_VIEWFAMILIARS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,60,35,43,10
-    CONTROL         "Flails",IDC_VIEWFLAILS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,60,50,31,10
-    CONTROL         "Food",IDC_VIEWFOOD,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,60,65,32,10
-    CONTROL         "Gems",IDC_VIEWGEMS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,60,80,34,10
-    CONTROL         "Gloves",IDC_VIEWGLOVES,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,60,95,38,10
-    CONTROL         "Halberds",IDC_VIEWHALBERDS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,60,110,44,10
-    CONTROL         "Hammers",IDC_VIEWHAMMERS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,60,125,45,10
-    CONTROL         "Hand to Hand",IDC_VIEWHANDTOHAND,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,60,140,61,10
-    CONTROL         "Helms",IDC_VIEWHELMS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,60,155,35,10
-    CONTROL         "Keys",IDC_VIEWKEYS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,60,170,31,10
-    CONTROL         "Maces",IDC_VIEWMACES,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,125,5,37,10
-    CONTROL         "Miscellaneous",IDC_VIEWMISC,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,125,20,60,10
-    CONTROL         "Morning Star",IDC_VIEWMORNINGSTARS,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,125,35,56,10
-    CONTROL         "Necklaces",IDC_VIEWNECKLACES,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,125,50,50,10
-    CONTROL         "Potions",IDC_VIEWPOTIONS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,125,65,39,10
-    CONTROL         "Rings",IDC_VIEWRINGS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,125,80,34,10
-    CONTROL         "Scrolls",IDC_VIEWSCROLLS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,125,95,37,10
-    CONTROL         "Shields",IDC_VIEWSHIELDS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,190,5,39,10
-    CONTROL         "Short Swords",IDC_VIEWSHORTSWORDS,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,190,20,58,10
-    CONTROL         "Slings",IDC_VIEWSLINGS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,190,35,35,10
-    CONTROL         "Spears",IDC_VIEWSPEARS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,190,50,38,10
-    CONTROL         "Staves",IDC_VIEWSTAVES,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,190,65,38,10
-    CONTROL         "Swords",IDC_VIEWSWORDS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,190,80,39,10
-    CONTROL         "Wands",IDC_VIEWWANDS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,190,95,39,10
+    CONTROL         "Armor",IDC_VIEWARMOR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,5,34,10
+    CONTROL         "Arrows",IDC_VIEWARROWS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,20,37,10
+    CONTROL         "Axes",IDC_VIEWAXES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,35,31,10
+    CONTROL         "Belts",IDC_VIEWBELT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,50,31,10
+    CONTROL         "Bolts",IDC_VIEWBOLTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,65,31,10
+    CONTROL         "Books",IDC_VIEWBOOKS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,80,36,10
+    CONTROL         "Boots",IDC_VIEWBOOTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,95,34,10
+    CONTROL         "Bows",IDC_VIEWBOWS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,110,33,10
+    CONTROL         "Bullets",IDC_VIEWBULLETS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,125,37,10
+    CONTROL         "Cloaks",IDC_VIEWCLOAKS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,140,37,10
+    CONTROL         "Containers",IDC_VIEWCONTAINERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,155,49,10
+    CONTROL         "Crossbows",IDC_VIEWCROSSBOWS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,170,50,10
+    CONTROL         "Daggers",IDC_VIEWDAGGERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,5,43,10
+    CONTROL         "Darts",IDC_VIEWDARTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,20,33,10
+    CONTROL         "Familiars",IDC_VIEWFAMILIARS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,35,43,10
+    CONTROL         "Flails",IDC_VIEWFLAILS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,50,31,10
+    CONTROL         "Food",IDC_VIEWFOOD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,65,32,10
+    CONTROL         "Gems",IDC_VIEWGEMS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,80,34,10
+    CONTROL         "Gloves",IDC_VIEWGLOVES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,95,38,10
+    CONTROL         "Halberds",IDC_VIEWHALBERDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,110,44,10
+    CONTROL         "Hammers",IDC_VIEWHAMMERS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,125,45,10
+    CONTROL         "Hand to Hand",IDC_VIEWHANDTOHAND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,140,61,10
+    CONTROL         "Helms",IDC_VIEWHELMS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,155,35,10
+    CONTROL         "Keys",IDC_VIEWKEYS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,170,31,10
+    CONTROL         "Maces",IDC_VIEWMACES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,125,5,37,10
+    CONTROL         "Miscellaneous",IDC_VIEWMISC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,125,20,60,10
+    CONTROL         "Morning Star",IDC_VIEWMORNINGSTARS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,125,35,56,10
+    CONTROL         "Necklaces",IDC_VIEWNECKLACES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,125,50,50,10
+    CONTROL         "Potions",IDC_VIEWPOTIONS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,125,65,39,10
+    CONTROL         "Rings",IDC_VIEWRINGS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,125,80,34,10
+    CONTROL         "Scrolls",IDC_VIEWSCROLLS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,125,95,37,10
+    CONTROL         "Shields",IDC_VIEWSHIELDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,5,39,10
+    CONTROL         "Short Swords",IDC_VIEWSHORTSWORDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,20,58,10
+    CONTROL         "Slings",IDC_VIEWSLINGS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,35,35,10
+    CONTROL         "Spears",IDC_VIEWSPEARS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,50,38,10
+    CONTROL         "Staves",IDC_VIEWSTAVES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,65,38,10
+    CONTROL         "Swords",IDC_VIEWSWORDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,80,39,10
+    CONTROL         "Wands",IDC_VIEWWANDS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,190,95,39,10
     GROUPBOX        "Text Search",IDC_STATIC,125,110,150,65
     EDITTEXT        IDC_SEARCHTEXT,130,125,140,12,ES_AUTOHSCROLL
-    CONTROL         "Match Item Name",IDC_MATCH_ITEMNAME,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,130,140,72,10
-    CONTROL         "Match Description",IDC_MATCH_DESCRIPTION,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,130,155,73,10
-    CONTROL         "Match Case",IDC_MATCH_CASE,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,215,140,54,10
+    CONTROL         "Match Item Name",IDC_MATCH_ITEMNAME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,130,140,72,10
+    CONTROL         "Match Description",IDC_MATCH_DESCRIPTION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,130,155,73,10
+    CONTROL         "Match Case",IDC_MATCH_CASE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,215,140,54,10
     DEFPUSHBUTTON   "OK",IDOK,16,189,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,81,189,50,14
     PUSHBUTTON      "Select All",IDC_SEL_ALL,146,189,50,14
     PUSHBUTTON      "Deselect All",IDC_DESEL_ALL,211,189,50,14
 END
 
-IDD_PORTRAITS DIALOG DISCARDABLE  0, 0, 312, 181
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_PORTRAITS DIALOG 0, 0, 312, 181
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Change Portrait"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -793,49 +682,42 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,164,160,50,14
     GROUPBOX        "&Large Portrait",IDC_STATIC,5,5,170,145
     GROUPBOX        "&Small Portrait",IDC_STATIC,180,5,125,145
-    LISTBOX         IDC_LARGE_PORTRAITS,10,15,80,130,LBS_SORT | 
-                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LARGE_PORTRAITS,10,15,80,130,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Extract",IDC_EXTRACT_LARGE,95,130,75,14,WS_DISABLED
-    LISTBOX         IDC_SMALL_PORTRAITS,185,15,80,130,LBS_SORT | 
-                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_SMALL_PORTRAITS,185,15,80,130,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Extract",IDC_EXTRACT_SMALL,270,130,30,14,WS_DISABLED
 END
 
-IDD_EXPORTOPTIONS DIALOG DISCARDABLE  0, 0, 142, 76
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_EXPORTOPTIONS DIALOG 0, 0, 142, 76
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Export Options"
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "&Filename",IDC_STATIC,5,5,29,8
     EDITTEXT        IDC_FILENAME,5,15,130,12,ES_AUTOHSCROLL
-    CONTROL         "&Include Descriptions",IDC_INCLUDE_DESC,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,5,35,80,10
+    CONTROL         "&Include Descriptions",IDC_INCLUDE_DESC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,35,80,10
     DEFPUSHBUTTON   "OK",IDOK,14,55,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,78,55,50,14
 END
 
-IDD_MISC_SETTINGS DIALOG DISCARDABLE  0, 0, 186, 95
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_MISC_SETTINGS DIALOG 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Editor Settings"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "Use &grid lines in lists.",IDC_USE_GRIDLINES,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,10,5,81,10
-    CONTROL         "&Default to single player games on open dialog.",
-                    IDC_DEFAULTSINGLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
-                    10,20,161,10
-    CONTROL         "&Ignore data format version numbers.",
-                    IDC_IGNORE_DATA_VERSIONS,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,10,35,129,10
-    CONTROL         "&Enable editing of quick and auto saves.",
-                    IDC_ENABLE_QUICKSAVES,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,10,50,141,10
+    CONTROL         "Use &grid lines in lists.",IDC_USE_GRIDLINES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,5,81,10
+    CONTROL         "&Default to single player games on open dialog.",IDC_DEFAULTSINGLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,20,161,10
+    CONTROL         "&Ignore data format version numbers.",IDC_IGNORE_DATA_VERSIONS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,35,129,10
+    CONTROL         "&Enable editing of quick and auto saves.",IDC_ENABLE_QUICKSAVES,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,50,141,10
     DEFPUSHBUTTON   "OK",IDOK,35,74,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,101,74,50,14
 END
 
-IDD_EXPORTRESOURCE DIALOG DISCARDABLE  0, 0, 142, 63
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_EXPORTRESOURCE DIALOG 0, 0, 142, 63
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Export Resource"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -845,13 +727,11 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,78,42,50,14
 END
 
-IDD_AFFECTS DIALOG DISCARDABLE  0, 0, 221, 131
-STYLE DS_CONTROL | WS_CHILD
+IDD_AFFECTS DIALOG 0, 0, 221, 131
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | 
-                    WS_BORDER | WS_TABSTOP,0,0,220,115
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,0,0,220,115
     PUSHBUTTON      "Duplicate",IDC_AFF_DUPLICATE,0,115,40,14,BS_FLAT
     PUSHBUTTON      "Edit",IDC_AFF_EDIT,40,115,40,14,BS_FLAT
     PUSHBUTTON      "Copy",IDC_AFF_COPY,80,115,40,14,BS_FLAT
@@ -859,8 +739,8 @@ BEGIN
     PUSHBUTTON      "Remove",IDC_AFF_REMOVE,160,115,40,14,BS_FLAT
 END
 
-IDD_AFFECT_EDIT DIALOG DISCARDABLE  0, 0, 272, 206
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_AFFECT_EDIT DIALOG 0, 0, 272, 206
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Edit Affect"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -887,15 +767,13 @@ BEGIN
     LTEXT           "Resource 3",IDC_STATIC,135,65,38,8
     EDITTEXT        IDC_AFF_RESOURCE3,175,65,90,12,ES_AUTOHSCROLL
     CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,5,95,260,1
-    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
-                    WS_TABSTOP,5,100,260,80
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,5,100,260,80
     DEFPUSHBUTTON   "OK",IDOK,78,185,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,144,185,50,14
 END
 
-IDD_AFFECT_DATA_EDIT DIALOG DISCARDABLE  0, 0, 127, 71
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_AFFECT_DATA_EDIT DIALOG 0, 0, 127, 71
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Edit Affect Data"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -909,59 +787,53 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,68,50,50,14
 END
 
-IDD_SETVALUE DIALOG DISCARDABLE  0, 0, 152, 66
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_SETVALUE DIALOG 0, 0, 152, 66
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Set Value"
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "&Value",IDC_STATIC,5,5,19,8
     EDITTEXT        IDC_VALUE,30,5,60,12,ES_AUTOHSCROLL
     LTEXT           "&Known",IDC_STATIC,5,20,23,8
-    COMBOBOX        IDC_COMBO,30,20,115,100,CBS_DROPDOWNLIST | WS_VSCROLL | 
-                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO,30,20,115,100,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     DEFPUSHBUTTON   "OK",IDOK,18,45,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,84,45,50,14
 END
 
-IDD_OPEN_CHARACTERFILE DIALOG DISCARDABLE  0, 0, 257, 161
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_OPEN_CHARACTERFILE DIALOG 0, 0, 257, 161
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Open Character File"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List2",IDC_LIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
-                    WS_TABSTOP,5,5,170,150
+    CONTROL         "List2",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,5,5,170,150
     DEFPUSHBUTTON   "OK",IDOK,190,120,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,190,140,50,14
 END
 
-IDD_SAVECHARACTER DIALOG DISCARDABLE  0, 0, 187, 86
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_SAVECHARACTER DIALOG 0, 0, 187, 86
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Save Character"
 FONT 8, "MS Sans Serif"
 BEGIN
-    LTEXT           "CHR file overwrites are disabled. You must pick a new name for this character file. This preserves the original file in case of accidental corruption or harmful editing.",
-                    IDC_SAVE_MSG,5,5,175,30
+    LTEXT           "CHR file overwrites are disabled. You must pick a new name for this character file. This preserves the original file in case of accidental corruption or harmful editing.",IDC_SAVE_MSG,5,5,175,30
     LTEXT           "&Filename",IDC_STATIC,5,45,29,8
     EDITTEXT        IDC_CHR_FILENAME,40,45,65,12,ES_AUTOHSCROLL
     DEFPUSHBUTTON   "OK",IDOK,30,65,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,100,65,50,14
 END
 
-IDD_GLOBALVARS DIALOG DISCARDABLE  0, 0, 221, 131
-STYLE DS_CONTROL | WS_CHILD
+IDD_GLOBALVARS DIALOG 0, 0, 221, 131
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
-                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,0,0,220,115
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,0,0,220,115
     PUSHBUTTON      "Add",IDC_VAR_ADD,0,115,40,14,BS_FLAT
     PUSHBUTTON      "Edit",IDC_VAR_EDIT,40,115,40,14,BS_FLAT
     PUSHBUTTON      "Delete",IDC_VAR_DELETE,80,115,40,14,BS_FLAT
 END
 
-IDD_EDIT_GLOBAL DIALOG DISCARDABLE  0, 0, 172, 61
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_EDIT_GLOBAL DIALOG 0, 0, 172, 61
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Edit Global Variable"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -973,14 +845,12 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,94,40,50,14
 END
 
-IDD_EDITLIST DIALOG DISCARDABLE  0, 0, 264, 161
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_EDITLIST DIALOG 0, 0, 264, 161
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Edit List"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
-                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,4,4,208,152
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,4,4,208,152
     PUSHBUTTON      "&Add",IDC_ADDLISTITEM,216,4,44,14
     PUSHBUTTON      "&Edit",IDC_EDITLISTITEM,216,20,44,14
     PUSHBUTTON      "&Delete",IDC_DELETELISTITEM,216,36,44,14
@@ -988,8 +858,8 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,216,140,44,14
 END
 
-IDD_EDIT_USERLIST DIALOG DISCARDABLE  0, 0, 172, 81
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_EDIT_USERLIST DIALOG 0, 0, 172, 81
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "User List"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -1002,8 +872,8 @@ BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,94,60,50,14
 END
 
-IDD_NAME_REF DIALOG DISCARDABLE  0, 0, 202, 111
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_NAME_REF DIALOG 0, 0, 202, 111
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Name - Dialog Reference Numbers"
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -1012,32 +882,27 @@ BEGIN
     EDITTEXT        IDC_SHORT_REF,55,15,70,12,ES_AUTOHSCROLL
     PUSHBUTTON      "Clear",IDC_CLEAR_SHORT,130,15,30,12,BS_FLAT
     PUSHBUTTON      "Find",IDC_FIND_SHORT,165,15,30,12,BS_FLAT
-    EDITTEXT        IDC_SHORT_TEXT,5,30,190,12,ES_CENTER | ES_READONLY | NOT 
-                    WS_TABSTOP
+    EDITTEXT        IDC_SHORT_TEXT,5,30,190,12,ES_CENTER | ES_READONLY | NOT WS_TABSTOP
     LTEXT           "&Long Name",IDC_STATIC,55,45,50,8
     LTEXT           "Str Reference",IDC_STATIC,5,55,45,8
     EDITTEXT        IDC_LONG_REF,55,55,70,12,ES_AUTOHSCROLL
     PUSHBUTTON      "Clear",IDC_CLEAR_LONG,130,55,30,12,BS_FLAT
     PUSHBUTTON      "Find",IDC_FIND_LONG,165,55,30,12,BS_FLAT
-    EDITTEXT        IDC_LONG_TEXT,5,70,190,12,ES_CENTER | ES_READONLY | NOT 
-                    WS_TABSTOP
+    EDITTEXT        IDC_LONG_TEXT,5,70,190,12,ES_CENTER | ES_READONLY | NOT WS_TABSTOP
     DEFPUSHBUTTON   "OK",IDOK,43,90,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,109,90,50,14
 END
 
-IDD_STRING_FINDER DIALOG DISCARDABLE  0, 0, 310, 215
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_STRING_FINDER DIALOG 0, 0, 310, 215
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "String Finder"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_STRINGS,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
-                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,5,5,300,140
+    CONTROL         "List1",IDC_STRINGS,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,5,5,300,140
     GROUPBOX        "",IDC_STATIC,5,150,190,60
     LTEXT           "&Max Length",IDC_STATIC,10,160,38,8
     EDITTEXT        IDC_MAX_LENGTH,55,160,50,12,ES_AUTOHSCROLL
-    CONTROL         "&Alphanumeric Only",IDC_ALPHANUM,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,115,160,75,10
+    CONTROL         "&Alphanumeric Only",IDC_ALPHANUM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,115,160,75,10
     LTEXT           "&Text Match",IDC_STATIC,10,175,37,8
     EDITTEXT        IDC_TEXT_MATCH,55,175,135,12,ES_AUTOHSCROLL
     PUSHBUTTON      "Find Strings",IDC_FIND_STRINGS,10,190,180,14
@@ -1047,13 +912,12 @@ BEGIN
     LTEXT           "",IDC_NUM_FOUND,255,150,50,8
 END
 
-IDD_APPEARANCE DIALOG DISCARDABLE  0, 0, 221, 126
-STYLE DS_CONTROL | WS_CHILD
+IDD_APPEARANCE DIALOG 0, 0, 221, 126
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "A&ppearance",IDC_STATIC,5,5,40,8
-    COMBOBOX        IDC_APPEARANCE,55,5,105,100,CBS_DROPDOWNLIST | CBS_SORT | 
-                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_APPEARANCE,55,5,105,100,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "Set Value",IDC_SETVALUE_APPEARANCE,165,5,50,13
     LTEXT           "Hair",IDC_STATIC,10,35,14,8
     LTEXT           "Skin",IDC_STATIC,115,35,15,8
@@ -1065,24 +929,21 @@ BEGIN
     LTEXT           "Metal",IDC_STATIC,10,95,18,8
 END
 
-IDD_COLORPICK DIALOG DISCARDABLE  0, 0, 257, 162
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_COLORPICK DIALOG 0, 0, 257, 162
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Color Selection"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_COLOR_LIST,"SysListView32",LVS_SINGLESEL | 
-                    WS_BORDER | WS_TABSTOP,5,5,245,125
+    CONTROL         "List1",IDC_COLOR_LIST,"SysListView32",LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,5,5,245,125
     DEFPUSHBUTTON   "OK",IDOK,70,141,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,136,141,50,14
 END
 
-IDD_CREATURE_BROWSER DIALOG DISCARDABLE  0, 0, 304, 166
-STYLE WS_CHILD
+IDD_CREATURE_BROWSER DIALOG 0, 0, 304, 166
+STYLE DS_SETFONT | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_CREATURE_LIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
-                    WS_TABSTOP,0,0,225,165
+    CONTROL         "List1",IDC_CREATURE_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,0,0,225,165
     PUSHBUTTON      "&Edit",IDC_EDIT_CREATURE,240,5,50,14
     PUSHBUTTON      "E&xtract",IDC_EXTRACT_CREATURE,240,25,50,14
     PUSHBUTTON      "Extract &As",IDC_EXTRACTCRE_AS,240,45,50,14
@@ -1093,113 +954,97 @@ BEGIN
     LTEXT           "",IDC_CREATURE_COUNT,265,155,25,8
 END
 
-IDD_OPEN_CRE DIALOG DISCARDABLE  0, 0, 257, 161
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_OPEN_CRE DIALOG 0, 0, 257, 161
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Open CRE File"
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_CRE_LIST,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
-                    WS_TABSTOP,5,5,170,150
+    CONTROL         "List1",IDC_CRE_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,5,5,170,150
     DEFPUSHBUTTON   "OK",IDOK,190,120,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,190,140,50,14
 END
 
-IDD_SAVE_CRE DIALOG DISCARDABLE  0, 0, 187, 86
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_SAVE_CRE DIALOG 0, 0, 187, 86
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Save Creature"
 FONT 8, "MS Sans Serif"
 BEGIN
-    LTEXT           "CRE file overwrites are disabled. You must pick a new name for this creature file. This preserves the original file in case of accidental corruption or harmful editing.",
-                    IDC_SAVE_MSG,5,5,175,30
+    LTEXT           "CRE file overwrites are disabled. You must pick a new name for this creature file. This preserves the original file in case of accidental corruption or harmful editing.",IDC_SAVE_MSG,5,5,175,30
     LTEXT           "&Filename",IDC_STATIC,5,45,29,8
     EDITTEXT        IDC_CRE_FILENAME,40,45,65,12,ES_AUTOHSCROLL
     DEFPUSHBUTTON   "OK",IDOK,30,65,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,100,65,50,14
 END
 
-IDD_SPECIAL_ABILITIES DIALOG DISCARDABLE  0, 0, 197, 116
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_SPECIAL_ABILITIES DIALOG 0, 0, 197, 116
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Innate Abilities"
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "&Kit",IDC_STATIC,5,5,9,8
-    COMBOBOX        IDC_KITTYPE,5,15,95,85,CBS_DROPDOWNLIST | CBS_SORT | 
-                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_KITTYPE,5,15,95,85,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
     LTEXT           "&From Level",IDC_STATIC,105,5,36,8
-    COMBOBOX        IDC_FROMLEVEL,105,15,40,85,CBS_DROPDOWNLIST | WS_VSCROLL | 
-                    WS_TABSTOP
+    COMBOBOX        IDC_FROMLEVEL,105,15,40,85,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
     LTEXT           "&To Level",IDC_STATIC,150,5,29,8
-    COMBOBOX        IDC_TOLEVEL,150,15,40,85,CBS_DROPDOWNLIST | WS_VSCROLL | 
-                    WS_TABSTOP
-    CONTROL         "&Remove Kit",IDC_REMOVE_KIT,"Button",BS_AUTOCHECKBOX | 
-                    BS_MULTILINE | WS_TABSTOP,5,35,55,10
-    LTEXT           "Checking the 'Remove Kit' box will cause any special abilities found in the selected kit to be removed from the character rather than added.",
-                    IDC_STATIC,10,55,175,25
+    COMBOBOX        IDC_TOLEVEL,150,15,40,85,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Remove Kit",IDC_REMOVE_KIT,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,5,35,55,10
+    LTEXT           "Checking the 'Remove Kit' box will cause any special abilities found in the selected kit to be removed from the character rather than added.",IDC_STATIC,10,55,175,25
     DEFPUSHBUTTON   "OK",IDOK,40,95,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,106,95,50,14
     GROUPBOX        "",IDC_STATIC,5,45,185,40
 END
 
-IDD_CHANGESMADE DIALOG DISCARDABLE  0, 0, 272, 186
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_CHANGESMADE DIALOG 0, 0, 272, 186
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Changes Made"
 FONT 8, "MS Sans Serif"
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,111,165,50,14
-    EDITTEXT        IDC_CHANGELIST,5,5,260,150,ES_MULTILINE | ES_AUTOVSCROLL | 
-                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+    EDITTEXT        IDC_CHANGELIST,5,5,260,150,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
 END
 
-IDD_SPELLFILTER DIALOG DISCARDABLE  0, 0, 186, 95
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_SPELLFILTER DIALOG 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Spell Filter"
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "Search &Text",IDC_STATIC,5,5,40,8
     EDITTEXT        IDC_SEARCHTEXT,5,15,175,12,ES_AUTOHSCROLL
-    CONTROL         "Match Spell &Name",IDC_MATCH_SPELLNAME,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,5,35,74,10
-    CONTROL         "Match &Description",IDC_MATCH_DESCRIPTION,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,5,50,73,10
-    CONTROL         "Match &Case",IDC_MATCH_CASE,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,100,35,54,10
+    CONTROL         "Match Spell &Name",IDC_MATCH_SPELLNAME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,35,74,10
+    CONTROL         "Match &Description",IDC_MATCH_DESCRIPTION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,50,73,10
+    CONTROL         "Match &Case",IDC_MATCH_CASE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,100,35,54,10
     DEFPUSHBUTTON   "OK",IDOK,35,74,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,101,74,50,14
 END
 
-IDD_CREATUREFILTER DIALOG DISCARDABLE  0, 0, 186, 76
-STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+IDD_CREATUREFILTER DIALOG 0, 0, 186, 76
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Creature Filter"
 FONT 8, "MS Sans Serif"
 BEGIN
     LTEXT           "Creature &Name",IDC_STATIC,5,5,48,8
     EDITTEXT        IDC_CREATURENAME,5,15,175,12,ES_AUTOHSCROLL
-    CONTROL         "Match &Case",IDC_MATCH_CASE,"Button",BS_AUTOCHECKBOX | 
-                    WS_TABSTOP,5,35,54,10
+    CONTROL         "Match &Case",IDC_MATCH_CASE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,35,54,10
     DEFPUSHBUTTON   "OK",IDOK,35,55,50,14
     PUSHBUTTON      "Cancel",IDCANCEL,101,55,50,14
 END
 
-IDD_STATEFLAGS DIALOG DISCARDABLE  0, 0, 221, 131
-STYLE DS_CONTROL | WS_CHILD
+IDD_STATEFLAGS DIALOG 0, 0, 221, 131
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
-    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
-                    LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_NOSORTHEADER | 
-                    WS_BORDER | WS_TABSTOP,0,0,220,130
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,0,0,220,130
 END
 
 
-#ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,1,5,0
- PRODUCTVERSION 2,1,5,0
+ FILEVERSION 2,2,0,0
+ PRODUCTVERSION 2,2,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -1214,18 +1059,13 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "Comments", "sk@mud-master.com\0"
-            VALUE "CompanyName", "\0"
-            VALUE "FileDescription", "Shadow Keeper - Save game editor for Baldur's Gate II - Shadows of Amn.\0"
-            VALUE "FileVersion", "2, 1, 5, 0\0"
-            VALUE "InternalName", "Shadow Keeper\0"
-            VALUE "LegalCopyright", "Copyright (C) 2000,2001\0"
-            VALUE "LegalTrademarks", "\0"
-            VALUE "OriginalFilename", "ShadowKeeper.EXE\0"
-            VALUE "PrivateBuild", "\0"
-            VALUE "ProductName", "Shadow Keeper\0"
-            VALUE "ProductVersion", "2, 1, 5, 0\0"
-            VALUE "SpecialBuild", "\0"
+            VALUE "FileDescription", "Dale Keeper II - Save game editor for Icewind Dale II"
+            VALUE "FileVersion", "2.2.0.0"
+            VALUE "InternalName", "Dale Keeper II"
+            VALUE "LegalCopyright", "Copyright (C) 2000-2022"
+            VALUE "OriginalFilename", "DaleKeeper2.EXE"
+            VALUE "ProductName", "Dale Keeper II"
+            VALUE "ProductVersion", "2.2.0.0"
         END
     END
     BLOCK "VarFileInfo"
@@ -1234,8 +1074,6 @@ BEGIN
     END
 END
 
-#endif    // !_MAC
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -1243,7 +1081,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO DISCARDABLE 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_ABOUTBOX, DIALOG
     BEGIN
@@ -1259,6 +1097,10 @@ BEGIN
         RIGHTMARGIN, 309
         TOPMARGIN, 7
         BOTTOMMARGIN, 149
+    END
+
+    IDR_MAINFRAME, DIALOG
+    BEGIN
     END
 
     IDD_INSTALLATION_PATH, DIALOG
@@ -1637,29 +1479,30 @@ END
 // Cursor
 //
 
-IDC_HANDCUR             CURSOR  DISCARDABLE     "..\\res\\cursor1.cur"
+IDC_HANDCUR             CURSOR                  "..\\res\\cursor1.cur"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // String Table
 //
 
-STRINGTABLE PRELOAD DISCARDABLE 
+STRINGTABLE
 BEGIN
-    IDR_MAINFRAME           "Shadow Keeper"
+    IDR_MAINFRAME           "Dale Keeper II"
     IDR_DALEKETYPE          "\nShadowKe\nShadowKe\n\n\nShadowKeeper.Document\nShadowKe Document"
     IDR_ITEMBROWSER         "\n\n\n\n\n\n"
     IDR_SPELLBROWSER        "\n\n\n\n\n\n"
     IDR_CREATUREBROWSER     "\n\n\n\n\n\n"
 END
 
-STRINGTABLE PRELOAD DISCARDABLE 
+STRINGTABLE
 BEGIN
-    AFX_IDS_APP_TITLE       "Shadow Keeper"
+    AFX_IDS_APP_TITLE       "Dale Keeper II"
     AFX_IDS_IDLEMESSAGE     "Ready"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_INDICATOR_EXT        "EXT"
     ID_INDICATOR_CAPS       "CAP"
@@ -1669,7 +1512,7 @@ BEGIN
     ID_INDICATOR_REC        "REC"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_FILE_NEW             "Create a new document\nNew"
     ID_FILE_OPEN            "Open an existing document\nOpen"
@@ -1678,13 +1521,13 @@ BEGIN
     ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
     ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_FILE_MRU_FILE1       "Open this document"
     ID_FILE_MRU_FILE2       "Open this document"
@@ -1704,13 +1547,13 @@ BEGIN
     ID_FILE_MRU_FILE16      "Open this document"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
     ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
     ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
@@ -1720,7 +1563,7 @@ BEGIN
     ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_EDIT_CLEAR           "Erase the selection\nErase"
     ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
@@ -1735,13 +1578,13 @@ BEGIN
     ID_EDIT_REDO            "Redo the previously undone action\nRedo"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
     ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     AFX_IDS_SCSIZE          "Change the window size"
     AFX_IDS_SCMOVE          "Change the window position"
@@ -1752,21 +1595,21 @@ BEGIN
     AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     AFX_IDS_SCRESTORE       "Restore the window to normal size"
     AFX_IDS_SCTASKLIST      "Activate Task List"
     AFX_IDS_MDICHILD        "Activate this window"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_SETTINGS_INSTALLATIONDIRECTORY "Sets the installation directory"
     ID_OPENCHAR             "Open saved game\nEdit Saved Games"
     ID_FILE_OPENSAVEDGAME   "Open a saved game\nOpen Saved Game"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_ERR_CRE0            "No Error."
     IDS_ERR_CRE1            "Failed to read the CRE header."
@@ -1778,7 +1621,7 @@ BEGIN
     IDS_ERR_CRE7            "Failed to read memorization information."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_ERR_CRE8            "Unable to find the memorized spells."
     IDS_ERR_CRE9            "Too many memorized spells in the file."
@@ -1798,7 +1641,7 @@ BEGIN
     IDS_ERR_CRE23           "Failed to read the character affectations.."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_ERR_GAM0            "No Error."
     IDS_ERR_GAM1            "Failed to open the saved game file."
@@ -1806,7 +1649,7 @@ BEGIN
     IDS_ERR_GAM3            "The in-party character information does not follow the game header."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_ERR_GAM4            "Too many characters in the party. Dale Keeper only supports 6 characters."
     IDS_ERR_GAM5            "Error reading the in-pary character information blocks."
@@ -1826,7 +1669,7 @@ BEGIN
     IDS_ERR_GAM19           "Failed to read the jouirnal data."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_ERR_GAM20           "Failed to write the journal data."
     IDS_ERR_GAM21           "Missing GAME signature."
@@ -1836,10 +1679,10 @@ BEGIN
     IDS_ERR_GAM25           "Error writing the after-journal information."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_VIEW_ITEMBROWSER     "Toggle item browser\nItem Browser"
-    ID_HELP_VISITTHEWEBSITE "Visit http://www.mud-master.com/shadowkeeper\nVisit Web Site"
+    ID_HELP_VISITTHEWEBSITE "Visit Web Site"
     ID_HELP_SENDEMAILTOAARON 
                             "Send Aaron some email, mailto:sk@mud-master.com\nSend Email"
     ID_VIEW_SPELLBROWSER    "Toggle the spell browser\nSpell Browser"
@@ -1852,7 +1695,7 @@ BEGIN
                             "Open an exported character file\nOpen Character"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_ERR_CRE24           "Failed to write the character affectations.."
     IDS_ERR_CRE25           "Missing CRE signature."
@@ -1867,7 +1710,7 @@ BEGIN
     IDS_ERR_CRE34           "Failed to write a memorized but not known spell."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_ERR_CHR0            "No Error."
     IDS_ERR_CHR1            "Failed to open the character file."
@@ -1878,7 +1721,7 @@ BEGIN
     IDS_ERR_CHR6            "Failed to write the character header."
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_SETTINGS_LISTS_KITS  "Edit list of kit values"
     ID_SETTINGS_LISTS_GENDER "Edit list of gender values"
@@ -1896,18 +1739,18 @@ BEGIN
                             "Toggle overwriting of CRE files"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     ID_TOOLS_SPELLMEMORIZATIONCHECK 
                             "Checks all characters to see if they have more spells memorized than indicated on the Memorization tab"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE
 BEGIN
     IDS_ERR_MEMMISMATCH     "%s may have a problem with the number of spells memorized (details below). Generally, you will want the numbers on the Memorization tab to be greater than or equal to the number of spells you have actually set to be memorized for that spell level. However, this may not always be the case. It may be possible to have more memorized if you are wearing some equipment that allows you extra spells.\r\n\r\n"
 END
 
-#endif    // English (U.S.) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -1927,7 +1770,6 @@ END
 LANGUAGE 9, 1
 #pragma code_page(1252)
 #endif //_WIN32
-#include "DaleKeeper.rc2"  // non-Microsoft Visual C++ edited resources
 #include "afxres.rc"         // Standard components
 #endif
 

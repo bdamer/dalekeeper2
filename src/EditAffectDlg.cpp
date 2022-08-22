@@ -254,13 +254,13 @@ void CEditAffectDlg::LoadValues()
 		GetDataType(_sdCreAff[nIndex],szBuf);
 		m_lcList.SetItemText(nItem,1,szBuf);
 
-		sprintf(szBuf,"%d",_sdCreAff[nIndex].nLen);
+		sprintf_s(szBuf,"%d",_sdCreAff[nIndex].nLen);
 		m_lcList.SetItemText(nItem,2,szBuf);
 
 		GetValueString(_sdCreAff[nIndex],szBuf);
 		m_lcList.SetItemText(nItem,3,szBuf);
 
-		sprintf(szBuf,"%s",_sdCreAff[nIndex].pszName);
+		sprintf_s(szBuf,"%s",_sdCreAff[nIndex].pszName);
 		m_lcList.SetItemText(nItem,4,szBuf);
 
 		nIndex++;

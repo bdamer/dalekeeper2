@@ -12,4 +12,7 @@
     <LocalDebuggerWorkingDirectory>$(ProjectDir)..\</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup>
+    <RESOURCE_FILE>\development\dalekeeper2\res\DaleKeeper.rc</RESOURCE_FILE>
+  </PropertyGroup>
 </Project>

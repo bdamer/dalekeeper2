@@ -109,7 +109,7 @@ void CSaveCreDlg::OnOK()
 	else
 	{
 		CString strExt = strFile.Mid(nIndex+1);
-		if (strnicmp(strExt,"cre",3))
+		if (_strnicmp(strExt,"cre",3))
 			strFile += ".cre";
 	}
 

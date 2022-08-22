@@ -165,7 +165,7 @@ BOOL CInf2DA::Parse(const char *pszText)
 		return(FALSE);
 
 	// Keep a local copy around.
-	strcpy(m_pszBuf,pszText);
+	strcpy_s(m_pszBuf, m_nBufLen + 1,pszText);
 
 	// Figure out how big the array needs to be.
 	if (!GetDimensions())

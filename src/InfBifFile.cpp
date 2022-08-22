@@ -71,7 +71,7 @@ BOOL CInfBifFile::Open(const char *pszFilename, BOOL bAsOverride)
 {
 	char szLogBuf[1000];
 
-	sprintf(szLogBuf,"      File: %s\n",pszFilename);
+	sprintf_s(szLogBuf,"      File: %s\n",pszFilename);
 	AddToLog(szLogBuf);
 
 	if (!CFile::Open(pszFilename,CFile::modeRead|CFile::shareDenyNone))
@@ -104,7 +104,7 @@ BOOL CInfBifFile::Open(const char *pszFilename, BOOL bAsOverride)
 		CMapWordToOb *pBifEntries;
 		CBifFileEntry *pFileEntry;
 
-		sprintf(szLogBuf,"         Number of file entries: %d\n",m_bifHeader.dwFileEntryCount);
+		sprintf_s(szLogBuf,"         Number of file entries: %d\n",m_bifHeader.dwFileEntryCount);
 		AddToLog(szLogBuf);
 		for (int i=0;i<(int)m_bifHeader.dwFileEntryCount;i++)
 		{

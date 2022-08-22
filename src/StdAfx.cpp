@@ -37,5 +37,4 @@
 
 #include "stdafx.h"
 
-const char *_pszWebAddress = "http://www.mud-master.com/shadowkeeper";
-const char *_pszEmailAddress = "mailto:shadowkeeper@mud-master.com";
+const char *_pszWebAddress = "https://github.com/bdamer/dalekeeper2";
