@@ -24,11 +24,14 @@ namespace infinity
 		const std::string executable;
 		// Save game file name [Baldur, ??, icewind2]
 		const std::string save_prefix;
+		// Color palette BMP 
+		const std::string palette;
 		// Flags indicating which user list types to load
 		const int user_lists;
 
 		Profile(const std::string& name, const std::string& executable, const std::string& save_prefix,
-			int user_lists) : name(name), executable(executable), save_prefix(save_prefix), user_lists(user_lists) { }
+			const std::string& palette, int user_lists) 
+			: name(name), executable(executable), save_prefix(save_prefix), palette(palette), user_lists(user_lists) { }
 	};
 
 	extern const Profile active_profile;

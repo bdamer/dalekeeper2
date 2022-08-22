@@ -163,15 +163,16 @@ LRESULT CMainFrame::OnDoResources(WPARAM wParam, LPARAM lParam)
 {
 	CDaleKeeperApp *pApp = (CDaleKeeperApp*)AfxGetApp();
 	CString strTitle;
-	strTitle.Format("Shadow Keeper - Version %s",(const char *)pApp->m_strFileVersion);
-	SetWindowText(strTitle);
+	strTitle.Format(" - Version %s", (const char *)pApp->m_strFileVersion);
+	SetWindowText(app_name + strTitle);
 
 	if (!_infTlk.Open(_strInstallPath+"Dialog.tlk"))
 	{
-		MessageBox("Shadow Keeper was unable to read the text resources. Shadow Keeper must "
+		CString msg;
+		msg.Format("Unable to read the text resources. %s must "
 			"be able to find this file to work properly. Make sure the Installation Path has "
-			"been set to the correct directory and restart Shadow Keeper.","Can't Find Dialog.tlk",
-			MB_ICONEXCLAMATION);
+			"been set to the correct directory and restart this application.", app_name);
+		MessageBox(msg, "Can't Find Dialog.tlk", MB_ICONEXCLAMATION);
 		return(0);
 	}
 
@@ -185,12 +186,17 @@ LRESULT CMainFrame::OnDoResources(WPARAM wParam, LPARAM lParam)
 		return(0);
 	}
 
-	// TODO: fix loading of bitmap
 	HBITMAP hPal;
-	if (GetResourceBitmap("RANGES12",hPal))
+	if (GetResourceBitmap(infinity::active_profile.palette.c_str(), hPal))
 	{
 		_ilPal.CreateFromBitmap(hPal);
 		::DeleteObject(hPal);
+	}
+	else
+	{
+		const auto msg = "Failed to load resource: " + infinity::active_profile.palette;
+		MessageBox(msg.c_str(), "Resource Error", MB_ICONEXCLAMATION);
+		return 0;
 	}
 
 	_bResourcesLoaded = TRUE;

@@ -312,7 +312,7 @@ BOOL CDaleKeeperDoc::CanCloseFrame(CFrameWnd* pFrame)
 			{
 				CString strMessage;
 				strMessage.Format("Save changes to game '%s'?",(const char *)m_strGameTitle);
-				int nResult = pFrame->MessageBox(strMessage,"Shadow Keeper",MB_YESNOCANCEL|MB_ICONEXCLAMATION);
+				int nResult = pFrame->MessageBox(strMessage,app_name,MB_YESNOCANCEL|MB_ICONEXCLAMATION);
 				if (nResult == IDCANCEL)
 					return(FALSE);
 				if (nResult == IDYES && !DoSave())
@@ -337,7 +337,7 @@ BOOL CDaleKeeperDoc::CanCloseFrame(CFrameWnd* pFrame)
 		case LI_GAMETYPE_CHR :
 			if (m_infChr.HasChanged())
 			{
-				int nResult = pFrame->MessageBox("Save changes to character?","Shadow Keeper",MB_YESNOCANCEL|MB_ICONEXCLAMATION);
+				int nResult = pFrame->MessageBox("Save changes to character?",app_name,MB_YESNOCANCEL|MB_ICONEXCLAMATION);
 				if (nResult == IDCANCEL)
 					return(FALSE);
 				if (nResult == IDYES && !DoSave())
@@ -348,7 +348,7 @@ BOOL CDaleKeeperDoc::CanCloseFrame(CFrameWnd* pFrame)
 		case LI_GAMETYPE_CRE :
 			if (m_infCre.HasChanged())
 			{
-				int nResult = pFrame->MessageBox("Save changes to creature?","Shadow Keeper",MB_YESNOCANCEL|MB_ICONEXCLAMATION);
+				int nResult = pFrame->MessageBox("Save changes to creature?", app_name,MB_YESNOCANCEL|MB_ICONEXCLAMATION);
 				if (nResult == IDCANCEL)
 					return(FALSE);
 				if (nResult == IDYES && !DoSave())
