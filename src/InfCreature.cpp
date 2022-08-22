@@ -81,8 +81,9 @@ BOOL CInfCreature::Read(CFile &file)
 
 	UINT nStartPos = file.GetPosition();
 
-	nCount = file.Read(&m_infCre,sizeof(INF_CRE));
-	if (nCount != sizeof(INF_CRE))
+	const auto cre_size = sizeof(INF_CRE);
+	nCount = file.Read(&m_infCre, cre_size);
+	if (nCount != cre_size)
 	{
 		m_nError = ERR_CRE_READHEADER;
 		return(FALSE);
@@ -94,12 +95,20 @@ BOOL CInfCreature::Read(CFile &file)
 		return(FALSE);
 	}
 
-	if (!_bIgnoreDataVersions && memcmp(m_infCre.chVersion,"V1.0",4))
+	if (!_bIgnoreDataVersions)
 	{
-		m_nError = ERR_CRE_BADVERSION;
-		return(FALSE);
+#if INF_VERSION < 22 
+		if (memcmp(m_infCre.chVersion, "V1.0", 4))
+#else
+		if (memcmp(m_infCre.chVersion, "V2.2", 4))
+#endif
+		{
+			m_nError = ERR_CRE_BADVERSION;
+			return(FALSE);
+		}
 	}
 
+#if INF_VERSION < 22
 	// Known spells should follow the header.
 	if (m_infCre.dwKnownSpellsOffset)
 	{
@@ -398,6 +407,11 @@ BOOL CInfCreature::Read(CFile &file)
 		}
 	}
 
+#else
+
+
+#endif
+
 	m_bHasChanged = FALSE;
 	return(TRUE);
 }
@@ -417,6 +431,7 @@ UINT CInfCreature::GetFileSpace()
 	// Header.
 	UINT nSize = sizeof(INF_CRE);
 
+#if INF_VERSION < 22
 	// Known spells.
 	nSize += m_infCre.dwKnownSpellsCount * sizeof(INF_CRE_KNOWNSPELL);
 
@@ -427,6 +442,7 @@ UINT CInfCreature::GetFileSpace()
 	// of spells in the m_plMemButNotKnown list.
 	UpdateSpellInfo();
 	nSize += m_infCre.dwMemorizedSpellsCount * sizeof(INF_CRE_MEMSPELL);
+#endif
 
 	// Item slot index.
 	nSize += sizeof(INF_CRE_ITEMSLOTS);
@@ -448,6 +464,7 @@ BOOL CInfCreature::Write(CFile &file)
 	UpdateSpellInfo();
 
 	UINT nOffset = sizeof(INF_CRE);
+#if INF_VERSION < 22
 	if (m_infCre.dwKnownSpellsCount)
 		m_infCre.dwKnownSpellsOffset = nOffset;
 	else
@@ -474,6 +491,7 @@ BOOL CInfCreature::Write(CFile &file)
 		m_infCre.dwAffectOffset = nOffset;
 	else
 		m_infCre.dwAffectOffset = 0;
+#endif
 
 	// You apparently can't resurrect a player that has hit points. Even if they
 	// are dead. So if any of the death flags are set, I'm putting their hp to 0.
@@ -521,6 +539,7 @@ BOOL CInfCreature::Write(CFile &file)
 			nWriteCount++;
 		}
 
+#if INF_VERSION < 22
 	try { file.Write(m_pMemInfo,m_infCre.dwSpellMemorizationInfoCount*sizeof(INF_CRE_MEMINFO)); }
 	catch(CFileException *pe)
 	{
@@ -528,7 +547,7 @@ BOOL CInfCreature::Write(CFile &file)
 		pe->Delete();
 		return(FALSE);
 	}
-
+#endif
 	int k;
 	INF_CRE_MEMSPELL infMem;
 	nWriteCount = 0;
@@ -633,7 +652,9 @@ void CInfCreature::GetName(CString &strName)
 	if (strName.IsEmpty())
 	{
 		char szBuf[21];
+#if INF_VERSION < 22
 		memcpy(szBuf,m_infCre.chName,20);
+#endif
 		szBuf[20] = '\x0';
 		strName = szBuf;
 	}
@@ -647,11 +668,13 @@ void CInfCreature::SetName(const char *pszName)
 	if (strlen(pszName) > 20)
 		memcpy(szName,pszName,20);
 	else
-		strcpy(szName,pszName);
+		strcpy_s(szName,pszName);
 
+#if INF_VERSION < 22
 	if (memcmp(szName,m_infCre.chName,20))
 		m_bHasChanged = TRUE;
 	memcpy(m_infCre.chName,szName,20);
+#endif
 }
 
 void CInfCreature::SetSkinColor(BYTE chColor)
@@ -717,6 +740,7 @@ void CInfCreature::SetLongNameID(DWORD dwValue)
 	m_infCre.dwLongCreatureName = dwValue;
 }
 
+#if INF_VERSION < 22
 void CInfCreature::SetDualClass(int nValue)
 {
 	nValue = VALIDATE_RANGE(nValue,0,255);
@@ -748,7 +772,7 @@ void CInfCreature::SetThirdClassLevel(int nValue)
 		m_bHasChanged = TRUE;
 	m_infCre.chLevelThirdClass = nValue;
 }
-
+#endif
 void CInfCreature::SetStr(int nStr)
 {
 	nStr = VALIDATE_ATTR(nStr);
@@ -757,6 +781,7 @@ void CInfCreature::SetStr(int nStr)
 	m_infCre.chStrength = nStr;
 }
 
+#if INF_VERSION < 22
 void CInfCreature::SetStrBonus(int nBonus)
 {
 	nBonus = VALIDATE_RANGE(nBonus,0,100);
@@ -764,6 +789,7 @@ void CInfCreature::SetStrBonus(int nBonus)
 		m_bHasChanged = TRUE;
 	m_infCre.chStrengthBonus = nBonus;
 }
+#endif
 
 void CInfCreature::SetDex(int nDex)
 {
@@ -852,9 +878,12 @@ void CInfCreature::SetAC(int nValue)
 	if (GetAC() != nValue)
 		m_bHasChanged = TRUE;
 	m_infCre.nAC1 = nValue;
+#if INF_VERSION < 22
 	m_infCre.nAC2 = nValue;
+#endif
 }
 
+#if INF_VERSION < 22
 void CInfCreature::SetThac0(int nValue)
 {
 	nValue = VALIDATE_RANGE(nValue,-100,100);
@@ -902,10 +931,12 @@ void CInfCreature::SetSaveSpells(int nValue)
 		m_bHasChanged = TRUE;
 	m_infCre.chSaveSpells = nValue;
 }
+#endif
 
 ////////////////////////////////////////
 // 1st Class Proficiencies.
 
+#if INF_VERSION < 22
 void CInfCreature::SetProfLargeSwords(int nValue)
 {
 	nValue = VALIDATE_PROF(nValue);
@@ -1178,6 +1209,7 @@ void CInfCreature::SetProfHammers2(int nValue)
 		m_bHasChanged = TRUE;
 	m_infCre.chProfHammers = nValue;
 }
+#endif
 
 void CInfCreature::SetResFire(int nValue)
 {
@@ -1267,6 +1299,7 @@ void CInfCreature::SetResMissile(int nValue)
 	m_infCre.chResistMissile = nValue;
 }
 
+#if INF_VERSION < 22
 void CInfCreature::SetLore(int nValue)
 {
 	nValue = VALIDATE_RANGE(nValue,0,255);
@@ -1274,6 +1307,7 @@ void CInfCreature::SetLore(int nValue)
 		m_bHasChanged = TRUE;
 	m_infCre.chLore = nValue;
 }
+#endif
 
 void CInfCreature::SetReputation(int nValue)
 {
@@ -1284,6 +1318,7 @@ void CInfCreature::SetReputation(int nValue)
 	m_infCre.chReputation = nValue;
 }
 
+#if INF_VERSION < 22
 void CInfCreature::SetOpenLocks(int nValue)
 {
 	nValue = VALIDATE_THIEF(nValue);
@@ -1339,6 +1374,7 @@ void CInfCreature::SetSetTraps(int nValue)
 		m_bHasChanged = TRUE;
 	m_infCre.chSetTraps = nValue;
 }
+#endif
 
 void CInfCreature::SetRace(int nValue)
 {
@@ -1375,12 +1411,14 @@ void CInfCreature::SetKit(DWORD dwValue)
 	m_infCre.dwKit = dwValue;
 }
 
+#if INF_VERSION < 22
 void CInfCreature::SetRacialEnemy(int nValue)
 {
 	if (m_infCre.chRacialEnemy != nValue)
 		m_bHasChanged = TRUE;
 	m_infCre.chRacialEnemy = nValue;
 }
+#endif
 
 void CInfCreature::SetEnemyAlly(int nValue)
 {
@@ -1389,12 +1427,14 @@ void CInfCreature::SetEnemyAlly(int nValue)
 	m_infCre.chEnemyAlly = nValue;
 }
 
+#if INF_VERSION < 22
 void CInfCreature::SetAnimationID(WORD wValue)
 {
 	if (m_infCre.wAnimationID != wValue)
 		m_bHasChanged = TRUE;
 	m_infCre.wAnimationID = wValue;
 }
+#endif
 
 void CInfCreature::SetStateFlags(DWORD dwValue)
 {
@@ -1462,6 +1502,7 @@ void CInfCreature::GetSpells(int nType, SPELLDATA *pData)
 
 void CInfCreature::UpdateSpellInfo()
 {
+#if INF_VERSION < 22
 	int i,j,k;
 	int nKnown = 0;
 	int nMem = 0;
@@ -1552,6 +1593,7 @@ void CInfCreature::UpdateSpellInfo()
 		m_pMemInfo[i].dwSpellIndex = nIndex;
 		nIndex += m_pMemInfo[i].dwSpellCount;
 	}
+#endif
 }
 
 void CInfCreature::SetSpells(int nType, int nSpellCount, const SPELLDATA *pData)
@@ -1583,12 +1625,14 @@ void CInfCreature::SetSpells(int nType, int nSpellCount, const SPELLDATA *pData)
 
 void CInfCreature::GetMemorizationInfo(MEMINFO *pMemInfo)
 {
+#if INF_VERSION < 22
 	for (int i=0;i<(int)m_infCre.dwSpellMemorizationInfoCount;i++)
 	{
 		pMemInfo[i].wLevel = m_pMemInfo[i].wSpellLevel;
 		pMemInfo[i].wType = m_pMemInfo[i].wSpellType;
 		pMemInfo[i].wNumMemorizable = m_pMemInfo[i].wNumMemorizable1;
 	}
+#endif
 }
 
 void CInfCreature::SetMemorizationInfo(const MEMINFO *pMemInfo)
@@ -1598,6 +1642,7 @@ void CInfCreature::SetMemorizationInfo(const MEMINFO *pMemInfo)
 	// This way even if externally the list is passed back in a screwed up order, it will
 	// still end up internally the way the Write code expects it.
 
+#if INF_VERSION < 22
 	int i,j;
 	for (i=0;i<(int)m_infCre.dwSpellMemorizationInfoCount;i++)
 		for (j=0;j<(int)m_infCre.dwSpellMemorizationInfoCount;j++)
@@ -1606,7 +1651,7 @@ void CInfCreature::SetMemorizationInfo(const MEMINFO *pMemInfo)
 				m_pMemInfo[j].wNumMemorizable1 = pMemInfo[i].wNumMemorizable;
 				m_pMemInfo[j].wNumMemorizable2 = pMemInfo[i].wNumMemorizable;
 			}
-
+#endif
 	// This corrects for any spells that may have been set as more memorized than allowed.
 	UpdateSpellInfo();
 }
@@ -1628,12 +1673,14 @@ void CInfCreature::GetProfs(CObList &list)
 
 			pProf->m_chProf = (BYTE)pAff->nNP2;
 
+#if INF_VERSION < 22
 			if (m_infCre.chDualClass)
 			{
 				pProf->m_nFirstClass = HITRIBBLE(pAff->nNP1);
 				pProf->m_nSecondClass = LOTRIBBLE(pAff->nNP1);
 			}
 			else
+#endif
 				pProf->m_nFirstClass = pAff->nNP1;
 
 			list.AddTail(pProf);
@@ -1685,9 +1732,11 @@ void CInfCreature::SetProfs(CObList &list)
 		pAff->dwAffectType = AFF_TYPE_PROF;
 		pAff->nNP2 = pData->m_chProf;
 
+#if INF_VERSION < 22
 		if (m_infCre.chDualClass)
 			pAff->nNP1 = MAKETRIBBLE(pData->m_nSecondClass,pData->m_nFirstClass);
 		else
+#endif
 			pAff->nNP1 = pData->m_nFirstClass;
 
 		pAff->dwFlags = 0x09;
@@ -1716,7 +1765,7 @@ DWORD CInfCreature::GetSpeed()
 	{
 		pAff = (INF_AFF*)m_plAffects.GetNext(pos);
 
-		if (pAff->dwAffectType == AFF_TYPE_SPELL && !strnicmp(pAff->chResRef3,"SPCL812",7))
+		if (pAff->dwAffectType == AFF_TYPE_SPELL && !_strnicmp(pAff->chResRef3,"SPCL812",7))
 			return(pAff->nNP1);
 	}
 
@@ -1735,7 +1784,7 @@ void CInfCreature::SetSpeed(DWORD dwSpeed)
 		posPrev = pos;
 		pAff = (INF_AFF*)m_plAffects.GetNext(pos);
 
-		if (pAff->dwAffectType == AFF_TYPE_SPELL && !strnicmp(pAff->chResRef3,"SPCL812",7))
+		if (pAff->dwAffectType == AFF_TYPE_SPELL && !_strnicmp(pAff->chResRef3,"SPCL812",7))
 		{
 			if (dwSpeed)
 				pAff->nNP1 = dwSpeed;
@@ -1823,7 +1872,7 @@ BOOL CInfCreature::GetAffects(CPtrList &list)
 
 		// Don't return the affects that are already handled in special cases.
 		if (pAff->dwAffectType == AFF_TYPE_PROF ||	
-			 (pAff->dwAffectType == AFF_TYPE_SPELL && !strnicmp(pAff->chResRef3,"SPCL812",7))
+			 (pAff->dwAffectType == AFF_TYPE_SPELL && !_strnicmp(pAff->chResRef3,"SPCL812",7))
 			)
 			continue;
 
@@ -1852,7 +1901,7 @@ void CInfCreature::SetAffects(CPtrList &list)
 
 		// Delete all the affects except those handled elsewhere.
 		if (pAff->dwAffectType == AFF_TYPE_PROF ||	
-			 (pAff->dwAffectType == AFF_TYPE_SPELL && !strnicmp(pAff->chResRef3,"SPCL812",7))
+			 (pAff->dwAffectType == AFF_TYPE_SPELL && !_strnicmp(pAff->chResRef3,"SPCL812",7))
 			)
 			continue;
 

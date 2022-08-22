@@ -160,6 +160,10 @@ BOOL CTabAppearanceDlg::OnInitDialog()
 
 void CTabAppearanceDlg::SetColor(CBitmapWnd &wnd, BYTE &chIndex)
 {
+	// TODO: fixme
+	if (_ilPal == nullptr || _ilPal.GetImageCount() == 0)
+		return;
+
 	if (chIndex >= _ilPal.GetImageCount())
 		chIndex = 0;
 

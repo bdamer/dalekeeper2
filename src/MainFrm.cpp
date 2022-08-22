@@ -185,6 +185,7 @@ LRESULT CMainFrame::OnDoResources(WPARAM wParam, LPARAM lParam)
 		return(0);
 	}
 
+	// TODO: fix loading of bitmap
 	HBITMAP hPal;
 	if (GetResourceBitmap("RANGES12",hPal))
 	{

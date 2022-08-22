@@ -68,36 +68,43 @@ CInfGame::~CInfGame()
 	}
 }
 
-BOOL CInfGame::Read(const char *pszFilename)
+BOOL CInfGame::Read(const char* pszFilename)
 {
 	CFile file;
 	UINT nCount;
 	int i;
 
-	if (!file.Open(pszFilename,CFile::modeRead))
+	if (!file.Open(pszFilename, CFile::modeRead))
 	{
 		m_nError = ERR_GAME_FAILEDOPEN;
 		return(FALSE);
 	}
 	m_strFilename = pszFilename;
 
-	nCount = file.Read(&m_infGame,sizeof(INF_GAME));
+	nCount = file.Read(&m_infGame, sizeof(INF_GAME));
 	if (nCount != sizeof(INF_GAME))
 	{
 		m_nError = ERR_GAME_BADHEADER;
 		return(FALSE);
 	}
 
-	if (memcmp(m_infGame.chSignature,"GAME",4))
+	if (memcmp(m_infGame.chSignature, "GAME", 4))
 	{
 		m_nError = ERR_GAME_MISSINGSIG;
 		return(FALSE);
 	}
 
-	if (!_bIgnoreDataVersions && memcmp(m_infGame.chVersion,"V2.0",4) && memcmp(m_infGame.chVersion,"V2.1",4))
+	if (!_bIgnoreDataVersions)
 	{
-		m_nError = ERR_GAME_BADVERSION;
-		return(FALSE);
+#if INF_VERSION < 22 
+		if (memcmp(m_infGame.chVersion, "V2.0", 4) && memcmp(m_infGame.chVersion, "V2.1", 4))
+#else
+		if (memcmp(m_infGame.chVersion, "V2.2", 4))
+#endif
+		{
+			m_nError = ERR_GAME_BADVERSION;
+			return(FALSE);
+		}
 	}
 
 	// After each section is read I'm checking the file position to be sure it follows
@@ -436,13 +443,13 @@ void CInfGame::SetPartyCharName(int nChar, const char *pszName)
 	if (strlen(pszName) > 20)
 		memcpy(szName,pszName,20);
 	else
-		strcpy(szName,pszName);
+		strcpy_s(szName,pszName);
 
 	if (m_infCharInfo[nChar].szName[0])
 	{
 		if (memcmp(m_infCharInfo[nChar].szName,szName,20))
 			m_bHasChanged = TRUE;
-		strcpy(m_infCharInfo[nChar].szName,szName);
+		strcpy_s(m_infCharInfo[nChar].szName,szName);
 	}
 	else
 		m_infParty[nChar].SetName(szName);
@@ -469,13 +476,13 @@ void CInfGame::SetOutOfPartyCharName(int nChar, const char *pszName)
 	if (strlen(pszName) > 20)
 		memcpy(szName,pszName,20);
 	else
-		strcpy(szName,pszName);
+		strcpy_s(szName,pszName);
 
 	if (m_pinfOutCharInfo[nChar].szName[0])
 	{
 		if (memcmp(m_pinfOutCharInfo[nChar].szName,szName,20))
 			m_bHasChanged = TRUE;
-		strcpy(m_pinfOutCharInfo[nChar].szName,szName);
+		strcpy_s(m_pinfOutCharInfo[nChar].szName,szName);
 	}
 	else
 		m_pinfOutParty[nChar].SetName(szName);

@@ -535,7 +535,9 @@ void CDaleKeeperView::LoadChar(int nChar)
 	GetNameText(nChar);
 	
 	m_tabAbilities.m_nStr = pCre->GetStr();
+#if INF_VERSION < 22
 	m_tabAbilities.m_nStrBonus = pCre->GetStrBonus();
+#endif
 	m_tabAbilities.m_nDex = pCre->GetDex();
 	m_tabAbilities.m_nCon = pCre->GetCon();
 	m_tabAbilities.m_nInt = pCre->GetInt();
@@ -560,10 +562,12 @@ void CDaleKeeperView::LoadChar(int nChar)
 	}
 	m_tabAbilities.SetAttacks(pCre->GetAttacks());
 	m_tabAbilities.m_nAC = pCre->GetAC();
+#if INF_VERSION < 22
 	m_tabAbilities.m_nThac0 = pCre->GetThac0();
 	m_tabAbilities.m_nLevelFirstClass = pCre->GetFirstClassLevel();
 	m_tabAbilities.m_nLevelSecondClass = pCre->GetSecondClassLevel();
 	m_tabAbilities.m_nLevelThirdClass = pCre->GetThirdClassLevel();
+#endif
 
 	CObList list;
 	pCre->GetProfs(list);
@@ -573,11 +577,13 @@ void CDaleKeeperView::LoadChar(int nChar)
 	pCre->GetAffects(listPtr);
 	m_tabAffects.SetAffects(listPtr);
 
+#if INF_VERSION < 22
 	m_tabSaves.m_nBreath = pCre->GetSaveBreath();
 	m_tabSaves.m_nParalyzation = pCre->GetSaveDeath();
 	m_tabSaves.m_nPolymorph = pCre->GetSavePoly();
 	m_tabSaves.m_nSpells = pCre->GetSaveSpells();
 	m_tabSaves.m_nWands = pCre->GetSaveWands();
+#endif
 
 	m_tabResistances.m_nAcid = pCre->GetResAcid();
 	m_tabResistances.m_nCold = pCre->GetResCold();
@@ -591,6 +597,7 @@ void CDaleKeeperView::LoadChar(int nChar)
 	m_tabResistances.m_nPiercing = pCre->GetResPiercing();
 	m_tabResistances.m_nSlashing = pCre->GetResSlashing();
 
+#if INF_VERSION < 22
 	m_tabThief.m_nOpenLocks = pCre->GetOpenLocks();
 	m_tabThief.m_nMoveSilently = pCre->GetMoveSilently();
 	m_tabThief.m_nFindTraps = pCre->GetFindTraps();
@@ -598,17 +605,22 @@ void CDaleKeeperView::LoadChar(int nChar)
 	m_tabThief.m_nSetTraps = pCre->GetSetTraps();
 	m_tabThief.m_nDetectIllusions = pCre->GetDetectIllusions();
 	m_tabThief.m_nHideInShadows = pCre->GetHideInShadows();
+#endif
 
 	m_tabCharacteristics.SetClass(pCre->GetClass());
 	m_tabCharacteristics.SetGender(pCre->GetGender());
 	m_tabCharacteristics.SetRace(pCre->GetRace());
 	m_tabCharacteristics.SetAlignment(pCre->GetAlignment());
 	m_tabCharacteristics.SetKit(pCre->GetKit());
+#if INF_VERSION < 22
 	m_tabCharacteristics.SetRacialEnemy(pCre->GetRacialEnemy());
+#endif
 	m_tabCharacteristics.m_nMovementSpeed = pCre->GetSpeed();
 	m_tabCharacteristics.SetEnemyAlly(pCre->GetEnemyAlly());
 
+#if INF_VERSION < 22
 	m_tabAppearance.SetAppearance(pCre->GetAnimationID());
+#endif
 	m_tabAppearance.SetHairColor(pCre->GetHairColor());
 	m_tabAppearance.SetSkinColor(pCre->GetSkinColor());
 	m_tabAppearance.SetMajorColor(pCre->GetMajorColor());
@@ -633,6 +645,7 @@ void CDaleKeeperView::LoadChar(int nChar)
 	m_tabWizard.m_strCharName = m_strName;
 	m_tabWizard.m_strGameName = GetDocument()->m_strGameTitle;
 
+#if INF_VERSION < 22
 	int nMemInfoCount = pCre->GetMemorizationInfoCount();
 	MEMINFO *pMemInfo = NULL;
 	if (nMemInfoCount)
@@ -642,6 +655,7 @@ void CDaleKeeperView::LoadChar(int nChar)
 	}
 	m_tabMem.SetData(pMemInfo,nMemInfoCount);
 	delete [] pMemInfo;
+#endif
 
 	int nSpellCount;
 	CTabSpellsDlg *pSpellTab;
@@ -700,7 +714,9 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 	CInfCreature *pCre = GetCre(nChar);
 
 	pCre->SetStr(m_tabAbilities.m_nStr);
+#if INF_VERSION < 22
 	pCre->SetStrBonus(m_tabAbilities.m_nStrBonus);
+#endif
 	pCre->SetDex(m_tabAbilities.m_nDex);
 	pCre->SetCon(m_tabAbilities.m_nCon);
 	pCre->SetInt(m_tabAbilities.m_nInt);
@@ -725,10 +741,12 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 	pCre->SetCurrentHP(m_tabAbilities.m_nCurrentHP);
 	pCre->SetAttacks(m_tabAbilities.GetAttacks());
 	pCre->SetAC(m_tabAbilities.m_nAC);
+#if INF_VERSION < 22
 	pCre->SetThac0(m_tabAbilities.m_nThac0);
 	pCre->SetFirstClassLevel(m_tabAbilities.m_nLevelFirstClass);
 	pCre->SetSecondClassLevel(m_tabAbilities.m_nLevelSecondClass);
 	pCre->SetThirdClassLevel(m_tabAbilities.m_nLevelThirdClass);
+#endif
 
 	CObList list;
 	m_tabProfs.GetProfs(list);
@@ -738,11 +756,13 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 	m_tabAffects.GetAffects(listPtr);
 	pCre->SetAffects(listPtr);
 
+#if INF_VERSION < 22
 	pCre->SetSaveBreath(m_tabSaves.m_nBreath);
 	pCre->SetSaveDeath(m_tabSaves.m_nParalyzation);
 	pCre->SetSavePoly(m_tabSaves.m_nPolymorph);
 	pCre->SetSaveSpells(m_tabSaves.m_nSpells);
 	pCre->SetSaveWands(m_tabSaves.m_nWands);
+#endif
 
 	pCre->SetResAcid(m_tabResistances.m_nAcid);
 	pCre->SetResCold(m_tabResistances.m_nCold);
@@ -756,6 +776,7 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 	pCre->SetResPiercing(m_tabResistances.m_nPiercing);
 	pCre->SetResSlashing(m_tabResistances.m_nSlashing);
 
+#if INF_VERSION < 22
 	pCre->SetOpenLocks(m_tabThief.m_nOpenLocks);
 	pCre->SetMoveSilently(m_tabThief.m_nMoveSilently);
 	pCre->SetFindTraps(m_tabThief.m_nFindTraps);
@@ -763,17 +784,22 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 	pCre->SetSetTraps(m_tabThief.m_nSetTraps);
 	pCre->SetDetectIllusions(m_tabThief.m_nDetectIllusions);
 	pCre->SetHideInShadows(m_tabThief.m_nHideInShadows);
+#endif
 
 	pCre->SetClass(m_tabCharacteristics.GetClass());
 	pCre->SetGender(m_tabCharacteristics.GetGender());
 	pCre->SetRace(m_tabCharacteristics.GetRace());
 	pCre->SetAlignment(m_tabCharacteristics.GetAlignment());
 	pCre->SetKit(m_tabCharacteristics.GetKit());
+#if INF_VERSION < 22
 	pCre->SetRacialEnemy(m_tabCharacteristics.GetRacialEnemy());
+#endif
 	pCre->SetSpeed(m_tabCharacteristics.m_nMovementSpeed);
 	pCre->SetEnemyAlly(m_tabCharacteristics.GetEnemyAlly());
 
+#if INF_VERSION < 22
 	pCre->SetAnimationID(m_tabAppearance.GetAppearance());
+#endif
 	pCre->SetSkinColor(m_tabAppearance.m_chSkinColor);
 	pCre->SetHairColor(m_tabAppearance.m_chHairColor);
 	pCre->SetMajorColor(m_tabAppearance.m_chMajorColor);
@@ -788,6 +814,7 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 	m_tabInv.GetItems(&creItems[0]);
 	pCre->SetItems(&creItems[0]);
 
+#if INF_VERSION < 22
 	// You can't add items to the list so I'm just pulling the same number from
 	// the CRE.
 	int nMemInfoCount = pCre->GetMemorizationInfoCount();
@@ -799,6 +826,7 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 		pCre->SetMemorizationInfo(pMemInfo);
 		delete [] pMemInfo;
 	}
+#endif
 
 	int nSpellCount;
 	CTabSpellsDlg *pSpellTab;

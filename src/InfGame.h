@@ -35,6 +35,8 @@
 #ifndef __INFGAME__
 #define __INFGAME__
 
+#include "infinity_version.h"
+
 #pragma pack(push,1)
 
 #include "InfCreature.h"
@@ -119,14 +121,22 @@ struct INF_GAME_CHARINFO
 	WORD		wViewX;
 	WORD		wViewY;
 
+#if INF_VERSION < 22
 	char		chUnknown2[0x98];
-
+#else
+	char		chUnknown2[0x196];
+#endif
 	// In the case of the first character (PC) this is the name of the
 	// character. The name is NOT found in the character data portion
 	// like it is for an NPC.
 	char		szName[0x15];
 
+#if INF_VERSION < 22
 	char		chUnknown3[0x8B];
+#else
+	// There is data in here - looks like sprite + item info of some sort
+	char		chUnknown3[0x16D];
+#endif
 };
 
 struct INF_GAME_GLOBAL

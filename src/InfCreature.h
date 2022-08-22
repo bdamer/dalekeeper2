@@ -34,6 +34,8 @@
 #ifndef __INFCREATURE__
 #define __INFCREATURE__
 
+#include "infinity_version.h"
+
 #pragma pack(push,1)
 
 // Proficiencies are packed 3 bits each. Hi 3 bits is the 1st class of a
@@ -49,6 +51,7 @@
 #define CRE_STAT_STONE_DEAD	0x00000080
 #define CRE_STAT_FROZEN_DEAD	0x00000040
 
+#if INF_VERSION < 20
 struct INF_CRE
 {
 	char		chSignature[0x04];
@@ -144,7 +147,7 @@ struct INF_CRE
 	BYTE		chProfHammers;
 	BYTE		chProfClubs;
 	BYTE		chProfQuarterstaffs;
-	BYTE		chProfCrossbows; 
+	BYTE		chProfCrossbows;
 
 	char		chUnknown5[0x06];
 
@@ -207,6 +210,265 @@ struct INF_CRE
 
 	char		chDialogRef[0x08];
 };
+
+#else // Version 2.2
+
+struct INF_CRE
+{
+	char		chSignature[0x04];
+	char		chVersion[0x04];
+	DWORD		dwLongCreatureName;
+	DWORD		dwShortCreatureName;
+
+	DWORD		dwFlags;
+
+	DWORD		dwExpForKilling;
+	DWORD		dwExp; // Creature Power Level (for summoning spells) / XP of the creature (for party members)
+	DWORD		dwGold; // Gold carried
+	DWORD		dwStateFlags;
+	WORD		wCurrentHP;
+	WORD		wBaseHP;
+	DWORD		dwAnimationID;
+
+	BYTE		chMetalColor;
+	BYTE		chMinorColor;
+	BYTE		chMajorColor;
+	BYTE		chSkinColor;
+	BYTE		chLeatherColor;
+	BYTE		chArmorColor;
+	BYTE		chHairColor;
+
+	// EFF structure version
+	// 0: Version 1 EFF
+	// 1 : Version 2 EFF
+	char		chUnknown2;
+
+	char		chSmallPortrait[8];
+	char		chLargePortrait[8];
+	BYTE		chReputation;
+	BYTE		chHideInShadows;
+	short		nAC1;
+	short		nACModCrushing;
+	short		nACModMissile;
+	short		nACModPiercing;
+	short		nACModSlashing;
+	BYTE		chBAB; // Base Attack Bonus (BAB) for non party characters
+	BYTE		chAttacks;
+	BYTE		chSaveFortitude;
+	BYTE		chSaveReflex;
+	BYTE		chSaveWill;
+	BYTE		chResistFire;
+	BYTE		chResistCold;
+	BYTE		chResistElectricity;
+	BYTE		chResistAcid;
+	BYTE		chResistMagic;
+	BYTE		chResistMagicFire;
+	BYTE		chResistMagicCold;
+	BYTE		chResistSlashing;
+	BYTE		chResistCrushing;
+	BYTE		chResistPiercing;
+	BYTE		chResistMissile;
+	BYTE		chResistMagicDamage; // Resist magic damage (0-100)
+
+	char		chUnknownResistances[0x4];
+
+	BYTE		chFatique;
+	BYTE		chIntoxication;
+	BYTE		chLuck;
+	BYTE		chTurnUndead;
+
+	char		chUnknown3[0x21];
+
+	BYTE		chTotalLevels;
+	BYTE		chBarbarianLevels;
+	BYTE		chBardLevels;
+	BYTE		chClericLevels;
+	BYTE		chDruidLevels;
+	BYTE		chFighterLevels;
+	BYTE		chMonkLevels;
+	BYTE		chPaladinLevels;
+	BYTE		chRangerLevels;
+	BYTE		chRogueLevels;
+	BYTE		chSorcererLevels;
+	BYTE		chWizardLevels;
+
+	char		chUnknown4[0x16];
+
+	DWORD		dwStrefs[0x40]; // most are connected with the sound - set
+
+	char		chTeamScript[0x8];
+	char		chSpecialScript[0x8];
+
+	BYTE		chCreatureEnchanmentLevel;
+
+	char		chUnknown5[0x3];
+
+	DWORD		dwFeats1;
+	DWORD		dwFeats2;
+	DWORD		dwFeats3;
+
+	DWORD		dwUnknown6[0x3];
+
+	BYTE		chBow;
+	BYTE		chCrossbow;
+	BYTE		chMissile;
+	BYTE		chAxe;
+	BYTE		chMace;
+	BYTE		chFlail;
+	BYTE		chPolearm;
+	BYTE		chHammer;
+	BYTE		chQuarterstaff;
+	BYTE		chGreatSword;
+	BYTE		chLargeSword;
+	BYTE		chSmallBlade;
+	BYTE		chToughness;
+	BYTE		chArmoredArcana;
+	BYTE		chCleave;
+	BYTE		chArmorProficiency;
+	BYTE		chEnchantment;
+	BYTE		chEvocation;
+	BYTE		chNecromancy;
+	BYTE		chTransmutation;
+	BYTE		chSpellPenetration;
+	BYTE		chExtraRage;
+	BYTE		chExtraWildShape;
+	BYTE		chExtraSmiting;
+	BYTE		chExtraTurning;
+	BYTE		chBastardSword;
+
+	char		chUnknown7[0x26];
+
+	BYTE		chAlchemy;
+	BYTE		chAnimalEmpathy;
+	BYTE		chBluff;
+	BYTE		chConcentration;
+	BYTE		chDiplomacy;
+	BYTE		chDisableDevice;
+	BYTE		chHide;
+	BYTE		chIntimidate;
+	BYTE		chKnowledgeArcana;
+	BYTE		chMoveSilently;
+	BYTE		chOpenLock;
+	BYTE		chPickPocket;
+	BYTE		chSearch;
+	BYTE		chSpellcraft;
+	BYTE		chUseMagicDevice;
+	BYTE		chWildernessLaw;
+
+	char		chUnknown8[0x32];
+
+	BYTE		chXPCategory; // (values from moncrate.2da)
+	BYTE		chFavouredEnemy1;
+	BYTE		chFavouredEnemy2;
+	BYTE		chFavouredEnemy3;
+	BYTE		chFavouredEnemy4;
+	BYTE		chFavouredEnemy5;
+	BYTE		chFavouredEnemy6;
+	BYTE		chFavouredEnemy7;
+	BYTE		chFavouredEnemy8;
+	BYTE		chSubrace; // (subrace.ids)
+
+	char		chUnknown9[0x2];
+
+	BYTE		chStrength;
+	BYTE		chIntelligence;
+	BYTE		chWisdom;
+	BYTE		chDexterity;
+	BYTE		chConstitution;
+	BYTE		chCharisma;
+
+	char		chUnknown10[0x4];
+
+	DWORD		dwKit;
+
+	char		chOverrideScript[0x8];
+	char		chCreatureSpecial3Script[0x8];
+	char		chCreatureSpecial2Script[0x8];
+	char		chCreatureCombatScript[0x8];
+	char		chCreatureMovementOverride[0x8];
+
+	BYTE		chVisible;
+	BYTE		chSetVariableOnDeath;
+	BYTE		chSetKillCountOnDeath;
+
+	char		chUnknown11;
+
+	WORD		wInternals[0x5];
+	char		chSecondaryDeathVariable[0x20];
+	char		chTertiaryDeathVariable[0x20];
+
+	WORD		wUnknown12;
+
+	WORD		wSavedLocationXCoordinate;
+	WORD		wSavedLocationYCoordinate;
+	WORD		wSavedLocationOrientation;
+
+	char		chUnknown13[0xf];
+
+	BYTE		chMinTransparency;
+	BYTE		chFadeSpeed;
+	BYTE		chSpecFlagValues;
+
+	BYTE		chVisible2; // ??
+
+	char		chUnknown14[0x2];
+
+	BYTE		chRemainingSkillPoints;
+
+	char		chUnknown15[0x7c];
+
+	BYTE		chEnemyAlly; // EA.IDS
+	BYTE		chGeneral; // GENERAL.IDS
+	BYTE		chRace; // RACE.IDS
+	BYTE		chClass; // CLASS.IDS
+	BYTE		chSpecific; // SPECIFIC.IDS
+	BYTE		chGender; // GENDER.IDS
+	BYTE		chObjectIds[0x5]; // OBJECT.IDS
+	BYTE		chAlignment; // ALIGNMEN.IDS
+
+	WORD		wGlobalActorEnumValue;
+	WORD		wLocalActorEnumValue;
+
+	char		chDeathVar[0x20];
+
+	WORD		wAVClass;
+	WORD		wClassMsk;
+	WORD		wUnknown16;
+
+	DWORD		dwBardSpellOffsets[9];
+	DWORD		dwClericSpellOffsets[9];
+	DWORD		dwDruidSpellOffsets[9];
+	DWORD		dwPaladinSpellOffsets[9];
+	DWORD		dwRangerSpellOffsets[9];
+	DWORD		dwSorcererSpellOffsets[9];
+	DWORD		dwWizardSpellOffsets[9];
+
+	DWORD		dwBardSpellCounts[9];
+	DWORD		dwClericSpellCounts[9];
+	DWORD		dwDruidSpellCounts[9];
+	DWORD		dwPaladinSpellCounts[9];
+	DWORD		dwRangerSpellCounts[9];
+	DWORD		dwSorcererSpellCounts[9];
+	DWORD		dwWizardSpellCounts[9];
+	DWORD		dwDomainSpellOffsets[9];
+	DWORD		dwDomainSpellCounts[9];
+
+	DWORD		dwAbilitiesOffset;
+	DWORD		dwAbilitiesCount;
+	DWORD		dwSongOffset;
+	DWORD		dwSongCount;
+	DWORD		dwShapesOffset;
+	DWORD		dwShapesCount;
+	DWORD		dwItemSlotsOffset;
+	DWORD		dwItemsOffset;
+	DWORD		dwItemsCount;
+	DWORD		dwAffectOffset;
+	DWORD		dwAffectCount;
+
+	char		chDialogRef[0x8];
+};
+
+#endif
 
 #define AFF_TYPE_ABILITY			0x0A
 #define AFF_TYPE_SPELL				0x7E		// Don't really have a clue what 7E is, but this is good for now.
@@ -316,6 +578,7 @@ struct INF_CRE_ITEMSLOTS
 	char		chUnknown[4];
 };
 
+// struct looks ok
 struct INF_CRE_ITEM
 {
 	char		chResName[8];
@@ -436,6 +699,7 @@ public:
 	DWORD GetShortNameID()					{ return(m_infCre.dwShortCreatureName); }
 	void	SetShortNameID(DWORD dwValue);
 
+#if INF_VERSION < 22
 	BYTE	GetDualClass()						{ return(m_infCre.chDualClass); }
 	void	SetDualClass(int nValue=0x08);
 
@@ -445,11 +709,14 @@ public:
 	void	SetSecondClassLevel(int nValue);
 	BYTE	GetThirdClassLevel()				{ return(m_infCre.chLevelThirdClass); }
 	void	SetThirdClassLevel(int nValue);
+#endif
 
 	BYTE	GetStr()								{ return(m_infCre.chStrength); }
 	void	SetStr(int nStr);
+#if INF_VERSION < 22
 	BYTE	GetStrBonus()						{ return(m_infCre.chStrengthBonus); }
 	void	SetStrBonus(int nBonus);
+#endif
 	BYTE	GetDex()								{ return(m_infCre.chDexterity); }
 	void	SetDex(int nDex);
 	BYTE	GetCon()								{ return(m_infCre.chConstitution); }
@@ -465,8 +732,10 @@ public:
 	void	SetAttacks(int nValue);
 	short	GetAC()								{ return(m_infCre.nAC1); }
 	void	SetAC(int nValue);	
+#if INF_VERSION < 22
 	char	GetThac0()							{ return(m_infCre.chTHAC0); }
 	void	SetThac0(int nValue);
+#endif
 
 	DWORD	GetExp()								{ return(m_infCre.dwExp); }
 	void	SetExp(DWORD dwExp);
@@ -479,13 +748,16 @@ public:
 	void	SetBaseHP(WORD wBaseHP);
 	WORD	GetCurrentHP()						{ return(m_infCre.wCurrentHP); }
 	void	SetCurrentHP(WORD wCurrentHP);
+#if INF_VERSION < 22
 	BYTE	GetLore()							{ return(m_infCre.chLore); }
 	void	SetLore(int nValue);
+#endif
 
 	// The reputation value seems to be 10x what is shown in the game.
 	BYTE	GetReputation()					{ return(m_infCre.chReputation/10); }
 	void	SetReputation(int nValue);
 
+#if INF_VERSION < 22
 	BYTE	GetSaveDeath()						{ return(m_infCre.chSaveDeath); }
 	void	SetSaveDeath(int nValue);
 	BYTE	GetSaveWands()						{ return(m_infCre.chSaveWands); }
@@ -558,6 +830,7 @@ public:
 	void	SetProfQuarterStaffs2(int nValue);
 	BYTE	GetProfHammers2()						{ return(HITRIBBLE(m_infCre.chProfHammers)); }
 	void	SetProfHammers2(int nValue);
+#endif
 
 	BYTE	GetResFire()						{ return(m_infCre.chResistFire); }
 	void	SetResFire(int nValue);
@@ -582,6 +855,7 @@ public:
 	BYTE	GetResMissile()					{ return(m_infCre.chResistMissile); }
 	void	SetResMissile(int nValue);
 
+#if INF_VERSION < 22
 	BYTE	GetOpenLocks()						{ return(m_infCre.chOpenLocks); }
 	void	SetOpenLocks(int nValue);
 	BYTE	GetMoveSilently()					{ return(m_infCre.chMoveSilently); }
@@ -596,6 +870,7 @@ public:
 	void	SetDetectIllusions(int nValue);
 	BYTE	GetSetTraps()						{ return(m_infCre.chSetTraps); }
 	void  SetSetTraps(int nValue);
+#endif
 
 	BYTE	GetRace()							{ return(m_infCre.chRace); }
 	void	SetRace(int nValue);
@@ -607,13 +882,17 @@ public:
 	void	SetClass(int nValue);
 	DWORD	GetKit()								{ return(m_infCre.dwKit); }
 	void	SetKit(DWORD dwValue);
+#if INF_VERSION < 22
 	BYTE	GetRacialEnemy()					{ return(m_infCre.chRacialEnemy); }
 	void	SetRacialEnemy(int nValue);
+#endif
 	BYTE	GetEnemyAlly()						{ return(m_infCre.chEnemyAlly); }
 	void	SetEnemyAlly(int nValue);
 
+#if INF_VERSION < 22
 	WORD	GetAnimationID()					{ return(m_infCre.wAnimationID); }
 	void	SetAnimationID(WORD wValue);
+#endif
 
 	DWORD GetStateFlags()					{ return(m_infCre.dwStateFlags); }
 	void  SetStateFlags(DWORD dwValue);
@@ -692,8 +971,9 @@ public:
 	// pointed to by pData to internal buffers.
 	void	SetSpells(int nType, int nSpellCount, const SPELLDATA *pData);
 
+#if INF_VERSION < 22
 	int	GetMemorizationInfoCount()		{ return(m_infCre.dwSpellMemorizationInfoCount); }
-
+#endif
 	// Gets a copy of the memorization maximums. pMemInfo must point to a buffer big enough
 	// to hold as many items as GetMemorizationInfoCount returns.
 	void	GetMemorizationInfo(MEMINFO *pMemInfo);
