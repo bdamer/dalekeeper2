@@ -883,6 +883,30 @@ void CInfCreature::SetAC(int nValue)
 #endif
 }
 
+void CInfCreature::SetACModCrushing(int value)
+{
+	m_bHasChanged = GetACModCrushing() != value;
+	m_infCre.nACModCrushing = value;
+}
+
+void CInfCreature::SetACModMissile(int value)
+{
+	m_bHasChanged = GetACModMissile() != value;
+	m_infCre.nACModMissile = value;
+}
+
+void CInfCreature::SetACModPiercing(int value)
+{
+	m_bHasChanged = GetACModPiercing() != value;
+	m_infCre.nACModPiercing = value;
+}
+
+void CInfCreature::SetACModSlashing(int value)
+{
+	m_bHasChanged = GetACModSlashing() != value;
+	m_infCre.nACModSlashing = value;
+}
+
 #if INF_VERSION < 22
 void CInfCreature::SetThac0(int nValue)
 {

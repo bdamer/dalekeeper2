@@ -713,10 +713,6 @@ public:
 
 	BYTE	GetStr()								{ return(m_infCre.chStrength); }
 	void	SetStr(int nStr);
-#if INF_VERSION < 22
-	BYTE	GetStrBonus()						{ return(m_infCre.chStrengthBonus); }
-	void	SetStrBonus(int nBonus);
-#endif
 	BYTE	GetDex()								{ return(m_infCre.chDexterity); }
 	void	SetDex(int nDex);
 	BYTE	GetCon()								{ return(m_infCre.chConstitution); }
@@ -730,8 +726,17 @@ public:
 
 	BYTE	GetAttacks()						{ return(m_infCre.chAttacks); }
 	void	SetAttacks(int nValue);
-	short	GetAC()								{ return(m_infCre.nAC1); }
-	void	SetAC(int nValue);	
+	short	GetAC(void) const { return m_infCre.nAC1; }
+	void	SetAC(int nalue);
+	short	GetACModCrushing(void) const { return m_infCre.nACModCrushing; }
+	void	SetACModCrushing(int value);
+	short	GetACModMissile(void) const { return m_infCre.nACModMissile; }
+	void	SetACModMissile(int value);
+	short	GetACModPiercing(void) const { return m_infCre.nACModPiercing; }
+	void	SetACModPiercing(int value);
+	short	GetACModSlashing(void) const { return m_infCre.nACModSlashing; }
+	void	SetACModSlashing(int value);
+
 #if INF_VERSION < 22
 	char	GetThac0()							{ return(m_infCre.chTHAC0); }
 	void	SetThac0(int nValue);

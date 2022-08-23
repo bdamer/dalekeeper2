@@ -59,16 +59,15 @@ CTabAbilitiesDlg::CTabAbilitiesDlg(CWnd* pParent /*=NULL*/)
 	m_nDex = 3;
 	m_nInt = 3;
 	m_nStr = 3;
-	m_nStrBonus = 3;
 	m_nWis = 3;
 	m_nExp = 0;
 	m_nGold = 0;
 	m_nHP = 1;
 	m_nAC = 0;
-	m_nThac0 = 0;
-	m_nLevelFirstClass = 0;
-	m_nLevelSecondClass = 0;
-	m_nLevelThirdClass = 0;
+	m_nACModCrushing = 0;
+	m_nACModMissile = 0;
+	m_nACModPiercing = 0;
+	m_nACModSlashing = 0;
 	m_nReputation = 0;
 	m_nExpForKill = 0;
 	m_nCurrentHP = 0;
@@ -82,7 +81,6 @@ void CTabAbilitiesDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CTabAbilitiesDlg)
-	DDX_Control(pDX, IDC_ATTACKS, m_cbAttacks);
 	DDX_Control(pDX, IDC_STR, m_edStr);
 	DDX_Text(pDX, IDC_CHA, m_nCha);
 	DDV_MinMaxUInt(pDX, m_nCha, 1, 250);
@@ -94,8 +92,6 @@ void CTabAbilitiesDlg::DoDataExchange(CDataExchange* pDX)
 	DDV_MinMaxUInt(pDX, m_nInt, 1, 250);
 	DDX_Text(pDX, IDC_STR, m_nStr);
 	DDV_MinMaxUInt(pDX, m_nStr, 1, 250);
-	DDX_Text(pDX, IDC_STR_PLUS, m_nStrBonus);
-	DDV_MinMaxUInt(pDX, m_nStrBonus, 0, 255);
 	DDX_Text(pDX, IDC_WIS, m_nWis);
 	DDV_MinMaxUInt(pDX, m_nWis, 1, 250);
 	DDX_Text(pDX, IDC_EXP, m_nExp);
@@ -106,16 +102,14 @@ void CTabAbilitiesDlg::DoDataExchange(CDataExchange* pDX)
 	DDV_MinMaxUInt(pDX, m_nHP, 1, 65000);
 	DDX_Text(pDX, IDC_BASEAC, m_nAC);
 	DDV_MinMaxInt(pDX, m_nAC, -32000, 32000);
-	DDX_Text(pDX, IDC_THAC0, m_nThac0);
-	DDV_MinMaxInt(pDX, m_nThac0, -128, 127);
-	DDX_Text(pDX, IDC_LEVEL1, m_nLevelFirstClass);
-	DDV_MinMaxUInt(pDX, m_nLevelFirstClass, 0, 255);
-	DDX_Text(pDX, IDC_LEVEL2, m_nLevelSecondClass);
-	DDV_MinMaxUInt(pDX, m_nLevelSecondClass, 0, 255);
-	DDX_Text(pDX, IDC_LEVEL3, m_nLevelThirdClass);
-	DDV_MinMaxUInt(pDX, m_nLevelThirdClass, 0, 255);
-	DDX_Text(pDX, IDC_REPUTATION, m_nReputation);
-	DDV_MinMaxUInt(pDX, m_nReputation, 0, 255);
+	DDX_Text(pDX, IDC_ACCRUSHING, m_nACModCrushing);
+	DDV_MinMaxUInt(pDX, m_nACModCrushing, 0, 255);
+	DDX_Text(pDX, IDC_ACMISSILES, m_nACModMissile);
+	DDV_MinMaxUInt(pDX, m_nACModMissile, 0, 255);
+	DDX_Text(pDX, IDC_ACPIERCING, m_nACModPiercing);
+	DDV_MinMaxUInt(pDX, m_nACModPiercing, 0, 255);
+	DDX_Text(pDX, IDC_ACSLASHING, m_nACModSlashing);
+	DDV_MinMaxUInt(pDX, m_nACModSlashing, 0, 255);
 	DDX_Text(pDX, IDC_EXP_FORKILL, m_nExpForKill);
 	DDV_MinMaxUInt(pDX, m_nExpForKill, 0, 4000000000);
 	DDX_Text(pDX, IDC_CURRENTHP, m_nCurrentHP);
@@ -160,20 +154,7 @@ BOOL CTabAbilitiesDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 	m_hAccel = ::LoadAccelerators(AfxGetApp()->m_hInstance,MAKEINTRESOURCE(IDR_MAINFRAME));
-
-	_vlNumAttacks.FillComboBox(m_cbAttacks);
-
 	return TRUE; 
 }
 
-void CTabAbilitiesDlg::SetAttacks(BYTE chAttacks)
-{
-	if (!CValueList::SetComboBoxValue(m_cbAttacks,chAttacks,FALSE))
-		CValueList::SetComboBoxValue(m_cbAttacks,1,FALSE);
-}
-
-BYTE CTabAbilitiesDlg::GetAttacks()
-{
-	return((BYTE)CValueList::GetComboBoxValue(m_cbAttacks));
-}
 

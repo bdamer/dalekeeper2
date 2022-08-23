@@ -535,9 +535,6 @@ void CDaleKeeperView::LoadChar(int nChar)
 	GetNameText(nChar);
 	
 	m_tabAbilities.m_nStr = pCre->GetStr();
-#if INF_VERSION < 22
-	m_tabAbilities.m_nStrBonus = pCre->GetStrBonus();
-#endif
 	m_tabAbilities.m_nDex = pCre->GetDex();
 	m_tabAbilities.m_nCon = pCre->GetCon();
 	m_tabAbilities.m_nInt = pCre->GetInt();
@@ -560,8 +557,12 @@ void CDaleKeeperView::LoadChar(int nChar)
 			m_tabAbilities.m_nReputation = pCre->GetReputation();
 			break;
 	}
-	m_tabAbilities.SetAttacks(pCre->GetAttacks());
 	m_tabAbilities.m_nAC = pCre->GetAC();
+	m_tabAbilities.m_nACModCrushing = pCre->GetACModCrushing();
+	m_tabAbilities.m_nACModMissile = pCre->GetACModMissile();
+	m_tabAbilities.m_nACModPiercing = pCre->GetACModPiercing();
+	m_tabAbilities.m_nACModSlashing = pCre->GetACModSlashing();
+
 #if INF_VERSION < 22
 	m_tabAbilities.m_nThac0 = pCre->GetThac0();
 	m_tabAbilities.m_nLevelFirstClass = pCre->GetFirstClassLevel();
@@ -739,14 +740,11 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 	}
 	pCre->SetBaseHP(m_tabAbilities.m_nHP);
 	pCre->SetCurrentHP(m_tabAbilities.m_nCurrentHP);
-	pCre->SetAttacks(m_tabAbilities.GetAttacks());
 	pCre->SetAC(m_tabAbilities.m_nAC);
-#if INF_VERSION < 22
-	pCre->SetThac0(m_tabAbilities.m_nThac0);
-	pCre->SetFirstClassLevel(m_tabAbilities.m_nLevelFirstClass);
-	pCre->SetSecondClassLevel(m_tabAbilities.m_nLevelSecondClass);
-	pCre->SetThirdClassLevel(m_tabAbilities.m_nLevelThirdClass);
-#endif
+	pCre->SetACModCrushing(m_tabAbilities.m_nACModCrushing);
+	pCre->SetACModMissile(m_tabAbilities.m_nACModMissile);
+	pCre->SetACModPiercing(m_tabAbilities.m_nACModPiercing);
+	pCre->SetACModSlashing(m_tabAbilities.m_nACModSlashing);
 
 	CObList list;
 	m_tabProfs.GetProfs(list);

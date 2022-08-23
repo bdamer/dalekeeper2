@@ -52,29 +52,24 @@ public:
 
 	HACCEL m_hAccel;
 
-	void SetAttacks(BYTE chAttacks);
-	BYTE GetAttacks();
-
 // Dialog Data
 	//{{AFX_DATA(CTabAbilitiesDlg)
 	enum { IDD = IDD_ABILITIES };
-	CComboBox	m_cbAttacks;
 	CEdit	m_edStr;
 	UINT	m_nCha;
 	UINT	m_nCon;
 	UINT	m_nDex;
 	UINT	m_nInt;
 	UINT	m_nStr;
-	UINT	m_nStrBonus;
 	UINT	m_nWis;
 	UINT	m_nExp;
 	UINT	m_nGold;
 	UINT	m_nHP;
 	int		m_nAC;
-	int		m_nThac0;
-	UINT	m_nLevelFirstClass;
-	UINT	m_nLevelSecondClass;
-	UINT	m_nLevelThirdClass;
+	short	m_nACModCrushing;
+	short	m_nACModMissile;
+	short	m_nACModPiercing;
+	short	m_nACModSlashing;
 	UINT	m_nReputation;
 	UINT	m_nExpForKill;
 	short	m_nCurrentHP;

@@ -103,6 +103,7 @@
 #define IDS_ERR_CRE19                   1019
 #define IDC_BASEHP                      1020
 #define IDS_ERR_CRE20                   1020
+#define IDC_MAXHP                       1020
 #define IDC_EXP                         1021
 #define IDS_ERR_CRE21                   1021
 #define IDC_GOLD                        1022
@@ -120,10 +121,12 @@
 #define IDC_SAVE_PARALYZATION           1027
 #define IDS_ERR_CRE27                   1027
 #define IDC_LEVEL2                      1027
+#define IDC_ACMISSILES                  1027
 #define IDC_SAVE_WAND                   1028
 #define IDC_FILENAME                    1028
 #define IDS_ERR_CRE28                   1028
 #define IDC_LEVEL3                      1028
+#define IDC_ACPIERCING                  1028
 #define IDC_SAVE_POLYMORPH              1029
 #define IDS_ERR_CRE29                   1029
 #define IDC_CURRENTHP                   1029
@@ -136,6 +139,8 @@
 #define IDC_PROF_BOW                    1032
 #define IDC_RES_ACID                    1032
 #define IDS_ERR_CRE32                   1032
+#define IDC_BASEAC5                     1032
+#define IDC_ACSLASHING                  1032
 #define IDC_PROF_CLUB                   1033
 #define IDC_RES_COLD                    1033
 #define IDC_OPEN_LOCKS                  1033
@@ -359,6 +364,7 @@
 #define IDC_MATCH_SPELLNAME             1223
 #define IDC_CREATURENAME                1226
 #define IDC_ENABLE_QUICKSAVES           1228
+#define IDC_ACCRUSHING                  1229
 #define IDS_ERR_GAM0                    1500
 #define IDS_ERR_GAM1                    1501
 #define IDS_ERR_GAM2                    1502
@@ -439,9 +445,9 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        186
+#define _APS_NEXT_RESOURCE_VALUE        188
 #define _APS_NEXT_COMMAND_VALUE         32819
-#define _APS_NEXT_CONTROL_VALUE         1229
+#define _APS_NEXT_CONTROL_VALUE         1233
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
