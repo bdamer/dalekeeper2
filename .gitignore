@@ -39,6 +39,7 @@ ipch
 x64
 x86
 .vscode
+*.aps
 
 # CMake
 build/*
