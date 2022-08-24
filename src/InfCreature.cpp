@@ -77,9 +77,8 @@ CInfCreature::~CInfCreature()
 BOOL CInfCreature::Read(CFile &file)
 {
 	UINT nCount;
-	int i;
 
-	UINT nStartPos = file.GetPosition();
+	auto nStartPos = file.GetPosition();
 
 	const auto cre_size = sizeof(INF_CRE);
 	nCount = file.Read(&m_infCre, cre_size);
@@ -207,7 +206,7 @@ BOOL CInfCreature::Read(CFile &file)
 	char szSpell[10];
 	memset(szSpell,0,10);
 
-	for (i=0;i<(int)m_infCre.dwKnownSpellsCount;i++)
+	for (auto i=0;i<(int)m_infCre.dwKnownSpellsCount;i++)
 	{
 		if (m_pKnownSpells[i].wSpellType >= INF_CRE_SPELLTYPES)
 		{
@@ -226,7 +225,7 @@ BOOL CInfCreature::Read(CFile &file)
 		m_nSpellCount[m_pKnownSpells[i].wSpellType]++;
 	}
 
-	for (i=0;i<INF_CRE_SPELLTYPES;i++)
+	for (auto i=0;i<INF_CRE_SPELLTYPES;i++)
 	{
 		if (m_nSpellCount[i])
 		{
@@ -249,7 +248,7 @@ BOOL CInfCreature::Read(CFile &file)
 
 	// Fill up the internal structures with all the known spells.
 	int j;
-	for (i=0;i<(int)m_infCre.dwKnownSpellsCount;i++)
+	for (auto i=0;i<(int)m_infCre.dwKnownSpellsCount;i++)
 	{
 		if (m_pSpellData[m_pKnownSpells[i].wSpellType])
 		{
@@ -278,13 +277,13 @@ BOOL CInfCreature::Read(CFile &file)
 	// If there were any duplicates in the number of known spells the count needs to
 	// be changed. The editor will trim out those duplicates when it saves.
 	m_infCre.dwKnownSpellsCount = 0;
-	for (i=0;i<INF_CRE_SPELLTYPES;i++)
+	for (auto i=0;i<INF_CRE_SPELLTYPES;i++)
 		m_infCre.dwKnownSpellsCount += m_nSpellCount[i];
 
 	// Find all the memorized spells and count up the times memorized.
 	int k;
 	BOOL bFoundSpell;
-	for (i=0;i<(int)m_infCre.dwMemorizedSpellsCount;i++)
+	for (auto i=0;i<(int)m_infCre.dwMemorizedSpellsCount;i++)
 	{
 		// Find it in the new lists.
 		bFoundSpell = FALSE;
@@ -365,7 +364,7 @@ BOOL CInfCreature::Read(CFile &file)
 			return(FALSE);
 		}
 
-		for (i=0;i<(int)m_infCre.dwItemsCount;i++)
+		for (auto i=0;i<(int)m_infCre.dwItemsCount;i++)
 		{
 			nCount = file.Read(&m_infItems[i],sizeof(INF_CRE_ITEM));
 			if (nCount != sizeof(INF_CRE_ITEM))
@@ -387,7 +386,7 @@ BOOL CInfCreature::Read(CFile &file)
 		}
 
 		INF_AFF *pAff;
-		for (i=0;i<(int)m_infCre.dwAffectCount;i++)
+		for (auto i=0;i<(int)m_infCre.dwAffectCount;i++)
 		{
 			pAff = new INF_AFF;
 			if (!pAff)

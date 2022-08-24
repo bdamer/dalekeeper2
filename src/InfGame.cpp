@@ -215,8 +215,8 @@ BOOL CInfGame::Read(const char* pszFilename)
 		return(FALSE);
 	}
 
-	int nFileSize = file.GetLength();
-	int nPos = file.GetPosition();
+	const auto nFileSize = file.GetLength();
+	auto nPos = file.GetPosition();
 
 	// I'm not sure if this data is always here or not, but it will affect the size
 	// of the journal data.
