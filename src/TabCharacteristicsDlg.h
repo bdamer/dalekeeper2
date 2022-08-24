@@ -57,19 +57,17 @@ public:
 	DWORD GetValue(CComboBox &cb);
 
 	void SetAlignment(BYTE chAlignment);
-	void SetKit(DWORD dwKit);
 	void SetClass(BYTE chClass);
 	void SetRace(BYTE chRace);
+	void SetSubRace(BYTE chSubRace);
 	void SetGender(BYTE chGender);
-	void SetRacialEnemy(BYTE chRacialEnemy);
 	void SetEnemyAlly(BYTE chEnemyAlly);
 
 	BYTE GetAlignment();
-	DWORD GetKit();
 	BYTE GetClass();
 	BYTE GetRace();
+	BYTE GetSubRace();
 	BYTE GetGender();
-	BYTE GetRacialEnemy();
 	BYTE GetEnemyAlly();
 
 private:
@@ -82,17 +80,15 @@ private:
 	BYTE	m_chAlignment;
 	BYTE	m_chClass;
 	BYTE	m_chRace;
+	BYTE	m_chSubRace;
 	BYTE	m_chGender;
-	BYTE	m_chRacialEnemy;
-	DWORD	m_dwKit;
 	BYTE	m_chEnemyAlly;
 
 	BOOL	m_bAlignment;
 	BOOL	m_bClass;
 	BOOL	m_bRace;
+	BOOL	m_bSubRace;
 	BOOL	m_bGender;
-	BOOL	m_bRacialEnemy;
-	BOOL	m_bKit;
 	BOOL	m_bEnemyAlly;
 
 public:
@@ -101,11 +97,10 @@ public:
 	//{{AFX_DATA(CTabCharacteristicsDlg)
 	enum { IDD = IDD_CHARACTERISTICS };
 	CComboBox	m_cbEnemyAlly;
-	CComboBox	m_cbKit;
-	CComboBox	m_cbRacialEnemy;
 	CComboBox	m_cbAlignment;
 	CComboBox	m_cbClass;
 	CComboBox	m_cbRace;
+	CComboBox	m_cbSubRace;
 	CComboBox	m_cbGender;
 	UINT	m_nMovementSpeed;
 	//}}AFX_DATA
@@ -129,10 +124,9 @@ protected:
 	virtual BOOL OnInitDialog();
 	afx_msg void OnSetvalueAlignment();
 	afx_msg void OnSetvalueClass();
-	afx_msg void OnSetvalueEnemy();
 	afx_msg void OnSetvalueGender();
-	afx_msg void OnSetvalueKit();
 	afx_msg void OnSetvalueRace();
+	afx_msg void OnSetvalueSubRace();
 	afx_msg void OnSetvalueEnemyally();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()

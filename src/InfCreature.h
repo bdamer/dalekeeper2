@@ -877,21 +877,19 @@ public:
 	void  SetSetTraps(int nValue);
 #endif
 
-	BYTE	GetRace()							{ return(m_infCre.chRace); }
+	BYTE	GetRace(void) const	{ return m_infCre.chRace; }
 	void	SetRace(int nValue);
-	BYTE  GetGender()							{ return(m_infCre.chGender); }
+	BYTE	GetSubRace(void) const { return m_infCre.chSubrace; }
+	void	SetSubRace(int nValue);
+	BYTE	GetGender(void) const{ return m_infCre.chGender; }
 	void	SetGender(int nValue);
-	BYTE	GetAlignment()						{ return(m_infCre.chAlignment); }
+	BYTE	GetAlignment(void) const { return m_infCre.chAlignment; }
 	void	SetAlignment(int nValue);
-	BYTE	GetClass()							{ return(m_infCre.chClass); }
+	BYTE	GetClass(void) const { return m_infCre.chClass; }
 	void	SetClass(int nValue);
-	DWORD	GetKit()								{ return(m_infCre.dwKit); }
+	DWORD	GetKit(void) const { return m_infCre.dwKit; }
 	void	SetKit(DWORD dwValue);
-#if INF_VERSION < 22
-	BYTE	GetRacialEnemy()					{ return(m_infCre.chRacialEnemy); }
-	void	SetRacialEnemy(int nValue);
-#endif
-	BYTE	GetEnemyAlly()						{ return(m_infCre.chEnemyAlly); }
+	BYTE	GetEnemyAlly(void) const { return m_infCre.chEnemyAlly; }
 	void	SetEnemyAlly(int nValue);
 
 #if INF_VERSION < 22

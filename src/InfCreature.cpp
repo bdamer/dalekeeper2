@@ -1407,6 +1407,12 @@ void CInfCreature::SetRace(int nValue)
 	m_infCre.chRace = nValue;
 }
 
+void CInfCreature::SetSubRace(int nValue)
+{
+	m_bHasChanged = m_infCre.chRace != nValue;
+	m_infCre.chRace = nValue;
+}
+
 void CInfCreature::SetGender(int nValue)
 {
 	if (m_infCre.chGender != nValue)

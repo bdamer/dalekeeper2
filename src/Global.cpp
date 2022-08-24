@@ -77,6 +77,7 @@ CValueList _vlProfs;
 CValueList _vlProfsUser;
 CValueList _vlRace;
 CValueList _vlRaceUser;
+CValueList _vlSubRace;
 CValueList _vlClass;
 CValueList _vlClassUser;
 CValueList _vlKitList;

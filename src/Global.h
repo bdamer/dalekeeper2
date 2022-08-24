@@ -128,13 +128,14 @@ extern CValueList _vlProfs;
 extern CValueList _vlProfsUser;
 extern CValueList _vlRace;
 extern CValueList _vlRaceUser;
+extern CValueList _vlSubRace;
 extern CValueList _vlClass;
 extern CValueList _vlClassUser;
 extern CValueList _vlKitList;
 extern CValueList _vlAffects;
-extern CValueList	_vlEnemyAlly;
-extern CValueList	_vlState;
-extern CValueList	_vlSpells;
+extern CValueList _vlEnemyAlly;
+extern CValueList _vlState;
+extern CValueList _vlSpells;
 
 #define ITEMTYPE_MISC						0x0000
 #define ITEMTYPE_NECKLACE					0x0001

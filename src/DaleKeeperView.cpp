@@ -611,11 +611,8 @@ void CDaleKeeperView::LoadChar(int nChar)
 	m_tabCharacteristics.SetClass(pCre->GetClass());
 	m_tabCharacteristics.SetGender(pCre->GetGender());
 	m_tabCharacteristics.SetRace(pCre->GetRace());
+	m_tabCharacteristics.SetSubRace(pCre->GetSubRace());
 	m_tabCharacteristics.SetAlignment(pCre->GetAlignment());
-	m_tabCharacteristics.SetKit(pCre->GetKit());
-#if INF_VERSION < 22
-	m_tabCharacteristics.SetRacialEnemy(pCre->GetRacialEnemy());
-#endif
 	m_tabCharacteristics.m_nMovementSpeed = pCre->GetSpeed();
 	m_tabCharacteristics.SetEnemyAlly(pCre->GetEnemyAlly());
 
@@ -715,9 +712,6 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 	CInfCreature *pCre = GetCre(nChar);
 
 	pCre->SetStr(m_tabAbilities.m_nStr);
-#if INF_VERSION < 22
-	pCre->SetStrBonus(m_tabAbilities.m_nStrBonus);
-#endif
 	pCre->SetDex(m_tabAbilities.m_nDex);
 	pCre->SetCon(m_tabAbilities.m_nCon);
 	pCre->SetInt(m_tabAbilities.m_nInt);
@@ -787,8 +781,8 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 	pCre->SetClass(m_tabCharacteristics.GetClass());
 	pCre->SetGender(m_tabCharacteristics.GetGender());
 	pCre->SetRace(m_tabCharacteristics.GetRace());
+	pCre->SetSubRace(m_tabCharacteristics.GetSubRace());
 	pCre->SetAlignment(m_tabCharacteristics.GetAlignment());
-	pCre->SetKit(m_tabCharacteristics.GetKit());
 #if INF_VERSION < 22
 	pCre->SetRacialEnemy(m_tabCharacteristics.GetRacialEnemy());
 #endif

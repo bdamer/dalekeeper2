@@ -692,6 +692,12 @@ BOOL CDaleKeeperApp::LoadLists()
 {
 	AddToLog("Loading user defined lists:\n");
 
+	// TODO: load from file
+	CValueItem entry;
+	entry.m_strText = "Purerace";
+	entry.m_nValue = 0;
+	_vlSubRace.AddTail(entry);
+
 	// TODO: Don't hardcode paths
 	if (!_vlKit.Load(ULF_KITS) ||
 		 !_vlGenderUser.Load(ULF_GENDER,TRUE) ||

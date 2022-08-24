@@ -169,6 +169,7 @@
 #define IDC_MAGE_SPECIALTY              1038
 #define IDC_KIT                         1038
 #define IDC_SETTRAPS                    1038
+#define IDC_SUBRACE                     1038
 #define IDC_PROF_HALBERD                1039
 #define IDC_RES_MISSILE                 1039
 #define IDC_RACIAL_ENEMY                1039
@@ -305,6 +306,7 @@
 #define IDC_COMBO                       1163
 #define IDC_SETVALUE_CLASS              1164
 #define IDC_SETVALUE_KIT                1165
+#define IDC_SETVALUE_SUBRACE            1165
 #define IDC_SETVALUE_ENEMY              1166
 #define IDC_CHR_FILENAME                1166
 #define IDC_SETVALUE_APPEARANCE         1167
@@ -445,7 +447,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        188
+#define _APS_NEXT_RESOURCE_VALUE        189
 #define _APS_NEXT_COMMAND_VALUE         32819
 #define _APS_NEXT_CONTROL_VALUE         1233
 #define _APS_NEXT_SYMED_VALUE           101
