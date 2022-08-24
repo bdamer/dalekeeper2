@@ -83,8 +83,8 @@ private:
 
 	void LoadValues();
 	
-	BOOL GetValueString(const STRUCTDEF &sd, char *pszResult);
-	BOOL GetDataType(const STRUCTDEF &sd, char *pszResult);
+	BOOL GetValueString(const STRUCTDEF &sd, char *pszResult, std::size_t reslen);
+	BOOL GetDataType(const STRUCTDEF &sd, char *pszResult, std::size_t reslen);
 	BOOL AssignData(const STRUCTDEF &sd, const char *pszValue);
 
 	void UpdateList(CEdit &edit, int nIndex, DWORD &dwValue);

@@ -123,6 +123,8 @@ STRUCTDEF _sdCreAff[] =
 	{0x0000,NULL,0,0}
 };
 
+static constexpr std::size_t buffer_len = 101u;
+
 CEditAffectDlg::CEditAffectDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CEditAffectDlg::IDD, pParent)
 {
@@ -204,39 +206,39 @@ void CEditAffectDlg::GetAffect(INF_AFF *pAff)
 
 void CEditAffectDlg::LoadValues()
 {
-	char szBuf[101];
+	char szBuf[buffer_len];
 
-	GetValueString(_sdCreAff[INDEX_TYPE],szBuf);
+	GetValueString(_sdCreAff[INDEX_TYPE],szBuf, buffer_len);
 	m_edType.SetWindowText(szBuf);
 
-	GetValueString(_sdCreAff[INDEX_TARGET],szBuf);
+	GetValueString(_sdCreAff[INDEX_TARGET],szBuf, buffer_len);
 	m_edTarget.SetWindowText(szBuf);
 
-	GetValueString(_sdCreAff[INDEX_PARAM1],szBuf);
+	GetValueString(_sdCreAff[INDEX_PARAM1],szBuf, buffer_len);
 	m_edParam1.SetWindowText(szBuf);
 
-	GetValueString(_sdCreAff[INDEX_PARAM2],szBuf);
+	GetValueString(_sdCreAff[INDEX_PARAM2],szBuf, buffer_len);
 	m_edParam2.SetWindowText(szBuf);
 
-	GetValueString(_sdCreAff[INDEX_PROBABILITY],szBuf);
+	GetValueString(_sdCreAff[INDEX_PROBABILITY],szBuf, buffer_len);
 	m_edProbability.SetWindowText(szBuf);
 
-	GetValueString(_sdCreAff[INDEX_TIME],szBuf);
+	GetValueString(_sdCreAff[INDEX_TIME],szBuf, buffer_len);
 	m_edTime.SetWindowText(szBuf);
 
-	GetValueString(_sdCreAff[INDEX_FLAGS],szBuf);
+	GetValueString(_sdCreAff[INDEX_FLAGS],szBuf, buffer_len);
 	m_edFlags.SetWindowText(szBuf);
 
-	GetValueString(_sdCreAff[INDEX_RESOURCE0],szBuf);
+	GetValueString(_sdCreAff[INDEX_RESOURCE0],szBuf, buffer_len);
 	m_edResource0.SetWindowText(szBuf);
 
-	GetValueString(_sdCreAff[INDEX_RESOURCE1],szBuf);
+	GetValueString(_sdCreAff[INDEX_RESOURCE1],szBuf, buffer_len);
 	m_edResource1.SetWindowText(szBuf);
 
-	GetValueString(_sdCreAff[INDEX_RESOURCE2],szBuf);
+	GetValueString(_sdCreAff[INDEX_RESOURCE2],szBuf, buffer_len);
 	m_edResource2.SetWindowText(szBuf);
 	
-	GetValueString(_sdCreAff[INDEX_RESOURCE3],szBuf);
+	GetValueString(_sdCreAff[INDEX_RESOURCE3],szBuf, buffer_len);
 	m_edResource3.SetWindowText(szBuf);
 
 	m_lcList.DeleteAllItems();
@@ -251,13 +253,13 @@ void CEditAffectDlg::LoadValues()
 
 		ptr = (BYTE*)(&m_aff) + _sdCreAff[nIndex].nOffset;
 
-		GetDataType(_sdCreAff[nIndex],szBuf);
+		GetDataType(_sdCreAff[nIndex],szBuf, buffer_len);
 		m_lcList.SetItemText(nItem,1,szBuf);
 
 		sprintf_s(szBuf,"%d",_sdCreAff[nIndex].nLen);
 		m_lcList.SetItemText(nItem,2,szBuf);
 
-		GetValueString(_sdCreAff[nIndex],szBuf);
+		GetValueString(_sdCreAff[nIndex],szBuf, buffer_len);
 		m_lcList.SetItemText(nItem,3,szBuf);
 
 		sprintf_s(szBuf,"%s",_sdCreAff[nIndex].pszName);
@@ -267,55 +269,55 @@ void CEditAffectDlg::LoadValues()
 	}
 }
 
-BOOL CEditAffectDlg::GetDataType(const STRUCTDEF &sd, char *pszResult)
+BOOL CEditAffectDlg::GetDataType(const STRUCTDEF &sd, char *pszResult, std::size_t reslen)
 {
 	switch(sd.nType)
 	{
 		case STRUCTDEF_TYPE_NONE :
-			strcpy(pszResult,"None");
+			strcpy_s(pszResult, reslen, "None");
 			break;
 		case STRUCTDEF_TYPE_BYTE :
-			strcpy(pszResult,"BYTE");
+			strcpy_s(pszResult, reslen,"BYTE");
 			break;
 		case STRUCTDEF_TYPE_INT :
-			strcpy(pszResult,"int");
+			strcpy_s(pszResult, reslen,"int");
 			break;
 		case STRUCTDEF_TYPE_DWORD :
-			strcpy(pszResult,"DWORD");
+			strcpy_s(pszResult, reslen,"DWORD");
 			break;
 		case STRUCTDEF_TYPE_CHAR :
-			strcpy(pszResult,"char");
+			strcpy_s(pszResult, reslen,"char");
 			break;
 		case STRUCTDEF_TYPE_WORD :
-			strcpy(pszResult,"WORD");
+			strcpy_s(pszResult, reslen,"WORD");
 			break;
 		default:
-			strcpy(pszResult,"Unknown");
+			strcpy_s(pszResult, reslen,"Unknown");
 			return(FALSE);
 	}
 	return(TRUE);
 }
 
-BOOL CEditAffectDlg::GetValueString(const STRUCTDEF &sd, char *pszResult)
+BOOL CEditAffectDlg::GetValueString(const STRUCTDEF &sd, char *pszResult, std::size_t reslen)
 {
 	BYTE *ptr = (BYTE*)(&m_aff) + sd.nOffset;
 	switch(sd.nType)
 	{
 		case STRUCTDEF_TYPE_NONE :
-			strcpy(pszResult,"");
+			strcpy_s(pszResult, reslen, "");
 			break;
 		case STRUCTDEF_TYPE_BYTE :
-			sprintf(pszResult,"%d",*((BYTE*)ptr));
+			sprintf_s(pszResult, reslen,"%d",*((BYTE*)ptr));
 			break;
 		case STRUCTDEF_TYPE_INT :
-			sprintf(pszResult,"%d",*((int*)ptr));
+			sprintf_s(pszResult, reslen,"%d",*((int*)ptr));
 			break;
 		case STRUCTDEF_TYPE_DWORD :
 			MakeHexString(*((DWORD*)ptr),pszResult,sd.nPadding);
 			break;
 		case STRUCTDEF_TYPE_CHAR :
 			if (sd.nLen == 1)
-				sprintf(pszResult,"%d",*((char*)ptr));
+				sprintf_s(pszResult, reslen,"%d",*((char*)ptr));
 			else
 			{
 				memset(pszResult,0,sd.nLen+1);
@@ -323,10 +325,10 @@ BOOL CEditAffectDlg::GetValueString(const STRUCTDEF &sd, char *pszResult)
 			}
 			break;
 		case STRUCTDEF_TYPE_WORD :
-			sprintf(pszResult,"%d",*((WORD*)ptr));
+			sprintf_s(pszResult, reslen,"%d",*((WORD*)ptr));
 			break;
 		default:
-			strcpy(pszResult,"Error");
+			strcpy_s(pszResult, reslen,"Error");
 			return(FALSE);
 	}
 
@@ -339,8 +341,8 @@ void CEditAffectDlg::UpdateList(CEdit &edit, int nIndex, DWORD &dwValue)
 	edit.GetWindowText(strText);
 	dwValue = strtoul(strText,NULL,0);
 
-	char szBuf[101];
-	GetValueString(_sdCreAff[nIndex],szBuf);
+	char szBuf[buffer_len];
+	GetValueString(_sdCreAff[nIndex],szBuf, buffer_len);
 	m_lcList.SetItemText(nIndex,3,szBuf);
 }
 
@@ -350,8 +352,8 @@ void CEditAffectDlg::UpdateList(CEdit &edit, int nIndex, int &nValue)
 	edit.GetWindowText(strText);
 	nValue = strtol(strText,NULL,0);
 
-	char szBuf[101];
-	GetValueString(_sdCreAff[nIndex],szBuf);
+	char szBuf[buffer_len];
+	GetValueString(_sdCreAff[nIndex],szBuf, buffer_len);
 	m_lcList.SetItemText(nIndex,3,szBuf);
 }
 
@@ -361,8 +363,8 @@ void CEditAffectDlg::UpdateList(CEdit &edit, int nIndex, WORD &wValue)
 	edit.GetWindowText(strText);
 	wValue = (WORD)strtol(strText,NULL,0);
 
-	char szBuf[101];
-	GetValueString(_sdCreAff[nIndex],szBuf);
+	char szBuf[buffer_len];
+	GetValueString(_sdCreAff[nIndex],szBuf, buffer_len);
 	m_lcList.SetItemText(nIndex,3,szBuf);
 }
 
@@ -375,8 +377,8 @@ void CEditAffectDlg::UpdateList(CEdit &edit, int nIndex, char *pchValue)
 	int nLen = min(8,strText.GetLength());
 	memcpy(pchValue,(const char*)strText,nLen);
 
-	char szBuf[101];
-	GetValueString(_sdCreAff[nIndex],szBuf);
+	char szBuf[buffer_len];
+	GetValueString(_sdCreAff[nIndex],szBuf, buffer_len);
 	m_lcList.SetItemText(nIndex,3,szBuf);
 }
 
@@ -478,9 +480,9 @@ void CEditAffectDlg::OnDblclkList(NMHDR* pNMHDR, LRESULT* pResult)
 	if (nIndex == -1)
 		return;
 
-	char szValue[101], szType[101];
-	GetValueString(_sdCreAff[nIndex],szValue);
-	GetDataType(_sdCreAff[nIndex],szType);
+	char szValue[buffer_len], szType[buffer_len];
+	GetValueString(_sdCreAff[nIndex],szValue, buffer_len);
+	GetDataType(_sdCreAff[nIndex],szType, buffer_len);
 
 	CEditAffectDataDlg d;
 
@@ -491,7 +493,7 @@ void CEditAffectDlg::OnDblclkList(NMHDR* pNMHDR, LRESULT* pResult)
 	{
 		AssignData(_sdCreAff[nIndex],d.m_strValue);
 
-		GetValueString(_sdCreAff[nIndex],szValue);
+		GetValueString(_sdCreAff[nIndex],szValue, buffer_len);
 		m_lcList.SetItemText(nIndex,3,szValue);
 
 		switch(nIndex)
