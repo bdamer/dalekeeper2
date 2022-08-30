@@ -76,7 +76,6 @@ CTabAbilitiesDlg::CTabAbilitiesDlg(CWnd* pParent /*=NULL*/)
 	m_hAccel = NULL;
 }
 
-
 void CTabAbilitiesDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);

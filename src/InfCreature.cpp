@@ -1456,6 +1456,78 @@ void CInfCreature::SetEnemyAlly(int nValue)
 	m_infCre.chEnemyAlly = nValue;
 }
 
+void CInfCreature::SetBarbarianLevels(int value)
+{
+	m_bHasChanged = GetBarbarianLevels() != value;
+	m_infCre.chBarbarianLevels = value;
+}
+
+void CInfCreature::SetBardLevels(int value)
+{
+	m_bHasChanged = GetBardLevels() != value;
+	m_infCre.chBardLevels = value;
+}
+
+void CInfCreature::SetClericLevels(int value)
+{
+	m_bHasChanged = GetClericLevels() != value;
+	m_infCre.chClericLevels = value;
+}
+
+void CInfCreature::SetDruidLevels(int value)
+{
+	m_bHasChanged = GetDruidLevels() != value;
+	m_infCre.chDruidLevels = value;
+}
+
+void CInfCreature::SetFighterLevels(int value)
+{
+	m_bHasChanged = GetFighterLevels() != value;
+	m_infCre.chFighterLevels = value;
+}
+
+void CInfCreature::SetMonkLevels(int value)
+{
+	m_bHasChanged = GetMonkLevels() != value;
+	m_infCre.chMonkLevels = value;
+}
+
+void CInfCreature::SetPaladinLevels(int value)
+{
+	m_bHasChanged = GetPaladinLevels() != value;
+	m_infCre.chPaladinLevels = value;
+}
+
+void CInfCreature::SetRangerLevels(int value)
+{
+	m_bHasChanged = GetRangerLevels() != value;
+	m_infCre.chRangerLevels = value;
+}
+
+void CInfCreature::SetRogueLevels(int value)
+{
+	m_bHasChanged = GetRogueLevels() != value;
+	m_infCre.chRogueLevels = value;
+}
+
+void CInfCreature::SetSorcererLevels(int value)
+{
+	m_bHasChanged = GetSorcererLevels() != value;
+	m_infCre.chSorcererLevels = value;
+}
+
+void CInfCreature::SetWizardLevels(int value)
+{
+	m_bHasChanged = GetWizardLevels() != value;
+	m_infCre.chWizardLevels = value;
+}
+
+void CInfCreature::SetTotalLevels(int value)
+{
+	m_bHasChanged = GetTotalLevels() != value;
+	m_infCre.chTotalLevels = value;
+}
+
 #if INF_VERSION < 22
 void CInfCreature::SetAnimationID(WORD wValue)
 {

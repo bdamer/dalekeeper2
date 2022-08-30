@@ -48,23 +48,6 @@
 #define PORTRAIT_WIDTH			110
 #define PORTRAIT_HEIGHT			170
 
-#define NUM_VIEW_TABS			15
-#define TAB_ABILITIES			0
-#define TAB_CHARACTERISTICS	1
-#define TAB_APPEARANCE			2
-#define TAB_INVENTORY			3
-#define TAB_SPELL_MEM			4
-#define TAB_SPELL_INNATE		5
-#define TAB_SPELL_WIZARD		6
-#define TAB_SPELL_PRIEST		7
-#define TAB_SAVES					8
-#define TAB_PROFS					9
-#define TAB_RESISTANCES			10
-#define TAB_THIEF					11
-#define TAB_STATE					12
-#define TAB_AFFECTS				13
-#define TAB_GLOBALS				14
-
 #include "BitmapWnd.h"
 #include "TabAbilitiesDlg.h"
 #include "TabSavesDlg.h"
@@ -80,6 +63,8 @@
 #include "TabGlobalVarsDlg.h"
 #include "TabAppearanceDlg.h"
 #include "TabStatesDlg.h"
+#include "TabLevelsDlg.h"
+#include "TabKitsDlg.h"
 
 #define DKV_VIEWTYPE_UNKNOWN	0
 #define DKV_VIEWTYPE_PARTY		1
@@ -93,8 +78,30 @@ protected: // create from serialization only
 	CDaleKeeperView();
 	DECLARE_DYNCREATE(CDaleKeeperView)
 
+private:	
+	enum Tabs
+	{
+		Abilities = 0,
+		Characteristics = 1,
+		Kits = 2,
+		Levels = 3,
+		Appearance = 4,
+		Inventory = 5,
+		SpellMemorized = 6,
+		SpellInnate = 7,
+		SpellWizard = 8,
+		SpellPriest = 9,
+		Saves = 10,
+		Profs = 11,
+		Resistances = 12,
+		Thief = 13,
+		State = 14,
+		Affects = 15,
+		Globals = 16
+	};
 
-private:
+	static constexpr auto num_view_tabs = 17;
+
 	// Makes the edit control for the name and the scrollpar line up with
 	// the portrait. Also used for first time initialiazation of other controls.
 	void	ResizeControls();
@@ -128,6 +135,8 @@ private:
 	void	UpdateGridLines(CListCtrl &list);
 
 	CTabAbilitiesDlg		m_tabAbilities;
+	TabKitsDlg m_tabKits;
+	TabLevelsDlg m_tabLevels;
 	CTabSavesDlg			m_tabSaves;
 	CTabProfsDlg			m_tabProfs;
 	CTabResistancesDlg	m_tabResistances;
@@ -145,7 +154,7 @@ private:
 
 	// Putting all the modeless dialogs in an array to make showing/hiding
 	// them easy.
-	CDialog *m_pTabDlg[NUM_VIEW_TABS];
+	std::array<CDialog*, num_view_tabs> m_pTabDlg;
 
 	// Keeps track of which tab is being viewed. This is used in the TCN_SELCHANGE
 	// notification to figure out which dialog needs to be hidden since the 

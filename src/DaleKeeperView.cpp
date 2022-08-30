@@ -99,8 +99,7 @@ CDaleKeeperView::CDaleKeeperView()
 	m_hPortrait = NULL;
 	m_nViewType = DKV_VIEWTYPE_UNKNOWN;
 
-	for (int i=0;i<NUM_VIEW_TABS;i++)
-		m_pTabDlg[i] = NULL;
+	std::fill(m_pTabDlg.begin(), m_pTabDlg.end(), nullptr);
 }
 
 CDaleKeeperView::~CDaleKeeperView()
@@ -108,9 +107,11 @@ CDaleKeeperView::~CDaleKeeperView()
 	_comItemBrowser.ClearSelected(this);
 	_comSpellBrowser.ClearSelected(this);
 	
-	for (int i=0;i<NUM_VIEW_TABS;i++)
-		if (m_pTabDlg[i] && m_pTabDlg[i]->GetSafeHwnd())
-			m_pTabDlg[i]->DestroyWindow();
+	for (auto tab : m_pTabDlg) 
+	{
+		if (tab && tab->GetSafeHwnd())
+			tab->DestroyWindow();
+	}
 
 	if (m_hPortrait)
 		::DeleteObject(m_hPortrait);
@@ -318,58 +319,64 @@ void CDaleKeeperView::ResizeControls()
 	// Add the tabs to the control. I used the literal numbers here instead
 	// of hte TAB_ defines so that it is obvious what order they are in. They
 	// need to be inserted in this order to come out right.
-	m_tab.InsertItem(0,"&Abilities");
-	m_tab.InsertItem(1,"Characteristics");
-	m_tab.InsertItem(2,"Appearance");
-	m_tab.InsertItem(3,"&Inventory");
-	m_tab.InsertItem(4,"Memorization");
-	m_tab.InsertItem(5,"Innate");
-	m_tab.InsertItem(6,"Wizard");
-	m_tab.InsertItem(7,"Priest");
-	m_tab.InsertItem(8,"Saving &Throws");
-	m_tab.InsertItem(9,"&Proficiencies");
-	m_tab.InsertItem(10,"Resistances");
-	m_tab.InsertItem(11,"T&hieves");
-	m_tab.InsertItem(12,"State Flags");
-	m_tab.InsertItem(13,"Affects");
-	m_tab.InsertItem(14,"Global Variables");
+	m_tab.InsertItem(Tabs::Abilities, "&Abilities");
+	m_tab.InsertItem(Tabs::Characteristics, "Characteristics");
+	m_tab.InsertItem(Tabs::Kits, "Kits");
+	m_tab.InsertItem(Tabs::Levels, "Levels");
+	m_tab.InsertItem(Tabs::Appearance, "Appearance");
+	m_tab.InsertItem(Tabs::Inventory, "&Inventory");
+	m_tab.InsertItem(Tabs::SpellMemorized, "Memorization");
+	m_tab.InsertItem(Tabs::SpellInnate, "Innate");
+	m_tab.InsertItem(Tabs::SpellWizard, "Wizard");
+	m_tab.InsertItem(Tabs::SpellPriest, "Priest");
+	m_tab.InsertItem(Tabs::Saves, "Saving &Throws");
+	m_tab.InsertItem(Tabs::Profs, "&Proficiencies");
+	m_tab.InsertItem(Tabs::Resistances, "Resistances");
+	m_tab.InsertItem(Tabs::Thief, "T&hieves");
+	m_tab.InsertItem(Tabs::State, "State Flags");
+	m_tab.InsertItem(Tabs::Affects, "Affects");
+	m_tab.InsertItem(Tabs::Globals, "Global Variables");
 
 	// Create all of the modeless dialogs for the tabs.
-	m_tabAbilities.Create(IDD_ABILITIES,&m_tab);
-	m_pTabDlg[TAB_ABILITIES] = &m_tabAbilities;
+	m_tabAbilities.Create(IDD_ABILITIES, &m_tab);
+	m_pTabDlg[Tabs::Abilities] = &m_tabAbilities;
+	m_tabKits.Create(IDD_KITS, &m_tab);
+	m_pTabDlg[Tabs::Kits] = &m_tabKits;
+	m_tabLevels.Create(IDD_LEVELS, &m_tab);
+	m_pTabDlg[Tabs::Levels] = &m_tabLevels;
 	m_tabSaves.Create(IDD_SAVING_THROWS,&m_tab);
-	m_pTabDlg[TAB_SAVES] = &m_tabSaves;
+	m_pTabDlg[Tabs::Saves] = &m_tabSaves;
 	m_tabProfs.Create(IDD_PROFICIENCIES,&m_tab);
-	m_pTabDlg[TAB_PROFS] = &m_tabProfs;
+	m_pTabDlg[Tabs::Profs] = &m_tabProfs;
 	m_tabResistances.Create(IDD_RESISTANCES,&m_tab);
-	m_pTabDlg[TAB_RESISTANCES] = &m_tabResistances;
+	m_pTabDlg[Tabs::Resistances] = &m_tabResistances;
 	m_tabThief.Create(IDD_THIEF_SKILLS,&m_tab);
-	m_pTabDlg[TAB_THIEF] = &m_tabThief;
+	m_pTabDlg[Tabs::Thief] = &m_tabThief;
 	m_tabCharacteristics.Create(IDD_CHARACTERISTICS,&m_tab);
-	m_pTabDlg[TAB_CHARACTERISTICS] = &m_tabCharacteristics;
+	m_pTabDlg[Tabs::Characteristics] = &m_tabCharacteristics;
 	m_tabInv.Create(IDD_INVENTORY,&m_tab);
 	m_tabInv.SetParentView(this);
-	m_pTabDlg[TAB_INVENTORY] = &m_tabInv;
+	m_pTabDlg[Tabs::Inventory] = &m_tabInv;
 	m_tabInnate.SetInnate();
 	m_tabInnate.Create(IDD_SPELLS,&m_tab);
 	m_tabInnate.SetParentView(this);
-	m_pTabDlg[TAB_SPELL_INNATE] = &m_tabInnate;
+	m_pTabDlg[Tabs::SpellInnate] = &m_tabInnate;
 	m_tabPriest.Create(IDD_SPELLS,&m_tab);
 	m_tabPriest.SetParentView(this);
-	m_pTabDlg[TAB_SPELL_PRIEST] = &m_tabPriest;
+	m_pTabDlg[Tabs::SpellPriest] = &m_tabPriest;
 	m_tabWizard.Create(IDD_SPELLS,&m_tab);
 	m_tabWizard.SetParentView(this);
-	m_pTabDlg[TAB_SPELL_WIZARD] = &m_tabWizard;
+	m_pTabDlg[Tabs::SpellWizard] = &m_tabWizard;
 	m_tabMem.Create(IDD_MEMORIZATION,&m_tab);
-	m_pTabDlg[TAB_SPELL_MEM] = &m_tabMem;
+	m_pTabDlg[Tabs::SpellMemorized] = &m_tabMem;
 	m_tabAffects.Create(IDD_AFFECTS,&m_tab);
-	m_pTabDlg[TAB_AFFECTS] = &m_tabAffects;
+	m_pTabDlg[Tabs::Affects] = &m_tabAffects;
 	m_tabGlobals.Create(IDD_GLOBALVARS,&m_tab);
-	m_pTabDlg[TAB_GLOBALS] = &m_tabGlobals;
+	m_pTabDlg[Tabs::Globals] = &m_tabGlobals;
 	m_tabAppearance.Create(IDD_APPEARANCE,&m_tab);
-	m_pTabDlg[TAB_APPEARANCE] = &m_tabAppearance;
+	m_pTabDlg[Tabs::Appearance] = &m_tabAppearance;
 	m_tabStates.Create(IDD_STATEFLAGS,&m_tab);
-	m_pTabDlg[TAB_STATE] = &m_tabStates;
+	m_pTabDlg[Tabs::State] = &m_tabStates;
 
 	// Find the upper left position for the modeless dialogs.
 	CRect rItem;
@@ -379,21 +386,22 @@ void CDaleKeeperView::ResizeControls()
 
 	// Reposition them all.
 	CRect rNew;
-	for (int i=0;i<NUM_VIEW_TABS;i++)
+	for (auto tab : m_pTabDlg)
 	{
-		m_pTabDlg[i]->GetClientRect(&rTab);
-
-		rNew.left = nLeft;
-		rNew.top = nTop;
-		rNew.right = rNew.left + rTab.Width()-1;
-		rNew.bottom = rNew.top + rTab.Height()-1;
-
-		m_pTabDlg[i]->MoveWindow(&rNew);
+		if (tab)
+		{
+			tab->GetClientRect(&rTab);
+			rNew.left = nLeft;
+			rNew.top = nTop;
+			rNew.right = rNew.left + rTab.Width() - 1;
+			rNew.bottom = rNew.top + rTab.Height() - 1;
+			tab->MoveWindow(&rNew);
+		}
 	}
 	
 	// Need to do this by hand the first time rather than through
 	// DisplayTab().
-	m_pTabDlg[TAB_ABILITIES]->ShowWindow(SW_SHOW);
+	m_pTabDlg[Tabs::Abilities]->ShowWindow(SW_SHOW);
 	m_nCurrentTab = 0;
 	m_tabAbilities.m_edStr.SetFocus();
 }
@@ -570,6 +578,8 @@ void CDaleKeeperView::LoadChar(int nChar)
 	m_tabAbilities.m_nLevelThirdClass = pCre->GetThirdClassLevel();
 #endif
 
+	m_tabLevels.populate(*pCre);
+
 	CObList list;
 	pCre->GetProfs(list);
 	m_tabProfs.SetProfs(list);
@@ -693,20 +703,25 @@ void CDaleKeeperView::LoadChar(int nChar)
 		}
 	}
 
-	for (i=0;i<NUM_VIEW_TABS;i++)
-		m_pTabDlg[i]->UpdateData(FALSE);
+	for (auto tab : m_pTabDlg)
+	{
+		if (tab)
+			tab->UpdateData(FALSE);
+	}
 
 	UpdateData(FALSE);
 }
 
 BOOL CDaleKeeperView::SaveChar(int nChar)
 {
-	for (int i=0;i<NUM_VIEW_TABS;i++)
+	for (auto i = 0; i < num_view_tabs; i++)
+	{
 		if (!m_pTabDlg[i]->UpdateData(TRUE))
 		{
 			DisplayTab(i);
 			return(FALSE);
 		}
+	}
 
 	CInfGame *pGame = &GetDocument()->m_infGame;
 	CInfCreature *pCre = GetCre(nChar);
@@ -739,6 +754,8 @@ BOOL CDaleKeeperView::SaveChar(int nChar)
 	pCre->SetACModMissile(m_tabAbilities.m_nACModMissile);
 	pCre->SetACModPiercing(m_tabAbilities.m_nACModPiercing);
 	pCre->SetACModSlashing(m_tabAbilities.m_nACModSlashing);
+
+
 
 	CObList list;
 	m_tabProfs.GetProfs(list);
@@ -913,7 +930,7 @@ void CDaleKeeperView::OnCharacterPrev()
 
 void CDaleKeeperView::OnSelchangeTab(NMHDR* pNMHDR, LRESULT* pResult) 
 {
-	int nCurSel = m_tab.GetCurSel();
+	const auto nCurSel = m_tab.GetCurSel();
 	if (nCurSel != m_nCurrentTab)
 	{
 		m_pTabDlg[m_nCurrentTab]->ShowWindow(SW_HIDE);
@@ -928,7 +945,7 @@ void CDaleKeeperView::DisplayTab(int nIndex)
 {
 	// Make sure it's not out of range and that the tab isn't already the
 	// current tab.
-	if (nIndex < 0 || nIndex >= NUM_VIEW_TABS || m_nCurrentTab == nIndex)
+	if (nIndex < 0 || nIndex >= num_view_tabs || m_nCurrentTab == nIndex)
 		return;
 
 	m_pTabDlg[m_nCurrentTab]->ShowWindow(SW_HIDE);
@@ -942,49 +959,55 @@ void CDaleKeeperView::DisplayTab(int nIndex)
 	// remain behind on a tab that is no longer visible.
 	switch(m_nCurrentTab)
 	{
-		case TAB_ABILITIES :
+		case Tabs::Abilities :
 			m_tabAbilities.m_edStr.SetFocus();
 			break;
-		case TAB_SAVES :
+		case Tabs::Kits:
+			// TODO: fixme
+			break;
+		case Tabs::Levels:
+			m_tabLevels.m_edBarbarian.SetFocus();
+			break;
+		case Tabs::Saves :
 			m_tabSaves.m_edParalyzation.SetFocus();
 			break;
-		case TAB_PROFS :
+		case Tabs::Profs :
 			m_tabProfs.m_lcProfs.SetFocus();
 			break;
-		case TAB_RESISTANCES :
+		case Tabs::Resistances :
 			m_tabResistances.m_edAcid.SetFocus();
 			break;
-		case TAB_THIEF :
+		case Tabs::Thief :
 			m_tabThief.m_edMoveSilently.SetFocus();
 			break;
-		case TAB_CHARACTERISTICS :
+		case Tabs::Characteristics :
 			m_tabCharacteristics.m_cbGender.SetFocus();
 			break;
-		case TAB_INVENTORY :
+		case Tabs::Inventory :
 			m_tabInv.m_lcInv.SetFocus();
 			break;
-		case TAB_SPELL_INNATE :
+		case Tabs::SpellInnate :
 			m_tabInnate.m_lcSpells.SetFocus();
 			break;
-		case TAB_SPELL_PRIEST :
+		case Tabs::SpellPriest :
 			m_tabPriest.m_lcSpells.SetFocus();
 			break;
-		case TAB_SPELL_WIZARD :
+		case Tabs::SpellWizard :
 			m_tabWizard.m_lcSpells.SetFocus();
 			break;
-		case TAB_SPELL_MEM :
+		case Tabs::SpellMemorized :
 			m_tabMem.m_lcList.SetFocus();
 			break;
-		case TAB_AFFECTS :
+		case Tabs::Affects :
 			m_tabAffects.m_lcList.SetFocus();
 			break;
-		case TAB_GLOBALS :
+		case Tabs::Globals :
 			m_tabGlobals.m_lcList.SetFocus();
 			break;
-		case TAB_APPEARANCE :
+		case Tabs::Appearance :
 			m_tabAppearance.m_cbAppearance.SetFocus();
 			break;
-		case TAB_STATE :
+		case Tabs::State :
 			m_tabStates.m_lcList.SetFocus();
 			break;
 	}
@@ -1021,15 +1044,15 @@ void CDaleKeeperView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 				switch(pHs->wSpellType)
 				{
 					case INF_CRE_ST_INNATE :
-						DisplayTab(TAB_SPELL_INNATE);
+						DisplayTab(Tabs::SpellInnate);
 						m_tabInnate.AssignSpell(pHs);
 						break;
 					case INF_CRE_ST_PRIEST :
-						DisplayTab(TAB_SPELL_PRIEST);
+						DisplayTab(Tabs::SpellPriest);
 						m_tabPriest.AssignSpell(pHs);
 						break;
 					case INF_CRE_ST_WIZARD :
-						DisplayTab(TAB_SPELL_WIZARD);
+						DisplayTab(Tabs::SpellWizard);
 						m_tabWizard.AssignSpell(pHs);
 						break;
 				}
@@ -1042,7 +1065,7 @@ void CDaleKeeperView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 
 void CDaleKeeperView::OnUpdatePageNext(CCmdUI* pCmdUI) 
 {
-	if (m_nCurrentTab < NUM_VIEW_TABS-1)
+	if (m_nCurrentTab < num_view_tabs - 1)
 		pCmdUI->Enable(TRUE);
 	else
 		pCmdUI->Enable(FALSE);
@@ -1068,37 +1091,37 @@ void CDaleKeeperView::OnPagePrev()
 
 void CDaleKeeperView::OnPageAbilities() 
 {
-	DisplayTab(TAB_ABILITIES);
+	DisplayTab(Tabs::Abilities);
 }
 
 void CDaleKeeperView::OnPageSaves() 
 {
-	DisplayTab(TAB_SAVES);
+	DisplayTab(Tabs::Saves);
 }
 
 void CDaleKeeperView::OnPageProf() 
 {
-	DisplayTab(TAB_PROFS);	
+	DisplayTab(Tabs::Profs);	
 }
 
 void CDaleKeeperView::OnPageResistances() 
 {
-	DisplayTab(TAB_RESISTANCES);
+	DisplayTab(Tabs::Resistances);
 }
 
 void CDaleKeeperView::OnPageThief() 
 {
-	DisplayTab(TAB_THIEF);
+	DisplayTab(Tabs::Thief);
 }
 
 void CDaleKeeperView::OnPageCharacteristics() 
 {
-	DisplayTab(TAB_CHARACTERISTICS);
+	DisplayTab(Tabs::Characteristics);
 }
 
 void CDaleKeeperView::OnViewInventory() 
 {
-	DisplayTab(TAB_INVENTORY);
+	DisplayTab(Tabs::Inventory);
 }
 
 void CDaleKeeperView::OnPortrait() 

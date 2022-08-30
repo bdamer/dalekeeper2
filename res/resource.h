@@ -27,6 +27,7 @@
 #define IDD_RESISTANCES                 142
 #define IDD_THIEF_SKILLS                144
 #define IDD_CHARACTERISTICS             145
+#define IDD_ABILITIES2                  146
 #define IDD_ITEM_BROWSER                147
 #define IDD_INVENTORY                   148
 #define IDD_QUANTITY                    150
@@ -62,6 +63,9 @@
 #define IDD_SPELLFILTER                 184
 #define IDD_CREATUREFILTER              185
 #define IDD_STATEFLAGS                  186
+#define IDD_LEVELS                      187
+#define IDD_DIALOG1                     189
+#define IDD_KITS                        189
 #define IDC_VERSION                     1000
 #define IDS_ERR_CRE0                    1000
 #define IDC_EMAIL                       1001
@@ -367,6 +371,19 @@
 #define IDC_CREATURENAME                1226
 #define IDC_ENABLE_QUICKSAVES           1228
 #define IDC_ACCRUSHING                  1229
+#define IDC_BARBARIAN_LEVELS            1233
+#define IDC_BARD_LEVELS                 1234
+#define IDC_CLERIC_LEVELS               1235
+#define IDC_DRUID_LEVELS                1236
+#define IDC_FIGHTER_LEVELS              1237
+#define IDC_MONK_LEVELS                 1238
+#define IDC_PALADIN_LEVELS              1239
+#define IDC_RANGER_LEVELS               1240
+#define IDC_ROGUE_LEVELS                1241
+#define IDC_SORCERER_LEVELS             1242
+#define IDC_WIZARD_LEVELS               1243
+#define IDC_LOCK_TOTAL_LEVEL            1244
+#define IDC_TOTAL_LEVEL                 1245
 #define IDS_ERR_GAM0                    1500
 #define IDS_ERR_GAM1                    1501
 #define IDS_ERR_GAM2                    1502
@@ -447,9 +464,9 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        189
+#define _APS_NEXT_RESOURCE_VALUE        191
 #define _APS_NEXT_COMMAND_VALUE         32819
-#define _APS_NEXT_CONTROL_VALUE         1233
-#define _APS_NEXT_SYMED_VALUE           101
+#define _APS_NEXT_CONTROL_VALUE         1245
+#define _APS_NEXT_SYMED_VALUE           105
 #endif
 #endif

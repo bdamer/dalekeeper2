@@ -676,12 +676,12 @@ public:
 
 	// Read the CRE record from the file. The file position must already be
 	// placed in the right spot.
-	BOOL	Read(CFile &file);
-													 
-	// Writes the current data to the file.
-	BOOL	Write(CFile &file);
+	BOOL	Read(CFile& file);
 
-	int	GetLastError()						{ return(m_nError); }
+	// Writes the current data to the file.
+	BOOL	Write(CFile& file);
+
+	int	GetLastError() { return(m_nError); }
 
 	// Returns the number of bytes needed to store the information on disk.
 	// This value is used by CInfGame to create the header entries when 
@@ -689,42 +689,42 @@ public:
 	UINT	GetFileSpace();
 
 	// Returns the resource string for the large character portrait.
-	void	GetResLargePortrait(CString &strRes);
+	void	GetResLargePortrait(CString& strRes);
 
-	void	GetName(CString &strName);
-	void	SetName(const char *pszName);
+	void	GetName(CString& strName);
+	void	SetName(const char* pszName);
 
-	DWORD GetLongNameID()					{ return(m_infCre.dwLongCreatureName); }
+	DWORD GetLongNameID() { return(m_infCre.dwLongCreatureName); }
 	void	SetLongNameID(DWORD dwValue);
-	DWORD GetShortNameID()					{ return(m_infCre.dwShortCreatureName); }
+	DWORD GetShortNameID() { return(m_infCre.dwShortCreatureName); }
 	void	SetShortNameID(DWORD dwValue);
 
 #if INF_VERSION < 22
-	BYTE	GetDualClass()						{ return(m_infCre.chDualClass); }
-	void	SetDualClass(int nValue=0x08);
+	BYTE	GetDualClass() { return(m_infCre.chDualClass); }
+	void	SetDualClass(int nValue = 0x08);
 
-	BYTE	GetFirstClassLevel()				{ return(m_infCre.chLevelFirstClass); }
+	BYTE	GetFirstClassLevel() { return(m_infCre.chLevelFirstClass); }
 	void	SetFirstClassLevel(int nValue);
-	BYTE	GetSecondClassLevel()			{ return(m_infCre.chLevelSecondClass); }
+	BYTE	GetSecondClassLevel() { return(m_infCre.chLevelSecondClass); }
 	void	SetSecondClassLevel(int nValue);
-	BYTE	GetThirdClassLevel()				{ return(m_infCre.chLevelThirdClass); }
+	BYTE	GetThirdClassLevel() { return(m_infCre.chLevelThirdClass); }
 	void	SetThirdClassLevel(int nValue);
 #endif
 
-	BYTE	GetStr()								{ return(m_infCre.chStrength); }
+	BYTE	GetStr() { return(m_infCre.chStrength); }
 	void	SetStr(int nStr);
-	BYTE	GetDex()								{ return(m_infCre.chDexterity); }
+	BYTE	GetDex() { return(m_infCre.chDexterity); }
 	void	SetDex(int nDex);
-	BYTE	GetCon()								{ return(m_infCre.chConstitution); }
+	BYTE	GetCon() { return(m_infCre.chConstitution); }
 	void	SetCon(int nCon);
-	BYTE	GetInt()								{ return(m_infCre.chIntelligence); }
+	BYTE	GetInt() { return(m_infCre.chIntelligence); }
 	void	SetInt(int nInt);
-	BYTE	GetWis()								{ return(m_infCre.chWisdom); }
+	BYTE	GetWis() { return(m_infCre.chWisdom); }
 	void	SetWis(int nWis);
-	BYTE	GetCha()								{ return(m_infCre.chCharisma); }
+	BYTE	GetCha() { return(m_infCre.chCharisma); }
 	void	SetCha(int nCha);
 
-	BYTE	GetAttacks()						{ return(m_infCre.chAttacks); }
+	BYTE	GetAttacks() { return(m_infCre.chAttacks); }
 	void	SetAttacks(int nValue);
 	short	GetAC(void) const { return m_infCre.nAC1; }
 	void	SetAC(int nalue);
@@ -738,150 +738,150 @@ public:
 	void	SetACModSlashing(int value);
 
 #if INF_VERSION < 22
-	char	GetThac0()							{ return(m_infCre.chTHAC0); }
+	char	GetThac0() { return(m_infCre.chTHAC0); }
 	void	SetThac0(int nValue);
 #endif
 
-	DWORD	GetExp()								{ return(m_infCre.dwExp); }
+	DWORD	GetExp() { return(m_infCre.dwExp); }
 	void	SetExp(DWORD dwExp);
-	DWORD GetExpForKill()					{ return(m_infCre.dwExpForKilling); }
+	DWORD GetExpForKill() { return(m_infCre.dwExpForKilling); }
 	void  SetExpForKill(DWORD dwExp);
-	DWORD	GetGold()							{ return(m_infCre.dwGold); }
+	DWORD	GetGold() { return(m_infCre.dwGold); }
 	void	SetGold(DWORD dwGold);
 
-	WORD	GetBaseHP()							{ return(m_infCre.wBaseHP); }
+	WORD	GetBaseHP() { return(m_infCre.wBaseHP); }
 	void	SetBaseHP(WORD wBaseHP);
-	WORD	GetCurrentHP()						{ return(m_infCre.wCurrentHP); }
+	WORD	GetCurrentHP() { return(m_infCre.wCurrentHP); }
 	void	SetCurrentHP(WORD wCurrentHP);
 #if INF_VERSION < 22
-	BYTE	GetLore()							{ return(m_infCre.chLore); }
+	BYTE	GetLore() { return(m_infCre.chLore); }
 	void	SetLore(int nValue);
 #endif
 
 	// The reputation value seems to be 10x what is shown in the game.
-	BYTE	GetReputation()					{ return(m_infCre.chReputation/10); }
+	BYTE	GetReputation() { return(m_infCre.chReputation / 10); }
 	void	SetReputation(int nValue);
 
 #if INF_VERSION < 22
-	BYTE	GetSaveDeath()						{ return(m_infCre.chSaveDeath); }
+	BYTE	GetSaveDeath() { return(m_infCre.chSaveDeath); }
 	void	SetSaveDeath(int nValue);
-	BYTE	GetSaveWands()						{ return(m_infCre.chSaveWands); }
+	BYTE	GetSaveWands() { return(m_infCre.chSaveWands); }
 	void	SetSaveWands(int nValue);
-	BYTE	GetSavePoly()						{ return(m_infCre.chSavePoly); }
+	BYTE	GetSavePoly() { return(m_infCre.chSavePoly); }
 	void	SetSavePoly(int nValue);
-	BYTE	GetSaveBreath()					{ return(m_infCre.chSaveBreath); }
+	BYTE	GetSaveBreath() { return(m_infCre.chSaveBreath); }
 	void	SetSaveBreath(int nValue);
-	BYTE	GetSaveSpells()					{ return(m_infCre.chSaveSpells); }
+	BYTE	GetSaveSpells() { return(m_infCre.chSaveSpells); }
 	void	SetSaveSpells(int nValue);
 
-	BYTE	GetProfLargeSwords()				{ return(LOTRIBBLE(m_infCre.chProfLargeSwords)); }
+	BYTE	GetProfLargeSwords() { return(LOTRIBBLE(m_infCre.chProfLargeSwords)); }
 	void	SetProfLargeSwords(int nValue);
-	BYTE	GetProfSmallSwords()				{ return(LOTRIBBLE(m_infCre.chProfSmallSwords)); }
+	BYTE	GetProfSmallSwords() { return(LOTRIBBLE(m_infCre.chProfSmallSwords)); }
 	void	SetProfSmallSwords(int nValue);
-	BYTE	GetProfBows()						{ return(LOTRIBBLE(m_infCre.chProfBows)); }
+	BYTE	GetProfBows() { return(LOTRIBBLE(m_infCre.chProfBows)); }
 	void	SetProfBows(int nValue);
-	BYTE	GetProfSpears()					{ return(LOTRIBBLE(m_infCre.chProfSpears)); }
+	BYTE	GetProfSpears() { return(LOTRIBBLE(m_infCre.chProfSpears)); }
 	void	SetProfSpears(int nValue);
-	BYTE	GetProfClubs()						{ return(LOTRIBBLE(m_infCre.chProfClubs)); }
+	BYTE	GetProfClubs() { return(LOTRIBBLE(m_infCre.chProfClubs)); }
 	void	SetProfClubs(int nValue);
-	BYTE	GetProfFlails()					{ return(LOTRIBBLE(m_infCre.chProfFlails)); }
+	BYTE	GetProfFlails() { return(LOTRIBBLE(m_infCre.chProfFlails)); }
 	void	SetProfFlails(int nValue);
-	BYTE	GetProfAxes()						{ return(LOTRIBBLE(m_infCre.chProfAxes)); }
+	BYTE	GetProfAxes() { return(LOTRIBBLE(m_infCre.chProfAxes)); }
 	void	SetProfAxes(int nValue);
-	BYTE	GetProfMissiles()					{ return(LOTRIBBLE(m_infCre.chProfMissiles)); }
+	BYTE	GetProfMissiles() { return(LOTRIBBLE(m_infCre.chProfMissiles)); }
 	void	SetProfMissiles(int nValue);
-	BYTE	GetProfGreatSwords()				{ return(LOTRIBBLE(m_infCre.chProfGreatSwords)); }
+	BYTE	GetProfGreatSwords() { return(LOTRIBBLE(m_infCre.chProfGreatSwords)); }
 	void	SetProfGreatSwords(int nValue);
-	BYTE	GetProfDaggers()					{ return(LOTRIBBLE(m_infCre.chProfDaggers)); }
+	BYTE	GetProfDaggers() { return(LOTRIBBLE(m_infCre.chProfDaggers)); }
 	void	SetProfDaggers(int nValue);
-	BYTE	GetProfHalberds()					{ return(LOTRIBBLE(m_infCre.chProfHalberds)); }
+	BYTE	GetProfHalberds() { return(LOTRIBBLE(m_infCre.chProfHalberds)); }
 	void	SetProfHalberds(int nValue);
-	BYTE	GetProfMaces()						{ return(LOTRIBBLE(m_infCre.chProfMaces)); }
+	BYTE	GetProfMaces() { return(LOTRIBBLE(m_infCre.chProfMaces)); }
 	void	SetProfMaces(int nValue);
-	BYTE	GetProfCrossbows()				{ return(LOTRIBBLE(m_infCre.chProfCrossbows)); }
+	BYTE	GetProfCrossbows() { return(LOTRIBBLE(m_infCre.chProfCrossbows)); }
 	void	SetProfCrossbows(int nValue);
-	BYTE	GetProfQuarterStaffs()			{ return(LOTRIBBLE(m_infCre.chProfQuarterstaffs)); }
+	BYTE	GetProfQuarterStaffs() { return(LOTRIBBLE(m_infCre.chProfQuarterstaffs)); }
 	void	SetProfQuarterStaffs(int nValue);
-	BYTE	GetProfHammers()					{ return(LOTRIBBLE(m_infCre.chProfHammers)); }
+	BYTE	GetProfHammers() { return(LOTRIBBLE(m_infCre.chProfHammers)); }
 	void	SetProfHammers(int nValue);
 
-	BYTE	GetProfLargeSwords2()				{ return(HITRIBBLE(m_infCre.chProfLargeSwords)); }
+	BYTE	GetProfLargeSwords2() { return(HITRIBBLE(m_infCre.chProfLargeSwords)); }
 	void	SetProfLargeSwords2(int nValue);
-	BYTE	GetProfSmallSwords2()				{ return(HITRIBBLE(m_infCre.chProfSmallSwords)); }
+	BYTE	GetProfSmallSwords2() { return(HITRIBBLE(m_infCre.chProfSmallSwords)); }
 	void	SetProfSmallSwords2(int nValue);
-	BYTE	GetProfBows2()							{ return(HITRIBBLE(m_infCre.chProfBows)); }
+	BYTE	GetProfBows2() { return(HITRIBBLE(m_infCre.chProfBows)); }
 	void	SetProfBows2(int nValue);
-	BYTE	GetProfSpears2()						{ return(HITRIBBLE(m_infCre.chProfSpears)); }
+	BYTE	GetProfSpears2() { return(HITRIBBLE(m_infCre.chProfSpears)); }
 	void	SetProfSpears2(int nValue);
-	BYTE	GetProfClubs2()						{ return(HITRIBBLE(m_infCre.chProfClubs)); }
+	BYTE	GetProfClubs2() { return(HITRIBBLE(m_infCre.chProfClubs)); }
 	void	SetProfClubs2(int nValue);
-	BYTE	GetProfFlails2()						{ return(HITRIBBLE(m_infCre.chProfFlails)); }
+	BYTE	GetProfFlails2() { return(HITRIBBLE(m_infCre.chProfFlails)); }
 	void	SetProfFlails2(int nValue);
-	BYTE	GetProfAxes2()							{ return(HITRIBBLE(m_infCre.chProfAxes)); }
+	BYTE	GetProfAxes2() { return(HITRIBBLE(m_infCre.chProfAxes)); }
 	void	SetProfAxes2(int nValue);
-	BYTE	GetProfMissiles2()					{ return(HITRIBBLE(m_infCre.chProfMissiles)); }
+	BYTE	GetProfMissiles2() { return(HITRIBBLE(m_infCre.chProfMissiles)); }
 	void	SetProfMissiles2(int nValue);
-	BYTE	GetProfGreatSwords2()				{ return(HITRIBBLE(m_infCre.chProfGreatSwords)); }
+	BYTE	GetProfGreatSwords2() { return(HITRIBBLE(m_infCre.chProfGreatSwords)); }
 	void	SetProfGreatSwords2(int nValue);
-	BYTE	GetProfDaggers2()						{ return(HITRIBBLE(m_infCre.chProfDaggers)); }
+	BYTE	GetProfDaggers2() { return(HITRIBBLE(m_infCre.chProfDaggers)); }
 	void	SetProfDaggers2(int nValue);
-	BYTE	GetProfHalberds2()					{ return(HITRIBBLE(m_infCre.chProfHalberds)); }
+	BYTE	GetProfHalberds2() { return(HITRIBBLE(m_infCre.chProfHalberds)); }
 	void	SetProfHalberds2(int nValue);
-	BYTE	GetProfMaces2()						{ return(HITRIBBLE(m_infCre.chProfMaces)); }
+	BYTE	GetProfMaces2() { return(HITRIBBLE(m_infCre.chProfMaces)); }
 	void	SetProfMaces2(int nValue);
-	BYTE	GetProfCrossbows2()					{ return(HITRIBBLE(m_infCre.chProfCrossbows)); }
+	BYTE	GetProfCrossbows2() { return(HITRIBBLE(m_infCre.chProfCrossbows)); }
 	void	SetProfCrossbows2(int nValue);
-	BYTE	GetProfQuarterStaffs2()				{ return(HITRIBBLE(m_infCre.chProfQuarterstaffs)); }
+	BYTE	GetProfQuarterStaffs2() { return(HITRIBBLE(m_infCre.chProfQuarterstaffs)); }
 	void	SetProfQuarterStaffs2(int nValue);
-	BYTE	GetProfHammers2()						{ return(HITRIBBLE(m_infCre.chProfHammers)); }
+	BYTE	GetProfHammers2() { return(HITRIBBLE(m_infCre.chProfHammers)); }
 	void	SetProfHammers2(int nValue);
 #endif
 
-	BYTE	GetResFire()						{ return(m_infCre.chResistFire); }
+	BYTE	GetResFire() { return(m_infCre.chResistFire); }
 	void	SetResFire(int nValue);
-	BYTE	GetResCold()						{ return(m_infCre.chResistCold); }
+	BYTE	GetResCold() { return(m_infCre.chResistCold); }
 	void	SetResCold(int nValue);
-	BYTE	GetResElectricity()				{ return(m_infCre.chResistElectricity); }
+	BYTE	GetResElectricity() { return(m_infCre.chResistElectricity); }
 	void	SetResElectricity(int nValue);
-	BYTE	GetResAcid()						{ return(m_infCre.chResistAcid); }
+	BYTE	GetResAcid() { return(m_infCre.chResistAcid); }
 	void	SetResAcid(int nValue);
-	BYTE	GetResMagic()						{ return(m_infCre.chResistMagic); }
+	BYTE	GetResMagic() { return(m_infCre.chResistMagic); }
 	void	SetResMagic(int nValue);
-	BYTE	GetResMagicFire()					{ return(m_infCre.chResistMagicFire); }
+	BYTE	GetResMagicFire() { return(m_infCre.chResistMagicFire); }
 	void	SetResMagicFire(int nValue);
-	BYTE	GetResMagicCold()					{ return(m_infCre.chResistMagicCold); }
+	BYTE	GetResMagicCold() { return(m_infCre.chResistMagicCold); }
 	void	SetResMagicCold(int nValue);
-	BYTE	GetResSlashing()					{ return(m_infCre.chResistSlashing); }
+	BYTE	GetResSlashing() { return(m_infCre.chResistSlashing); }
 	void	SetResSlashing(int nValue);
-	BYTE	GetResCrushing()					{ return(m_infCre.chResistCrushing); }
+	BYTE	GetResCrushing() { return(m_infCre.chResistCrushing); }
 	void	SetResCrushing(int nValue);
-	BYTE	GetResPiercing()					{ return(m_infCre.chResistPiercing); }
+	BYTE	GetResPiercing() { return(m_infCre.chResistPiercing); }
 	void	SetResPiercing(int nValue);
-	BYTE	GetResMissile()					{ return(m_infCre.chResistMissile); }
+	BYTE	GetResMissile() { return(m_infCre.chResistMissile); }
 	void	SetResMissile(int nValue);
 
 #if INF_VERSION < 22
-	BYTE	GetOpenLocks()						{ return(m_infCre.chOpenLocks); }
+	BYTE	GetOpenLocks() { return(m_infCre.chOpenLocks); }
 	void	SetOpenLocks(int nValue);
-	BYTE	GetMoveSilently()					{ return(m_infCre.chMoveSilently); }
+	BYTE	GetMoveSilently() { return(m_infCre.chMoveSilently); }
 	void	SetMoveSilently(int nValue);
-	BYTE	GetFindTraps()						{ return(m_infCre.chFindTraps); }
+	BYTE	GetFindTraps() { return(m_infCre.chFindTraps); }
 	void	SetFindTraps(int nValue);
-	BYTE	GetPickPockets()					{ return(m_infCre.chPickPockets); }
+	BYTE	GetPickPockets() { return(m_infCre.chPickPockets); }
 	void	SetPickPockets(int nValue);
-	BYTE	GetHideInShadows()				{ return(m_infCre.chHideInShadows); }
+	BYTE	GetHideInShadows() { return(m_infCre.chHideInShadows); }
 	void	SetHideInShadows(int nValue);
-	BYTE	GetDetectIllusions()				{ return(m_infCre.chDetectIllusions); }
+	BYTE	GetDetectIllusions() { return(m_infCre.chDetectIllusions); }
 	void	SetDetectIllusions(int nValue);
-	BYTE	GetSetTraps()						{ return(m_infCre.chSetTraps); }
+	BYTE	GetSetTraps() { return(m_infCre.chSetTraps); }
 	void  SetSetTraps(int nValue);
 #endif
 
-	BYTE	GetRace(void) const	{ return m_infCre.chRace; }
+	BYTE	GetRace(void) const { return m_infCre.chRace; }
 	void	SetRace(int nValue);
 	BYTE	GetSubRace(void) const { return m_infCre.chSubrace; }
 	void	SetSubRace(int nValue);
-	BYTE	GetGender(void) const{ return m_infCre.chGender; }
+	BYTE	GetGender(void) const { return m_infCre.chGender; }
 	void	SetGender(int nValue);
 	BYTE	GetAlignment(void) const { return m_infCre.chAlignment; }
 	void	SetAlignment(int nValue);
@@ -891,6 +891,31 @@ public:
 	void	SetKit(DWORD dwValue);
 	BYTE	GetEnemyAlly(void) const { return m_infCre.chEnemyAlly; }
 	void	SetEnemyAlly(int nValue);
+
+	BYTE GetBarbarianLevels(void) const { return m_infCre.chBarbarianLevels; }
+	void SetBarbarianLevels(int value);
+	BYTE GetBardLevels(void) const { return m_infCre.chBardLevels; }
+	void SetBardLevels(int value);
+	BYTE GetClericLevels(void) const { return m_infCre.chClericLevels; }
+	void SetClericLevels(int value);
+	BYTE GetDruidLevels(void) const { return m_infCre.chDruidLevels; }
+	void SetDruidLevels(int value);
+	BYTE GetFighterLevels(void) const { return m_infCre.chFighterLevels; }
+	void SetFighterLevels(int value);
+	BYTE GetMonkLevels(void) const { return m_infCre.chMonkLevels; }
+	void SetMonkLevels(int value);
+	BYTE GetPaladinLevels(void) const { return m_infCre.chPaladinLevels; }
+	void SetPaladinLevels(int value);
+	BYTE GetRangerLevels(void) const { return m_infCre.chRangerLevels; }
+	void SetRangerLevels(int value);
+	BYTE GetRogueLevels(void) const { return m_infCre.chRogueLevels; }
+	void SetRogueLevels(int value);
+	BYTE GetSorcererLevels(void) const { return m_infCre.chSorcererLevels; }
+	void SetSorcererLevels(int value);
+	BYTE GetWizardLevels(void) const { return m_infCre.chWizardLevels; }
+	void SetWizardLevels(int value);
+	BYTE GetTotalLevels(void) const { return m_infCre.chTotalLevels; }
+	void SetTotalLevels(int value);
 
 #if INF_VERSION < 22
 	WORD	GetAnimationID()					{ return(m_infCre.wAnimationID); }

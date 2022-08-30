@@ -287,6 +287,8 @@
     <ClCompile Include="..\src\TabCharacteristicsDlg.cpp" />
     <ClCompile Include="..\src\TabGlobalVarsDlg.cpp" />
     <ClCompile Include="..\src\TabInvDlg.cpp" />
+    <ClCompile Include="..\src\TabKitsDlg.cpp" />
+    <ClCompile Include="..\src\TabLevelsDlg.cpp" />
     <ClCompile Include="..\src\TabMemSpellsDlg.cpp" />
     <ClCompile Include="..\src\TabProfsDlg.cpp" />
     <ClCompile Include="..\src\TabResistancesDlg.cpp" />
@@ -376,6 +378,8 @@
     <ClInclude Include="..\src\TabCharacteristicsDlg.h" />
     <ClInclude Include="..\src\TabGlobalVarsDlg.h" />
     <ClInclude Include="..\src\TabInvDlg.h" />
+    <ClInclude Include="..\src\TabKitsDlg.h" />
+    <ClInclude Include="..\src\TabLevelsDlg.h" />
     <ClInclude Include="..\src\TabMemSpellsDlg.h" />
     <ClInclude Include="..\src\TabProfsDlg.h" />
     <ClInclude Include="..\src\TabResistancesDlg.h" />

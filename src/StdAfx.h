@@ -58,6 +58,8 @@
 
 #include <afxtempl.h>
 #include <atlbase.h>
+#include <algorithm>
+#include <array>
 #include <math.h>
 
 #define	DIR_MULTISAVE		"mpsave\\"
